@@ -1,15 +1,18 @@
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
-import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { useState } from "react";
-import { Montserrat } from "next/font/google";
-const monst = Montserrat({
-  weight: ["400", "700"],
-  style: ["normal", "italic"],
+import { Unica_One, Quicksand } from "next/font/google";
+
+// const monst = Quicksand({
+//   weight: ["400", "700"],
+//   style: ["normal"],
+//   subsets: ["latin"],
+// });
+const play = Unica_One({
+  weight: ["400"],
+  style: ["normal"],
   subsets: ["latin"],
 });
 
@@ -21,28 +24,53 @@ function Navbar1() {
   return (
     <>
       {["lg"].map((expand) => (
-        <Navbar key={expand} bg="light" expand={expand} className="mb-3">
-          <Container fluid >
-            <Button variant="primary" onClick={handleShow} className="me-2">
-              <span>-</span>
-            </Button>
-            <Button
-              variant="primary"
-              onClick={handleShow}
-              className="me-2 navbar-toggler"
-            >
-              <span className="navbar-toggler-icon"></span>
-            </Button>
-            <Navbar.Brand href="#"  className={monst.className}>
-              Shaukeens
-            </Navbar.Brand>
+        <Navbar key={expand} bg="light" expand={expand} className="mb-3 navbar">
+          <Container fluid>
+            <div className="left-nav">
+              <Button
+                variant="primary"
+                onClick={handleShow}
+                className="me-2 nav-btn"
+              >
+                <span class="material-symbols-outlined">menu</span>
+              </Button>
+              <h1 className={play.className}>ShauKeens</h1>
+            </div>
+            <div>
+              <Button className="me-2 nav-btn sign-in-btn">
+                <span class="material-symbols-outlined">person</span>
+                <span id="signin">Login</span>
+              </Button>
+            </div>
             <Offcanvas show={show} onHide={handleClose}>
-              <Offcanvas.Header closeButton>
-                <Offcanvas.Title  className={monst.className}>Shaukeens</Offcanvas.Title>
+              <Offcanvas.Header>
+                <Offcanvas.Title className={play.className}>
+                  Shaukeens
+                </Offcanvas.Title>
+                <Button
+                  variant="primary"
+                  onClick={handleClose}
+                  className="me-2 nav-close-btn"
+                >
+                  <span class="material-symbols-outlined">close</span>
+                </Button>
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <hr />
-                <div className="btn-div" >
+                <div className="btn-div">
+                  <div>
+                    <span class="material-symbols-outlined">
+                      account_circle
+                    </span>
+                    <Button>Sign in / Register</Button>
+                  </div>
+                  <div>
+                    <span class="material-symbols-outlined">recommend</span>
+                    <Button>Just For You</Button>
+                  </div>
+                </div>
+                <hr />
+                <div className="btn-div">
                   <div>
                     <span class="material-symbols-outlined">
                       directions_boat
@@ -73,6 +101,13 @@ function Navbar1() {
                     </span>
                     <Button>Cars</Button>
                   </div>
+                </div>
+                <hr />
+                <div className="btn-div-2">
+                  <Button>List With Us</Button>
+                  <Button>Help & FAQ</Button>
+                  <Button>About</Button>
+                  <Button>Contact</Button>
                 </div>
                 <hr />
               </Offcanvas.Body>

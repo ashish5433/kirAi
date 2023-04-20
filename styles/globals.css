@@ -8,6 +8,16 @@ body{
   color: white;
 }
 
+/* 
+  ////////////////////////////////////////////////////////
+   NAVBAR
+  ///////////////////////////////////////////////////////
+*/
+
+.navbar{
+padding-left: 3rem !important;
+padding-right: 3rem !important;
+}
 #offcanvasNavbar-expand{
   background-color: rgb(255, 0, 0);
 }
@@ -33,6 +43,28 @@ color: black;
 /* margin-left: 0rem; */
 border: none;
 }
+.btn-div-2{
+  display: flex;
+  flex-direction: column;
+/* margin: 2rem; */
+}
+.btn-div-2 button{
+  background: none;
+  color: rgb(0, 0, 0);
+  margin: 0rem;
+  border: none;
+  text-align: left;
+margin-left: 0;
+transition-duration: 300ms;
+padding: 1rem;
+/* transform: translateY(-8px); */
+}
+.btn-div-2 button:hover{
+background: none;
+color: black;
+/* margin-left: 0rem; */
+border: none;
+}
 .material-symbols-outlined {
   padding: 0.8rem;
   font-variation-settings:
@@ -43,6 +75,62 @@ border: none;
 }
 
 .offcanvas, .offcanvas-lg, .offcanvas-md, .offcanvas-sm, .offcanvas-xl, .offcanvas-xxl {
-    --bs-offcanvas-width: 300px !important;
+    --bs-offcanvas-width: 350px !important;
 
+}
+
+.nav-btn{
+background: none !important;
+color: black !important;
+border: none !important;
+}
+
+.nav-close-btn{
+background: none !important;
+color: black !important;
+border: none !important;
+padding: 0 !important;
+margin-right: 0 !important;
+}
+.offcanvas-header{
+  min-height:10vh ;
+padding: 0 1rem !important;
+transform: translateY(10px);
+}
+.offcanvas-backdrop.show {
+/* filter: blur(3px); */
+opacity: 0.6 !important;
+/* filter: blur(3px) !important; */
+;
+/* -webkit-backdrop-filter: blur(10px); */
+}
+.sign-in-btn{
+border: 2px solid black !important;
+border-radius: 2rem !important;
+padding: 0.2rem 0.8rem 0.5rem 0.8rem !important;
+}
+.sign-in-btn span{
+
+padding: 0 !important;
+}
+.sign-in-btn span:nth-child(1){
+
+/* padding: 0 !important; */
+transform: translateY(5px);
+padding-right: 5px !important;
+}
+.left-nav h1{
+display: inline-block;
+transform: translateY(7px);
+letter-spacing: -2px;
+}
+.offcanvas-title{
+font-size: 2rem !important;
+padding-left: 0.4rem;
+}
+@media screen and (max-width: 680px){
+  .navbar{
+    padding-left: 0rem !important;
+    padding-right: 0rem !important;
+  }
 }
