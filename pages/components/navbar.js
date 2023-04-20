@@ -18,6 +18,9 @@ function Navbar1() {
             {["lg"].map((expand) => (
                 <Navbar key={expand} bg="light" expand={expand} className="mb-3">
                     <Container fluid>
+                    <Button variant="primary" onClick={handleShow} className="me-2">
+                            <span>hello</span>
+                        </Button>
                         <Button variant="primary" onClick={handleShow} className="me-2 navbar-toggler">
                             <span className='navbar-toggler-icon'></span>
                         </Button>
