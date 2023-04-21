@@ -1,13 +1,16 @@
-import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import Navbar1 from './components/navbar'
+import Navbar from './components/navbar'
 
-const inter = Inter({ subsets: ['latin'] })
+// import p1 from './p2.jpg'
+
+import Corousel from './components/corousel'
 
 export default function Home() {
   return (
-    <div>
-      <Navbar1/>
-    </div>
+    <>
+    
+    <Navbar/>
+   <Corousel/>
+    </>
   )
 }

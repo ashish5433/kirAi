@@ -134,3 +134,20 @@ padding-left: 0.4rem;
     padding-right: 0rem !important;
   }
 }
+
+
+/* //////////// Slider _Image ////////// */
+
+.img-sliders{
+  margin-top: -20px;
+  z-index: -2;
+}
+.img-slider{
+  height: 500px;
+  /* padding: 0.5rem 4rem; */
+  /* margin-top: -10px; */
+ 
+}
+.carousel-status{
+visibility: hidden;
+}

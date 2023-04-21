@@ -5,11 +5,7 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import { useState } from "react";
 import { Unica_One, Quicksand } from "next/font/google";
 
-// const monst = Quicksand({
-//   weight: ["400", "700"],
-//   style: ["normal"],
-//   subsets: ["latin"],
-// });
+
 const play = Unica_One({
   weight: ["400"],
   style: ["normal"],
