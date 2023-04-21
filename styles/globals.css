@@ -4,7 +4,7 @@
 
 
 body{
-  background-color: black;
+  background-color: rgb(180, 13, 13);
   color: white;
 }
 
@@ -25,6 +25,11 @@ padding-right: 3rem !important;
   display: flex;
   flex-direction: column;
 /* margin: 2rem; */
+}
+
+.thumbs{
+  margin:0px;
+  padding: 0px;
 }
 .btn-div button{
   background: none;
@@ -143,11 +148,22 @@ padding-left: 0.4rem;
   z-index: -2;
 }
 .img-slider{
-  height: 500px;
+  height: 700px;
+  position: relative;
   /* padding: 0.5rem 4rem; */
   /* margin-top: -10px; */
  
 }
 .carousel-status{
 visibility: hidden;
+}
+
+.navbar{
+  margin-top: -99vh;
+}
+
+@media only screen and ( max-width: 1500px){
+  .navbar{
+    margin-top: -113vh;
+  }
 }

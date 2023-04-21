@@ -9,8 +9,9 @@ export default function Home() {
   return (
     <>
     
-    <Navbar/>
    <Corousel/>
+   <Navbar/>
+
     </>
   )
 }

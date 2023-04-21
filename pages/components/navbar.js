@@ -20,7 +20,7 @@ function Navbar1() {
   return (
     <>
       {["lg"].map((expand) => (
-        <Navbar key={expand} bg="light" expand={expand} className="mb-3 navbar">
+        <Navbar key={expand} bg="transparent" expand={expand} className="mb-3 navbar">
           <Container fluid>
             <div className="left-nav">
               <Button
