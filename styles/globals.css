@@ -164,6 +164,17 @@ visibility: hidden;
 nav{
   background-color: rgba(0, 0, 0, 0.144) !important; 
 }
-.cor1{
-  position: absolute;
+
+
+
+
+/*   //////////////////////// Footer   //////////////////////// */
+
+.text-white{
+  text-decoration: none;
+ 
+}
+.list-unstyled li{
+  padding:  10px 0px;
+  text-align: left;
 }

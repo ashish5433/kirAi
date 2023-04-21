@@ -30,7 +30,7 @@ function Navbar1() {
               >
                 <span class="material-symbols-outlined">menu</span>
               </Button>
-              <h1 className={play.className}>ShauKeens</h1>
+              <h1 style={{fontSize:"1.5rem",fontWeight:"bold"}} className={play.className}>ShauKeens</h1>
             </div>
             <div>
               <Button className="me-2 nav-btn sign-in-btn">
