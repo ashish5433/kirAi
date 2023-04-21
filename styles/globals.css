@@ -4,7 +4,7 @@
 
 
 body{
-  background-color: black;
+  background-color: rgb(180, 13, 13);
   color: white;
 }
 
@@ -25,6 +25,11 @@ padding-right: 3rem !important;
   display: flex;
   flex-direction: column;
 /* margin: 2rem; */
+}
+
+.thumbs{
+  margin:0px;
+  padding: 0px;
 }
 .btn-div button{
   background: none;
