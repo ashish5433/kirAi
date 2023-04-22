@@ -225,7 +225,7 @@ body {
 
 nav {
   background-color: rgba(255, 255, 255, 0) !important;
-  height: 8vh !important;
+  height: 10vh !important;
   color: white !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.339);
   transition: 700ms;
@@ -415,6 +415,17 @@ top:100px !important;
 .responsive_nav2{
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
+  transition: 300ms;
+}
+
+.second_nav{
+  transition: 300ms;
+  background-color: black;
+  color: white;
+}
+.second_nav2{
+  transition: 300ms;
+  color: white;
 }
 .pointer{
   cursor: pointer;

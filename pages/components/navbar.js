@@ -140,7 +140,9 @@ function Navbar1() {
           </Container>
         </Navbar>
         <div>
-            <ul className="flex bg-transparent -mt-4 space-x-7 p-2 border-t-1 border-b-1 text-white responsive_nav2">
+          <div className={color?'second_nav':'second_nav2'}>
+            <ul className='flex bg-transparent -mt-4 space-x-7 p-2 border-t-1 border-b-1  responsive_nav22'>
+            
                 <li onMouseEnter={()=>
                     {document.getElementsByClassName("li_1_div")[0].style.visibility="visible"}}
                     className="left_li1 pointer">Yachts</li>
@@ -160,6 +162,7 @@ function Navbar1() {
                     {document.getElementsByClassName("li_1_div")[0].style.visibility="visible"}}
                     className="pointer">Cars</li>
             </ul>
+            </div>
             <div onMouseLeave={()=>
                 {console.log(document.getElementsByClassName("li_1_div")[0].style.visibility="hidden")}}
                 className="bg-white -mt-4 pl-10 pt-4 li_1_div ">
