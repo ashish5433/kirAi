@@ -14,17 +14,7 @@ const play = Unica_One({
 export default function Corousel() {
   return (
     <>
-      <div className="overlay-main-title">
-        <h1 className={play.className}>The World's</h1>
-        <h1 className={play.className}>Luxury Marketplace</h1>
-        <span>ONE SEARCH</span>
-        <span>•</span>
-        <span>200,000+ LISTINGS</span>
-        <span>•</span>
-        <span>7,000+ TRUSTED SELLERS</span>
-        <span>•</span>
-        <span>120 COUNTRIES</span>
-      </div>
+
       <div className="img-sliders">
         <Carousel
           autoPlay={true}

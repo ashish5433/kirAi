@@ -318,7 +318,7 @@ background-size: 300px;
 height: 400px;
 width: 300px;
 transition-duration: 500ms;
-
+overflow: hidden;
 }
 .category-cards:hover{
   height: 400px;
@@ -351,9 +351,78 @@ padding: 11%;
 font-size: 1.5rem;
 }
 
-.category-card-overlay{
-z-index: 10;
-position: relative;
-background-color: #fff;
 
+
+/*   //////////////////////// Nav2  //////////////////////// */
+
+@media only screen and ( max-width: 480px){
+  .responsive_nav2{
+    display: none;
+  }
+
+}
+@media only screen and ( max-width: 1200px){
+  .left_li1{
+    margin-left: 7%;
+  }
+}
+@media only screen and ( min-width: 1200px){
+  .left_li1{
+    margin-left: 5%;
+  }
+}
+.responsive_nav2{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+.pointer{
+  cursor: pointer;
+}
+
+.li_1{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.border-b-1{
+   border-bottom: 0.3px solid rgba(255, 255, 255, 0.393) ;
+}
+
+.li_1 li{
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+.li_1_div{
+  visibility: hidden;
+}
+
+.flex-end{
+  margin:10px;
+  padding-bottom: 10px ;  
+  margin-right: 60px;
+}
+
+.btn-top{
+  padding-top: 10px;
+}
+
+.nav1
+{
+  position: fixed;
+  z-index: 200;
+  width: 100vw;
+  
+}
+nav{
+  background-color: rgba(0, 0, 0, 0.144) !important; 
+}
+
+.nav2
+{
+  position: relative;
+  width: 100vw;
+  
 }
