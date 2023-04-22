@@ -165,8 +165,19 @@ nav{
   background-color: rgba(0, 0, 0, 0.144) !important; 
 }
 
+.nav2
+{
+  position: relative;
+  width: 100vw;
+  
+}
 
-
+.border-b-1{
+  border-bottom: 0.8px solid rgba(255, 255, 255, 0.499);
+}
+.border-t-1{
+  border-top: 0.8px solid rgba(255, 255, 255, 0.499);
+}
 
 /*   //////////////////////// Footer   //////////////////////// */
 
@@ -178,3 +189,62 @@ nav{
   padding:  10px 0px;
   text-align: left;
 }
+
+@media only screen and ( max-width: 480px){
+  .responsive_nav2{
+    display: none;
+  }
+
+}
+@media only screen and ( max-width: 1200px){
+  .left_li1{
+    margin-left: 7%;
+  }
+}
+@media only screen and ( min-width: 1200px){
+  .left_li1{
+    margin-left: 5%;
+  }
+}
+.responsive_nav2{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+.pointer{
+  cursor: pointer;
+}
+
+.li_1{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.li_1 li{
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+/* .li_1_div{
+  visibility: hidden;
+} */
+
+.flex-end{
+  margin:10px;
+  padding-bottom: 10px ;  
+  margin-right: 60px;
+}
+
+.btn-top{
+  padding-top: 10px;
+}
+
+.showyacht{
+  visibility: hidden;
+}
+
+.left_li1:hover ~ .li1_div {
+  background-color: aqua;
+}
+
