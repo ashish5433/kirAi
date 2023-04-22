@@ -6,6 +6,8 @@
 body{
   background-color: rgb(180, 13, 13);
   color: white;
+  overflow-x: hidden;
+
 }
 
 /* 
@@ -109,30 +111,63 @@ opacity: 0.6 !important;
 ;
 /* -webkit-backdrop-filter: blur(10px); */
 }
+
+.all-nav-btns{
+margin-right: 30px;
+}
+.nav-btns{
+color: whitesmoke;
+font-size: 0.9rem !important;
+margin-right: 2px;
+}
+.nav-btns:hover{
+  padding-bottom:20px;
+border-bottom: 2px solid whitesmoke;
+}
 .sign-in-btn{
-border: 2px solid black !important;
+border: 1.3px solid rgba(255, 255, 255, 0.95) !important;
+color: rgba(255, 255, 255, 0.95) !important;
 border-radius: 2rem !important;
-padding: 0.2rem 0.8rem 0.5rem 0.8rem !important;
+padding: 0.4rem 1.3rem 0.6rem 1rem !important;
+margin-left: 5px;
+}
+.sign-in-btn:hover{
+border: 1.3px solid rgba(255, 255, 255, 0.95) !important;
+background-color: #fff !important;
+color: rgba(0, 0, 0, 0.95) !important;
+border-radius: 2rem !important;
+padding: 0.4rem 1.3rem 0.6rem 1rem !important;
 }
 .sign-in-btn span{
 
 padding: 0 !important;
+font-size: 1.2rem !important;
+}
+#signin{
+  
+  font-size: 0.9rem !important;
 }
 .sign-in-btn span:nth-child(1){
 
 /* padding: 0 !important; */
-transform: translateY(5px);
+transform: translateY(4px);
 padding-right: 5px !important;
 }
 .left-nav h1{
 display: inline-block;
-transform: translateY(7px);
-letter-spacing: -2px;
+transform: translateY(5px);
+/* margin-top: 10px; */
+letter-spacing: 1px;
+color: white;
 }
 .offcanvas-title{
 font-size: 2rem !important;
 padding-left: 0.4rem;
 }
+.hamburger-menu{
+color: white !important;
+}
+
 @media screen and (max-width: 680px){
   .navbar{
     padding-left: 0rem !important;
@@ -145,7 +180,9 @@ padding-left: 0.4rem;
 
 
 .img-slider{
-  height: 100vh;
+  height: 80vh;
+  z-index: 3;
+  /* position: absolute; */
  
  
 }
@@ -161,24 +198,69 @@ visibility: hidden;
   width: 100vw;
   
 }
-nav{
-  background-color: rgba(0, 0, 0, 0.144) !important; 
-}
 
-.nav2
-{
-  position: relative;
-  width: 100vw;
+.overlay{
+  /* height: 80vh; */
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  /* z-index: 5; */
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.201), rgba(0, 0, 0, 0.58) 80%) fixed no-repeat;
+
+}
+.overlay-main-title{
+  /* height: 80vh; */
+  /* width: 100%; */
+  z-index: 4;
+  /* background-color: #00000090 !important; */
+  /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.181), rgba(0, 0, 0, 0.58) 80%) fixed no-repeat; */
+  position: absolute;
+  color: #fff;
+  /* top: 100%; */
+  top: 40%;
+  left: 5%;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   
 }
-
-.border-b-1{
-  border-bottom: 0.8px solid rgba(255, 255, 255, 0.499);
+.overlay-main-title h1{
+  
+  font-size: 500% !important;
+  margin: 0;
 }
-.border-t-1{
-  border-top: 0.8px solid rgba(255, 255, 255, 0.499);
+.overlay-main-title span{
+  
+  font-size: 70% !important;
+  padding-left: 0.5rem;
+  text-transform: capitalize;
+  letter-spacing: 2px;
 }
 
+nav{
+  background-color: rgba(255, 255, 255, 0) !important; 
+  height: 8vh !important;
+  color: white !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.339);
+}
+
+.carousel .control-dots .dot{
+/* margin: 0 !important; */
+border-radius: 0 !important;
+width: 60px !important;
+height: 4px !important;
+z-index: 5 !important;
+}
+/* 
+.carousel .control-arrow, .carousel.carousel-slider .control-arrow{
+font-size: 20px !important;
+display: block !important ;
+opacity: 1 !important;
+height: 30px !important;
+background-color: #000 !important;
+margin: 0 !important;
+padding: 0 !important;
+top: 0px !important;
+top:100px !important;
+} */
 /*   //////////////////////// Footer   //////////////////////// */
 
 .text-white{
@@ -189,6 +271,86 @@ nav{
   padding:  10px 0px;
   text-align: left;
 }
+
+/*   //////////////////////// Card   //////////////////////// */
+.featured-categories{
+  padding: 3rem;
+/* height: 100vh; */
+
+background-color:ghostwhite;
+}
+.featured-categories h1{
+padding-left: 2rem;
+
+}
+.card-div{
+  margin-top: 2rem;
+  width: 100%;
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+gap: 40px; 
+
+}
+.card-comp-1{
+  background: url("../public/card_1.jpg") center center no-repeat;
+}
+.card-comp-2{
+  background: url("../public/card_2.jpg") center center no-repeat;
+}
+.card-comp-3{
+  background: url("../public/card_3.jpg") center center no-repeat;
+}
+.card-comp-4{
+  background: url("../public/card_4.jpg") center center no-repeat;
+  overflow: hidden !important;
+}
+.category-cards{
+background-size: 300px;
+height: 400px;
+width: 300px;
+transition-duration: 500ms;
+
+}
+.category-cards:hover{
+  height: 400px;
+width: 300px;
+cursor: pointer;
+background-size: 350px;
+}
+.category-cards h1{
+color: #ffffff;
+position: relative;
+top: 70%;
+/* left: 0%; */
+padding: 10%;
+}
+.category-cards span{
+color: #ffffff;
+position: relative;
+top: 60%;
+/* left: 0%; */
+padding: 11%;
+}
+
+.category-cards p{
+color: #ffffff;
+position: relative;
+top: 45%;
+left: 60%;
+/* left: 0%; */
+padding: 11%;
+font-size: 1.5rem;
+}
+
+.category-card-overlay{
+z-index: 10;
+position: relative;
+background-color: #fff;
+
+}
+
+/*   //////////////////////// Nav2  //////////////////////// */
 
 @media only screen and ( max-width: 480px){
   .responsive_nav2{
@@ -240,11 +402,20 @@ nav{
   padding-top: 10px;
 }
 
-.showyacht{
-  visibility: hidden;
+.nav1
+{
+  position: fixed;
+  z-index: 200;
+  width: 100vw;
+  
+}
+nav{
+  background-color: rgba(0, 0, 0, 0.144) !important; 
 }
 
-.left_li1:hover ~ .li1_div {
-  background-color: aqua;
+.nav2
+{
+  position: relative;
+  width: 100vw;
+  
 }
-

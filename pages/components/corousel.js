@@ -1,50 +1,114 @@
-
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from 'react-responsive-carousel';
-import p1 from './p1.jpg'
-import p2 from './p2.jpg'
-import p3 from './p3.jpg'
-import p4 from './p4.jpg'
-import Image from 'next/image'
+import { Carousel } from "react-responsive-carousel";
+import Image from "next/image";
+import { Unica_One, Quicksand, Bebas_Neue } from "next/font/google";
+import { DynamicServerError } from "next/dist/client/components/hooks-server-context";
+
+const play = Unica_One({
+  weight: ["400"],
+  style: ["normal"],
+  subsets: ["latin"],
+});
 
 export default function Corousel() {
   return (
-     <div className='img-sliders'>
-              
-    <Carousel 
-    autoPlay={true}
-    showArrows={true}
-    interval={4000}
-    infiniteLoop={true}
-    autoFocus={true} 
-    stopOnHover={false}
->
-        <div>
-           <Image className='img-slider' src={p1} width={400}/>
-            
+    <>
+      <div className="overlay-main-title">
+        <h1 className={play.className}>The World's</h1>
+        <h1 className={play.className}>Luxury Marketplace</h1>
+        <span>ONE SEARCH</span>
+        <span>•</span>
+        <span>200,000+ LISTINGS</span>
+        <span>•</span>
+        <span>7,000+ TRUSTED SELLERS</span>
+        <span>•</span>
+        <span>120 COUNTRIES</span>
+      </div>
+      <div className="img-sliders">
+        <Carousel
+          autoPlay={true}
+          showArrows={true}
+          interval={4000}
+          infiniteLoop={true}
+          autoFocus={true}
+          showThumbs={false}
+          stopOnHover={false}
+        >
+          <div>
+            <div className="overlay"></div>
+            <Image
+              className="img-slider"
+              src="/real_estate.jpg"
+              width={1920}
+              height={1080}
+            />
+          </div>
 
-        </div>
-        
-        <div>
-           <Image  className='img-slider' src={p2} width={400}/>
-            
+          <div>
+            <div className="overlay"></div>
 
-        </div>
-        
-        <div>
-           <Image className='img-slider' src={p3} width={400} />
-         
+            <Image
+              className="img-slider"
+              src="/in_estate.jpg"
+              width={1920}
+              height={1080}
+            />
+          </div>
 
-        </div>
-        
-        <div>
-           <Image  className='img-slider' src={p4} width={400}/>
-          
+          <div>
+            <div className="overlay"></div>
 
-        </div>
-        
-    </Carousel>
-  </div>
-  )
+            <Image
+              className="img-slider"
+              src="/in_estate_3.jpg"
+              width={1920}
+              height={1080}
+            />
+          </div>
+
+          <div>
+            <div className="overlay"></div>
+
+            <Image
+              className="img-slider"
+              src="/yacht.jpg"
+              width={1920}
+              height={1080}
+            />
+          </div>
+          <div>
+            <div className="overlay"></div>
+
+            <Image
+              className="img-slider"
+              src="/real_estate_2.jpg"
+              width={1920}
+              height={1080}
+            />
+          </div>
+          <div>
+            <div className="overlay"></div>
+
+            <Image
+              className="img-slider"
+              src="/cars_3.jpg"
+              width={1920}
+              height={1080}
+            />
+          </div>
+          <div>
+            <div className="overlay"></div>
+
+            <Image
+              className="img-slider"
+              src="/in_estate_2.jpg"
+              width={1920}
+              height={1080}
+            />
+          </div>
+        </Carousel>
+      </div>
+    </>
+  );
 }
