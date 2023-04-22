@@ -310,7 +310,7 @@ background-size: 300px;
 height: 400px;
 width: 300px;
 transition-duration: 500ms;
-
+overflow: hidden;
 }
 .category-cards:hover{
   height: 400px;
@@ -343,12 +343,7 @@ padding: 11%;
 font-size: 1.5rem;
 }
 
-.category-card-overlay{
-z-index: 10;
-position: relative;
-background-color: #fff;
 
-}
 
 /*   //////////////////////// Nav2  //////////////////////// */
 
@@ -382,15 +377,19 @@ background-color: #fff;
   flex-direction: row;
 }
 
+.border-b-1{
+   border-bottom: 0.3px solid rgba(255, 255, 255, 0.393) ;
+}
+
 .li_1 li{
   margin-top: 8px;
   margin-bottom: 8px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
 }
-/* .li_1_div{
+.li_1_div{
   visibility: hidden;
-} */
+}
 
 .flex-end{
   margin:10px;
