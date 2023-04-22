@@ -228,7 +228,16 @@ nav {
   height: 8vh !important;
   color: white !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.339);
+  transition: 700ms;
 }
+.nav-bg{
+  background-color: rgb(2, 1, 1) !important; 
+  height: 10vh !important;
+  transition: 300ms;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.339);
+}
+
 
 .carousel .control-dots .dot {
   /* margin: 0 !important; */
@@ -383,4 +392,78 @@ top:100px !important;
 .product-card-comp-5 {
   background: url("../public/product_3.jpg") center center no-repeat;
   overflow: hidden !important;
+
+}
+/*   //////////////////////// Nav2  //////////////////////// */
+
+@media only screen and ( max-width: 480px){
+  .responsive_nav2{
+    display: none;
+  }
+
+}
+@media only screen and ( max-width: 1200px){
+  .left_li1{
+    margin-left: 7%;
+  }
+}
+@media only screen and ( min-width: 1200px){
+  .left_li1{
+    margin-left: 5%;
+  }
+}
+.responsive_nav2{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+.pointer{
+  cursor: pointer;
+}
+
+.li_1{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.border-b-1{
+   border-bottom: 0.3px solid rgba(255, 255, 255, 0.393) ;
+}
+
+.li_1 li{
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+.li_1_div{
+  visibility: hidden;
+}
+
+.flex-end{
+  margin:10px;
+  padding-bottom: 10px ;  
+  margin-right: 60px;
+}
+
+.btn-top{
+  padding-top: 10px;
+}
+
+.nav1
+{
+  position: fixed;
+  z-index: 200;
+  width: 100vw;
+  
+}
+nav{
+  background-color: rgba(0, 0, 0, 0.144) !important; 
+}
+
+.nav2
+{
+  position: relative;
+  width: 100vw;
+  
 }

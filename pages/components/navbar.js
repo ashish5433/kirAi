@@ -2,7 +2,7 @@ import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import { useState } from "react";
+import {useEffect, useState } from "react";
 import { Unica_One, Quicksand,Bebas_Neue } from "next/font/google";
 
 
@@ -15,12 +15,33 @@ const play = Bebas_Neue({
 function Navbar1() {
   const [show, setShow] = useState(false);
 
+  const [color,setColor] =useState(false);
+
+
+  const handleChange =() =>{
+    if(window.scrollY>=50){
+      setColor(true)
+    }
+    else setColor(false)
+  }
+
+  useEffect(()=>{
+    window.addEventListener('scroll',handleChange)
+  })
+
+
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  // window.addEventListener('scroll',handleChange)
+
   return (
     <>
       {["lg"].map((expand) => (
-        <Navbar key={expand}  expand={expand} className="mb-3 navbar">
+        <div>
+        <Navbar key={expand}  expand={expand} className={color ? 'mb-3 navbar nav-bg' : 'mb-3 navbar nav'}>
+        <script></script>
           <Container fluid>
             <div className="left-nav">
               <Button
@@ -30,19 +51,19 @@ function Navbar1() {
               >
                 <span className="material-symbols-outlined hamburger-menu">menu</span>
               </Button>
-              <h1 style={{fontSize:"1.5rem",fontWeight:"bold"}} className={play.className}>ShauKeens</h1>
+              <h1 style={{ fontSize: "1.5rem", fontWeight: "bold" }} className={play.className}>ShauKeens</h1>
             </div>
             <div className="all-nav-btns">
-            <Button className="me-2 nav-btn">
-            <span className="nav-btns">Just For You</span>
-            </Button>
-            <Button className="me-2 nav-btn">
-            <span className="nav-btns">List With Us</span>
-            </Button>
-            <Button className="me-2 nav-btn sign-in-btn">
-              <span className="material-symbols-outlined">person</span>
-              <span id="signin">Login</span>
-            </Button>
+              <Button className="me-2 nav-btn">
+                <span className="nav-btns">Just For You</span>
+              </Button>
+              <Button className="me-2 nav-btn">
+                <span className="nav-btns">List With Us</span>
+              </Button>
+              <Button className="me-2 nav-btn sign-in-btn">
+                <span className="material-symbols-outlined">person</span>
+                <span id="signin">Login</span>
+              </Button>
             </div>
             <Offcanvas show={show} onHide={handleClose}>
               <Offcanvas.Header>
@@ -114,34 +135,71 @@ function Navbar1() {
                 <hr />
               </Offcanvas.Body>
             </Offcanvas>
-            {/* <Navbar.Offcanvas
-              id={`offcanvasNavbar-expand-${expand}`}
-              aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
-              placement="end"
-            >
-              <Offcanvas.Header closeButton>
-                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                  Offcanvas
-                </Offcanvas.Title>
-              </Offcanvas.Header>
-              <Offcanvas.Body>
-                <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link href="#action1">Home</Nav.Link>
-                  <Nav.Link href="#action2">Link</Nav.Link>
-                </Nav>
-                <Form className="d-flex">
-                  <Form.Control
-                    type="search"
-                    placeholder="Search"
-                    className="me-2"
-                    aria-label="Search"
-                  />
-                  <Button varia.nt="outline-success">Search</Button>
-                </Form>
-              </Offcanvas.Body>
-            </Navbar.Offcanvas> */}
           </Container>
         </Navbar>
+        <div>
+            <ul className="flex bg-transparent -mt-4 space-x-7 p-2 border-t-1 border-b-1 text-white responsive_nav2">
+                <li onMouseEnter={()=>
+                    {document.getElementsByClassName("li_1_div")[0].style.visibility="visible"}}
+                    className="left_li1 pointer">Yachts</li>
+                <li onMouseEnter={()=>
+                    {document.getElementsByClassName("li_1_div")[0].style.visibility='visible'}}
+                    className="pointer">Real Estates</li>
+                <li onMouseEnter={()=>
+                    {document.getElementsByClassName("li_1_div")[0].style.visibility="visible"}}
+                    className="pointer">Helicopter</li>
+                <li onMouseEnter={()=>
+                    {document.getElementsByClassName("li_1_div")[0].style.visibility="visible"}}
+                    className="pointer">Jets</li>
+                <li onMouseEnter={()=>
+                    {document.getElementsByClassName("li_1_div")[0].style.visibility="visible"}}
+                    className="pointer">Bikes</li>
+                <li onMouseEnter={()=>
+                    {document.getElementsByClassName("li_1_div")[0].style.visibility="visible"}}
+                    className="pointer">Cars</li>
+            </ul>
+            <div onMouseLeave={()=>
+                {console.log(document.getElementsByClassName("li_1_div")[0].style.visibility="hidden")}}
+                className="bg-white -mt-4 pl-10 pt-4 li_1_div ">
+                <h6 className="ml-8">Popular Builders</h6>
+                <div className="li_1">
+                    <div>
+                        <ul>
+                            <li>Sunseeker</li>
+                            <li>Azimut</li>
+                            <li>Riva</li>
+                            <li>Benetti</li>
+                            <li>Custom</li>
+                            <li>Cranchi</li>
+                            <li>Beneteau</li>
+                            <li>Ferretti</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>Sea Ray</li>
+                            <li>Sunreef</li>
+                            <li>Chris Craft</li>
+                            <li>Heesen</li>
+                            <li>Pershing</li>
+                            <li>Hatteras</li>
+                            <li>Princess</li>
+                            <li>Viking</li>
+                        </ul>
+                    </div>
+                </div>
+                <div className="flex flex-end justify-end text-center">
+                    <button className="bg-black p-2 text-neutral-300 ">View all yachts
+
+                    </button>
+                    <div className="bg-black btn-top"><svg xmlns="http://www.w3.org/2000/svg" height="18"
+                            viewBox="0 96 960 960" fill="white" width="48">
+                            <path d="m561 814-43-42 168-168H160v-60h526L517 375l43-42 241 241-240 240Z" />
+                        </svg></div>
+                </div>
+            </div>
+              </div>
+        </div>
       ))}
     </>
   );
