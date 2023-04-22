@@ -40,7 +40,7 @@ function Navbar1() {
             <span className="nav-btns">List With Us</span>
             </Button>
             <Button className="me-2 nav-btn sign-in-btn">
-              <span class="material-symbols-outlined">person</span>
+              <span className="material-symbols-outlined">person</span>
               <span id="signin">Login</span>
             </Button>
             </div>

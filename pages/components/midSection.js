@@ -1,12 +1,8 @@
-import Card from "./card.js";
-
+import FeaturedCategories from './featuredCategoreis'
 export default function midSection() {
   return (
-    <div>
-      <h1>Featured Categories</h1>
       <div>
-        <Card />
+      <FeaturedCategories/>
       </div>
-    </div>
   );
 }
