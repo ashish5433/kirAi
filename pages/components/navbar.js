@@ -2,7 +2,7 @@ import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import { useState } from "react";
+import {useEffect, useState } from "react";
 import { Unica_One, Quicksand,Bebas_Neue } from "next/font/google";
 
 
@@ -25,17 +25,23 @@ function Navbar1() {
     else setColor(false)
   }
 
+  useEffect(()=>{
+    window.addEventListener('scroll',handleChange)
+  })
+
 
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  window.addEventListener('scroll',handleChange)
+  // window.addEventListener('scroll',handleChange)
 
   return (
     <>
       {["lg"].map((expand) => (
-        <Navbar key={expand}  expand={expand} className="mb-3 navbar">
+        <div>
+        <Navbar key={expand}  expand={expand} className={color ? 'mb-3 navbar nav-bg' : 'mb-3 navbar nav'}>
+        <script></script>
           <Container fluid>
             <div className="left-nav">
               <Button
@@ -131,59 +137,69 @@ function Navbar1() {
             </Offcanvas>
           </Container>
         </Navbar>
-        <div >
-              <ul className="flex bg-transparent -mt-4 space-x-7 p-2 border-t-1 border-b-1 text-white responsive_nav2">
-                <li onMouseEnter={()=>{console.log(document.getElementsByClassName("li_1_div")[0].style.visibility="visible")}} 
-                 className="left_li1 pointer">Yachts</li>
-                <li onMouseEnter={()=>{console.log(document.getElementsByClassName("li_1_div")[0].style.visibility="visible")}} 
-                 className="pointer">Real Estates</li>
-                <li onMouseEnter={()=>{console.log(document.getElementsByClassName("li_1_div")[0].style.visibility="visible")}} 
-                className="pointer">Helicopter</li>
-                <li onMouseEnter={()=>{console.log(document.getElementsByClassName("li_1_div")[0].style.visibility="visible")}} 
-                className="pointer">Jets</li>   
-                <li onMouseEnter={()=>{console.log(document.getElementsByClassName("li_1_div")[0].style.visibility="visible")}} 
-                className="pointer">Bikes</li>
-                <li onMouseEnter={()=>{console.log(document.getElementsByClassName("li_1_div")[0].style.visibility="visible")}} 
-                className="pointer">Cars</li>
-              </ul>
-              <div 
-              onMouseLeave={()=>{console.log(document.getElementsByClassName("li_1_div")[0].style.visibility="hidden")}} 
-               className="bg-white -mt-4 pl-10 pt-4 li_1_div ">
+        <div>
+            <ul className="flex bg-transparent -mt-4 space-x-7 p-2 border-t-1 border-b-1 text-white responsive_nav2">
+                <li onMouseEnter={()=>
+                    {document.getElementsByClassName("li_1_div")[0].style.visibility="visible"}}
+                    className="left_li1 pointer">Yachts</li>
+                <li onMouseEnter={()=>
+                    {document.getElementsByClassName("li_1_div")[0].style.visibility='visible'}}
+                    className="pointer">Real Estates</li>
+                <li onMouseEnter={()=>
+                    {document.getElementsByClassName("li_1_div")[0].style.visibility="visible"}}
+                    className="pointer">Helicopter</li>
+                <li onMouseEnter={()=>
+                    {document.getElementsByClassName("li_1_div")[0].style.visibility="visible"}}
+                    className="pointer">Jets</li>
+                <li onMouseEnter={()=>
+                    {document.getElementsByClassName("li_1_div")[0].style.visibility="visible"}}
+                    className="pointer">Bikes</li>
+                <li onMouseEnter={()=>
+                    {document.getElementsByClassName("li_1_div")[0].style.visibility="visible"}}
+                    className="pointer">Cars</li>
+            </ul>
+            <div onMouseLeave={()=>
+                {console.log(document.getElementsByClassName("li_1_div")[0].style.visibility="hidden")}}
+                className="bg-white -mt-4 pl-10 pt-4 li_1_div ">
                 <h6 className="ml-8">Popular Builders</h6>
                 <div className="li_1">
-                  <div>
-                    <ul>
-                      <li>Sunseeker</li>
-                      <li>Azimut</li>
-                      <li>Riva</li>
-                      <li>Benetti</li>
-                      <li>Custom</li>
-                      <li>Cranchi</li>
-                      <li>Beneteau</li>
-                      <li>Ferretti</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <ul>
-                      <li>Sea Ray</li>
-                      <li>Sunreef</li>
-                      <li>Chris Craft</li>
-                      <li>Heesen</li>
-                      <li>Pershing</li>
-                      <li>Hatteras</li>
-                      <li>Princess</li>
-                      <li>Viking</li>
-                    </ul>
-                  </div>
+                    <div>
+                        <ul>
+                            <li>Sunseeker</li>
+                            <li>Azimut</li>
+                            <li>Riva</li>
+                            <li>Benetti</li>
+                            <li>Custom</li>
+                            <li>Cranchi</li>
+                            <li>Beneteau</li>
+                            <li>Ferretti</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>Sea Ray</li>
+                            <li>Sunreef</li>
+                            <li>Chris Craft</li>
+                            <li>Heesen</li>
+                            <li>Pershing</li>
+                            <li>Hatteras</li>
+                            <li>Princess</li>
+                            <li>Viking</li>
+                        </ul>
+                    </div>
                 </div>
                 <div className="flex flex-end justify-end text-center">
-                  <button className="bg-black p-2 text-neutral-300 ">View all yachts
+                    <button className="bg-black p-2 text-neutral-300 ">View all yachts
 
-                  </button><div className="bg-black btn-top"><svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 96 960 960" fill="white" width="48"><path d="m561 814-43-42 168-168H160v-60h526L517 375l43-42 241 241-240 240Z" /></svg></div></div>
+                    </button>
+                    <div className="bg-black btn-top"><svg xmlns="http://www.w3.org/2000/svg" height="18"
+                            viewBox="0 96 960 960" fill="white" width="48">
+                            <path d="m561 814-43-42 168-168H160v-60h526L517 375l43-42 241 241-240 240Z" />
+                        </svg></div>
+                </div>
+            </div>
               </div>
-
-            </div>
-            </div>
+        </div>
       ))}
     </>
   );
