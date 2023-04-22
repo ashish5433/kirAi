@@ -2,7 +2,7 @@ import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import { use, useState } from "react";
+import { useEffect, useState } from "react";
 import { Unica_One, Quicksand,Bebas_Neue } from "next/font/google";
 
 
@@ -31,6 +31,8 @@ function Navbar1() {
   const handleShow = () => setShow(true);
 
   window.addEventListener('scroll',handleChange)
+
+ 
 
   return (
     <>
