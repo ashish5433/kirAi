@@ -11,7 +11,7 @@ import {
 
 export default function Footer() {
   return (
-    <MDBFooter className='text-center ' color='white' bgColor='dark'>
+    <MDBFooter className='text-center ' color='white' bgColor='black'>
       <MDBContainer className='p-4'>
         {/* <section className='mb-4'>
           <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
@@ -173,9 +173,9 @@ export default function Footer() {
           </MDBRow>
         </section>
       </MDBContainer>
-
+        <hr />
       <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
-        © 2020 Copyright:
+        © 2023 Copyright:
         <a className='text-white' href=''>
         Shaukeens.com
         </a>

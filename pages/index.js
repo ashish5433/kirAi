@@ -1,7 +1,4 @@
-import { Inter } from 'next/font/google'
 import Navbar from './components/navbar'
-
-// import p1 from './p2.jpg'
 
 import MidSection from './components/midSection'
 import Corousel from './components/corousel'
