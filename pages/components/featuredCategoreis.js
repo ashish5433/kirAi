@@ -9,7 +9,7 @@ const play = Bebas_Neue({
 
 export default function midSection() {
   return (
-    <div className="featured-categories">
+    <div className="menu-titles">
       <h1 className={play.className}>Featured Categories</h1>
       <hr className="hr_rule" />
       <div>
