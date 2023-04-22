@@ -235,12 +235,20 @@ visibility: hidden;
   letter-spacing: 2px;
 }
 
-nav{
-  background-color: rgba(255, 255, 255, 0) !important; 
-  height: 8vh !important;
+.nav{
+  height: 10vh !important;
   color: white !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.339);
+  transition: 700ms;
 }
+.nav-bg{
+  background-color: rgb(2, 1, 1) !important; 
+  height: 10vh !important;
+  transition: 300ms;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.339);
+}
+
 
 .carousel .control-dots .dot{
 /* margin: 0 !important; */

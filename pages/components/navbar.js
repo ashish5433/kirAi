@@ -3,7 +3,8 @@ import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { useState } from "react";
-import { Unica_One, Quicksand, Bebas_Neue } from "next/font/google";
+import { Unica_One, Quicksand,Bebas_Neue } from "next/font/google";
+
 
 const play = Bebas_Neue({
   weight: ["400"],
@@ -14,13 +15,27 @@ const play = Bebas_Neue({
 function Navbar1() {
   const [show, setShow] = useState(false);
 
+  const [color,setColor] =useState(false);
+
+
+  const handleChange =() =>{
+    if(window.scrollY>=50){
+      setColor(true)
+    }
+    else setColor(false)
+  }
+
+
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  window.addEventListener('scroll',handleChange)
+
   return (
     <>
       {["lg"].map((expand) => (
-        <div>
-        <Navbar key={expand} expand={expand} className="mb-3 navbar">
+        <Navbar key={expand}  expand={expand} className="mb-3 navbar">
           <Container fluid>
             <div className="left-nav">
               <Button
