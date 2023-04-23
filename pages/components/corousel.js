@@ -16,7 +16,7 @@ export default function Corousel() {
   return (
     <>
       <div className="overlay-main-title">
-        <h1 className={myFont.className}>The World's</h1>
+        {/* <h1 className={myFont.className}>The World's</h1>
         <h1 className={myFont.className}>Luxury Marketplace</h1>
         <span>ONE SEARCH</span>
         <span>•</span>
@@ -24,7 +24,7 @@ export default function Corousel() {
         <span>•</span>
         <span>7,000+ TRUSTED SELLERS</span>
         <span>•</span>
-        <span>120 COUNTRIES</span>
+        <span>120 COUNTRIES</span> */}
       </div>
       <div className="img-sliders">
         <Carousel
