@@ -1,5 +1,5 @@
+import GalleryCard from "./GalleryCard.js";
 import { Unica_One, Quicksand, Bebas_Neue } from "next/font/google";
-import ProductCard from "./ProductCards";
 
 const play = Bebas_Neue({
   weight: ["400"],
@@ -7,15 +7,14 @@ const play = Bebas_Neue({
   subsets: ["latin"],
 });
 
-export default function newAndTrending() {
+export default function midSection() {
   return (
-    <div className="menu-titles new-trending-title">
-      <h1 className={play.className}>New & Trending</h1>
+    <div className="menu-titles">
+      <h1 className={play.className}>Product Gallery</h1>
       <hr className="hr_rule" />
       <div>
-      <ProductCard/>
+        <GalleryCard />
       </div>
     </div>
-
   );
 }

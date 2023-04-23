@@ -3,6 +3,7 @@ import Navbar from './components/navbar'
 import MidSection from './components/midSection'
 import Corousel from './components/corousel'
 import Footer from './components/footer'
+import  ProgressBar  from 'react-progressbar-on-scroll'
 export default function Home() {
   return (
     <>
@@ -13,7 +14,12 @@ export default function Home() {
    <Corousel/>
    </div>
     <MidSection/>
-   <Footer/>
+      <Footer />
+      <ProgressBar
+        color='black'
+        height={10}
+        position='bottom'
+      />
     </>
   )
 }
