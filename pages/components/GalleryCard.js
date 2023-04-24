@@ -59,8 +59,4 @@ export default function midSection() {
       </div>
     </div>
   );
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> a18479f7005035aa087a8d126d294630a1da18eb
