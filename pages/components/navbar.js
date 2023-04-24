@@ -70,7 +70,7 @@ function Navbar1() {
 
 
   const [showsidenav,setShowsidenav] = useState("65px")
-  const changeWidth = () => showsidenav==="65px" ? setShowsidenav("150px") : setShowsidenav("65px");
+  const changeWidth = () => showsidenav==="65px" ? setShowsidenav("220px") : setShowsidenav("65px");
   return (
     <>
       {["lg"].map((expand) => (
@@ -91,7 +91,7 @@ function Navbar1() {
                 </Button>
                 <h1 style={{ fontSize: "1.5rem", fontWeight: "bold" }} className={play.className}>ShauKeens</h1>
               </div>
-              {/* <div className="all-nav-btns">
+              <div className="all-nav-btns">
                 <Button className="me-2 nav-btn">
                   <span className="nav-btns">Just For You</span>
                 </Button>
@@ -102,7 +102,7 @@ function Navbar1() {
                   <span className="material-symbols-outlined">person</span>
                   <span id="signin">Login</span>
                 </Button>
-              </div> */}
+              </div>
               {/* <Offcanvas show={show} onHide={handleClose}>
                 <Offcanvas.Header>
                   <Offcanvas.Title className={play.className}>
@@ -194,7 +194,7 @@ function Navbar1() {
               </ul>
             </div> */}
 
-            <Nav_li_items props={li_content} item={default_item} />
+            {/* <Nav_li_items props={li_content} item={default_item} /> */}
 
           </div>
           <div style={{marginTop:"-222px"}}>
