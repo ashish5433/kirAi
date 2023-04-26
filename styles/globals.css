@@ -8,6 +8,9 @@ body {
   overflow-x: hidden;
 }
 
+
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+
 /* 
   ////////////////////////////////////////////////////////
    NAVBAR
@@ -467,7 +470,7 @@ flex-direction: column;
 
 .nav1
 {
-  position: fixed;
+  /* position: fixed; */
   z-index: 200;
   width: 100vw;
   
@@ -487,4 +490,174 @@ nav{
   width: 1px;
   background-color: rgba(0, 0, 0, 0.264);
   height: 110%;
+}
+
+
+
+
+/* //////////////////    ProductPage   //////////////////////////// */
+
+.product_page{
+  background: rgb(130,13,159);
+  background: radial-gradient(circle, rgba(130,13,159,1) 7%, rgba(87,23,106,1) 47%, rgba(51,0,66,1) 73%, rgba(34,0,48,1) 90%);
+padding-bottom: 100px;  
+}
+.nav22{
+  position:fixed;
+  width: 100%;
+}
+
+.nav22 ul{
+  display: flex;
+  background-color: #180628;
+  /* color: black; */
+  flex-direction: row;
+  border-bottom: 3px solid white
+}
+
+
+.nav22 ul li{
+  padding:0.8rem 2rem;
+  color: white;
+  font-size: 1rem;
+}
+.nav22 ul li:hover{
+cursor: pointer;
+background-color: gray;
+transition: 300ms;
+color: #fff;
+}
+
+
+
+.li1{
+  transition: 300ms;
+  background-color: gray;
+color: #fff;
+}
+.li2{
+  color: black;
+}
+
+
+/* ///////////////////////////////////Product_Card ////////////////////////////////////// */
+.card22{
+  height:88vh;
+  margin-left: 5rem;
+  margin-right: 5rem;
+  display: flex;
+  flex-direction: row;
+  padding-top: 70px;
+  padding-bottom: 20px;
+  background-color: #ffffff13;
+  border: 1px solid gray
+}
+.main_card{
+  height: 98%;
+  width: 90%;
+  margin: 0 2%;
+  margin-top: 10px;
+  box-shadow: 0px 15px 10px rgba(42, 1, 58, 0.742);
+}
+.main-image{
+  height: 100%;
+}
+.side_card{
+  margin-right: 4%;
+  height: 100%;
+  width: 27%;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff5d;
+  padding: 20px;
+  border: 2px dashed white;
+  border-radius: 10px;
+}
+.side_card1{
+  height: 25%;
+  width: 100%;
+  margin-top :3%;
+  overflow: hidden;
+  
+}
+
+.side-images:hover{
+  cursor: pointer;
+}
+
+.description{
+  height: 60vh;
+  width: auto;
+  margin-left: 5rem;
+  margin-right: 5rem;
+  margin-top: 2rem;
+  padding: 2rem;
+  /* border: 1px so; */
+  background-color: rgb(214, 192, 233);
+  border-radius: 5px;
+}
+.description h1{
+  font-family: 'Oswald', sans-serif;
+  font-size: 50px;
+  font-weight: 600;
+}
+.desc_details{
+  display: flex;
+  height: 100%;
+}
+
+.desc_details1{
+  width: 30%;
+  height: 100%;
+  /* margin: 0 ; */
+}
+.dd3{
+  display: flex;
+  /* justify-content: center; */
+  align-items: flex-start;
+  flex-direction: column;
+}
+.pht-chng1{
+  background-color: gray;
+}
+.dd3 button{
+  margin: 5px;
+ width: 260px;
+ height: 50px;
+ border: 1.5px solid black;
+ transition: 500ms;
+}
+.dd3 button:hover{
+ background-color: green;
+ cursor: pointer;
+ color: #fff;
+}
+
+.price{
+  display: flex;
+  flex-direction: row;
+  margin-left: -10px;
+}
+.price h4{
+  margin-top: 8px;
+}
+.seller{
+  display: flex;
+  align-items: flex-end;
+}
+
+.seller_photo{
+
+  border-radius: 50%;
+  background-color: gray;
+  padding: 5px ;
+}
+.m1{
+  font-size: 90px !important;
+  margin-right: 2px ;
+  color: rgb(0, 0, 0) !important;
+}
+.loc1{
+  color: green;
+  font-size: 30px !important;
 }

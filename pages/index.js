@@ -1,5 +1,5 @@
 import Navbar from './components/navbar'
-
+// import Product from './components/ProductPage'
 import MidSection from './components/midSection'
 import Corousel from './components/corousel'
 import Footer from './components/footer'
