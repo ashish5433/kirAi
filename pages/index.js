@@ -1,5 +1,5 @@
 import Navbar from "./components/navbar";
-
+// import Product from './components/ProductPage'
 import MidSection from "./components/midSection";
 import Corousel from "./components/Carousel";
 import ProgressBar from "react-progressbar-on-scroll";
