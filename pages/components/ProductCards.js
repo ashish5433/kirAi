@@ -1,4 +1,5 @@
 import { Unica_One, Quicksand, Bebas_Neue, Raleway } from "next/font/google";
+import Image from "next/image";
 
 const play = Raleway({
   weight: ["400"],
@@ -6,70 +7,31 @@ const play = Raleway({
   subsets: ["latin"],
 });
 
-export default function ProductCard() {
+export default function ProductCard({products}) {
   return (
     <div>
       <div className="product-card-div">
-        <div className="product-wrapper">
-          <div className="product-cards product-card-comp-1"></div>
-          <div className={play.className}>
-            <div className="product-details">
-              <p className="product-name">Yachts</p>
-            </div>
-            <div className="product-details">
-              <span>&#8377;</span>
-              <span className="product-price">1,945,654,231</span>
-            </div>
+    {products?.map((data)=>
+      <div className="product-wrapper">
+        <div className="product-cards">
+          <Image
+            className="product--image"
+            src={data.image}
+            width={1920}
+            height={1080}
+          />
+        </div>
+        <div className={play.className}>
+          <div className="product-details">
+            <p className="product-name">{data.name}</p>
+          </div>
+          <div className="product-details">
+            <span>&#8377;</span>
+            <span className="product-price">{data.price}</span>
           </div>
         </div>
-        <div className="product-wrapper">
-          <div className="product-cards product-card-comp-2"></div>
-          <div className={play.className}>
-            <div className="product-details">
-              <p className="product-name">Cars</p>
-            </div>
-            <div className="product-details">
-              <span>&#8377;</span>
-              <span className="product-price">1,945,654,231</span>
-            </div>
-          </div>
-        </div>
-        <div className="product-wrapper">
-          <div className="product-cards product-card-comp-3"></div>
-          <div className={play.className}>
-            <div className="product-details">
-              <p className="product-name">Jets</p>
-            </div>
-            <div className="product-details">
-              <span>&#8377;</span>
-              <span className="product-price">1,945,654,231</span>
-            </div>
-          </div>
-        </div>
-        <div className="product-wrapper">
-          <div className="product-cards product-card-comp-4"></div>
-          <div className={play.className}>
-            <div className="product-details">
-              <p className="product-name">Yachts</p>
-            </div>
-            <div className="product-details">
-              <span>&#8377;</span>
-              <span className="product-price">1,945,654,231</span>
-            </div>
-          </div>
-        </div>
-        <div className="product-wrapper">
-          <div className="product-cards product-card-comp-5"></div>
-          <div className={play.className}>
-            <div className="product-details">
-              <p className="product-name">Cars</p>
-            </div>
-            <div className="product-details">
-              <span>&#8377;</span>
-              <span className="product-price">1,945,654,231</span>
-            </div>
-          </div>
-        </div>
+      </div>
+      )}
       </div>
     </div>
   );
