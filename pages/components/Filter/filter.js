@@ -3,6 +3,10 @@ import filter from "./filter.module.css"
 import { Button } from "react-bootstrap";
 import Datascroll_R from "./datascroll_cir";
 import { useState } from "react";
+import Image from "next/image";
+import motorboat from "../../../images/motorboat.png";
+import sailboat from "../../../images/sailboat.png";
+
 export default function Filter() {
 
     const collapse=(stateVal,setValfunc,class_name_val)=>{
@@ -67,9 +71,11 @@ export default function Filter() {
                                 expand_more
                             </span>
                         </div>
-                        <div className="overflow-y-auto yachtType">
+                        <div className="overflow-y-auto yachtType grid grid-cols-2">
+                            <div className="w-32 h-24 m-auto border-slate-400 border-2 rounded-md hover:border-blue-500 hover:bg-sky-100"><Image className="h-24 p-2" src={motorboat} width={innerWidth} height={innerHeight} alt="MotorBoat" /><p className="text-center">Motor</p></div>
+                            <div className="w-32 h-24 m-auto border-slate-400 border-2 rounded-md hover:border-blue-500 hover:bg-sky-100"><Image className="h-24 p-2" src={sailboat} width={innerWidth} height={innerHeight} alt="MotorBoat" /><p className="text-center">Sailing</p></div>
                         </div>
-                        {yachtType !== "160px" ? <Button className={`${filter.btn_width}`}>Apply</Button> :""}
+                        {yachtType !== "160px" ? <Button className={`ml-3 ${filter.btn_width}`}>Apply</Button> :""}
                     </div>
                     <hr />
                     <div>
