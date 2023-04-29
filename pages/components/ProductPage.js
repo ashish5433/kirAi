@@ -3,6 +3,7 @@ import Corousel from './corousel'
 import { useState, useEffect } from 'react';
 import Image from "next/image";
 import ProgressBar from 'react-progressbar-on-scroll'
+// import { Card } from '@nextui-org/react';
 
 
 
@@ -17,11 +18,11 @@ export default function Product() {
             setColor1(true)
         }
         else setColor1(false)
-        if (window.scrollY > 300 && window.scrollY < 1200) {
+        if (window.scrollY > 300 && window.scrollY < 600) {
             setColor2(true)
         }
         else setColor2(false)
-        if (window.scrollY > 1200) {
+        if (window.scrollY > 600 && window.scrollY < 1300) {
             setColor3(true)
         }
         else setColor3(false)
@@ -45,7 +46,7 @@ export default function Product() {
                         <li className={color1 ? 'li1 ' : 'li2'}>Overview</li>
                         <li className={color2 ? 'li1 ' : 'li2'}>Description</li>
                         <li className={color3 ? 'li1 ' : 'li2'}>Parameters</li>
-                        <li className='li2' >Auto Options</li>
+
                         <li className='li2'>Review</li>
                         <li className='li2'>Similar Products</li>
 
@@ -152,7 +153,86 @@ export default function Product() {
                         </div>
                     </div>
                 </div>
+                <div className="parameters-main">
+                    <h1>Parameters</h1><hr />
+                    <div className="parameters">
+                        <div>No of Rooms :7 </div>
+                        <div><button>View Rooms</button></div>
+                        <div>Location :Urban </div>
+                        <div>Area : 3400sq.ft </div>
+
+                    </div>
+                </div>
+                <div className="similar_products-main-div">
+                    <h1>Similar Products</h1><hr />
+                    <div className="similar_products">
+                        <div> <Image
+                            className="similar_products_image"
+                            src="/product_4.jpg"
+                            width={1920}
+                            height={1080}
+                        />
+                        </div>
+                        <div><Image
+                            className="similar_products_image"
+                            src="/product_1.jpg"
+                            width={1920}
+                            height={1080}
+                        /></div>
+                        <div><Image
+                            className="similar_products_image"
+                            src="/product_2.jpg"
+                            width={1920}
+                            height={1080}
+                        /></div>
+                        <div><Image
+                            className="similar_products_image"
+                            src="/product_3.jpg"
+                            width={1920}
+                            height={1080}
+                        /></div>
+                        <div><Image
+                            className="similar_products_image"
+                            src="/product_5.jpg"
+                            width={1920}
+                            height={1080}
+                        /></div>
+                        <div> <Image
+                            className="similar_products_image"
+                            src="/product_5.jpg"
+                            width={1920}
+                            height={1080}
+                        /></div>
+                        <div> <Image
+                            className="similar_products_image"
+                            src="/product_1.jpg"
+                            width={1920}
+                            height={1080}
+                        /></div>
+                        <div> <Image
+                            className="similar_products_image"
+                            src="/product_3.jpg"
+                            width={1920}
+                            height={1080}
+                        />
+                        </div>
+                        <div> <Image
+                            className="similar_products_image"
+                            src="/product_2.jpg"
+                            width={1920}
+                            height={1080}
+                        /></div>
+                        <div> <Image
+                            className="similar_products_image"
+                            src="/product_4.jpg"
+                            width={1920}
+                            height={1080}
+                        /></div>
+                    </div>
+                </div>
             </div>
+
+
         </>
 
 
