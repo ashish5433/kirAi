@@ -1,12 +1,15 @@
-import { useEffect } from "react";
-export default function Sidenav({width}){
+import { useEffect, useState } from "react";
+export default function Sidenav(){
+    const [showsidenav, setShowsidenav] = useState("65px")
+    const changeWidth = () => showsidenav === "65px" ? setShowsidenav("220px") : setShowsidenav("65px");
+    const mouseleave = () => showsidenav === "220px" ? setShowsidenav("65px") : setShowsidenav("65px");
     useEffect(() => {
-        document.getElementsByClassName("mt-18")[0].style.width=width
+        document.getElementsByClassName("mt-18")[0].style.width=showsidenav
       });
     return(
         <div>
-            <div className="flex flex-col  overflow-hidden  bg-black text-white absolute mt-18">
-                <div className="text-center hover:bg-semi-white pointer flex p-2">
+            <div onMouseEnter={changeWidth} onMouseLeave={mouseleave}  className="flex flex-col  overflow-hidden  bg-black text-white absolute mt-18">
+                <div  className="text-center hover:bg-semi-white pointer flex p-2">
                     <span className="material-symbols-outlined  mr-3">directions_boat</span>
                     <p className="text-sm m-auto">Yacht</p>
                 </div>

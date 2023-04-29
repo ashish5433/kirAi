@@ -49,12 +49,26 @@ function Navbar1() {
   const [li_content, set_li_content] = useState(li_default);
 
 
+  const [nav2, setNav2] = useState(false);
+  const [searchbar, setSearchbar] = useState(false);
   const handleChange = () => {
     if (window.scrollY >= 50) {
       setColor(true)
+
     }
-    else setColor(false)
+    else {
+      setColor(false)
+    }
+    if(window.scrollY>=400){
+      setNav2(false)
+      setSearchbar(false)
+    }
+    else{
+      setNav2(true)
+      setSearchbar(true)
+    }
   }
+  
 
 
   useEffect(() => {
@@ -69,8 +83,8 @@ function Navbar1() {
   // window.addEventListener('scroll',handleChange)
 
 
-  const [showsidenav,setShowsidenav] = useState("65px")
-  const changeWidth = () => showsidenav==="65px" ? setShowsidenav("220px") : setShowsidenav("65px");
+  // const [showsidenav, setShowsidenav] = useState("65px")
+  // const changeWidth = () => showsidenav === "65px" ? setShowsidenav("220px") : setShowsidenav("65px");
   return (
     <>
       {["lg"].map((expand) => (
@@ -81,7 +95,7 @@ function Navbar1() {
               <div className="left-nav">
                 <Button
                   variant="primary"
-                  onClick={changeWidth}
+                  // onClick={changeWidth}
                   className="me-2 nav-btn"
 
                 >
@@ -90,6 +104,15 @@ function Navbar1() {
                   </svg>
                 </Button>
                 <h1 style={{ fontSize: "1.5rem", fontWeight: "bold" }} className={play.className}>ShauKeens</h1>
+              </div>
+              
+              <div className={searchbar ? 'hidden fadeout' : 'flex justify-end fadein'}>
+                <div className="carousel-search">
+                  <input style={{maxWidth:"500px", minWidth:"400px"}}  type="text" className={play.className} />
+                  <button type="submit">
+                    <span style={{padding:"9px",position:"relative", marginLeft:"-60px"}} className="material-symbols-outlined ">search</span>
+                  </button>
+                </div>
               </div>
               <div className="all-nav-btns">
                 <Button className="me-2 nav-btn">
@@ -175,30 +198,30 @@ function Navbar1() {
               </Offcanvas> */}
             </Container>
           </Navbar>
-          <div>
-            {/* <div className={color ? 'second_nav' : 'second_nav2'}>
+          <div className={nav2 ? 'hidden' : 'absolute w-full'}>
+            <div className={color ? 'second_nav' : 'second_nav2'}>
 
-              <ul className="flex bg-transparent -mt-4 space-x-7 p-2 border-t-1 border-b-1 text-white responsive_nav2">
+              <ul className="flex bg-transparent -mt-4 space-x-4 p-2 border-t-1 text-white responsive_nav2">
                 <li onMouseEnter={() => { document.getElementsByClassName("li_1_div")[0].style.visibility = "visible"; set_li_content(li1_items); setdefaultItem("Yachts") }}
-                  className="left_li1 pointer">Yachts</li>
+                  className="left_li1 pointer px-2 py-1 rounded-md bg-semi-white">Yachts</li>
                 <li onMouseEnter={() => { document.getElementsByClassName("li_1_div")[0].style.visibility = "visible"; set_li_content(li2_items); setdefaultItem("Real Estates") }}
-                  className="pointer">Real Estates</li>
+                  className="pointer px-2 py-1 rounded-md bg-semi-white">Real Estates</li>
                 <li onMouseEnter={() => { document.getElementsByClassName("li_1_div")[0].style.visibility = "visible"; set_li_content(li_default); setdefaultItem("Helicopter") }}
-                  className="pointer">Helicopter</li>
+                  className="pointer px-2 py-1 rounded-md bg-semi-white">Helicopter</li>
                 <li onMouseEnter={() => { document.getElementsByClassName("li_1_div")[0].style.visibility = "visible"; set_li_content(li4_items); setdefaultItem("Jets") }}
-                  className="pointer">Jets</li>
+                  className="pointer px-2 py-1 rounded-md bg-semi-white">Jets</li>
                 <li onMouseEnter={() => { document.getElementsByClassName("li_1_div")[0].style.visibility = "visible"; set_li_content(li_default); setdefaultItem("Bikes") }}
-                  className="pointer">Bikes</li>
+                  className="pointer px-2 py-1 rounded-md bg-semi-white">Bikes</li>
                 <li onMouseEnter={() => { document.getElementsByClassName("li_1_div")[0].style.visibility = "visible"; set_li_content(li6_items); setdefaultItem("Cars") }}
-                  className="pointer">Cars</li>
+                  className="pointer px-2 py-1 rounded-md bg-semi-white">Cars</li>
               </ul>
-            </div> */}
+            </div>
 
-            {/* <Nav_li_items props={li_content} item={default_item} /> */}
+            <Nav_li_items props={li_content} item={default_item} />
 
           </div>
-          <div style={{marginTop:"-222px"}}>
-          <Sidenav width={showsidenav}/>
+          <div style={{ marginTop: "-222px" }}>
+            <Sidenav />
           </div>
         </div>
       ))}
