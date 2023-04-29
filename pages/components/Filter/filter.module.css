@@ -1,0 +1,50 @@
+.filter_width{
+    width: 340px;
+    min-width: 200px;
+    padding-top: 50px;
+    border-right: 2px solid black;
+    box-shadow: 1px 0px 100px 1px black;
+}
+
+.btn_width{
+    width: 93%;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+.btn_input{
+    width: 93%;
+    padding: 7px;
+    outline: 1px solid rgba(0, 0, 0, 0.32) ;
+    border-radius: 10px;
+}
+.btn_input :hover{
+    outline: 1px solid rgba(0, 0, 0, 1) ;
+}
+
+.saleStatus{
+    height: 0px;
+}
+.yachtType{
+    height: 0px;
+}
+.length_filter{
+    height: 0px;
+}
+.builder{
+    height: 0px;
+}
+.year{
+    height: 0px;
+}
+.price{
+    height: 0px;
+}
+.country{
+    height: 0px;
+}
+.subtype{
+    height: 0px;
+}
+.volume{
+    height: 0px;
+}
