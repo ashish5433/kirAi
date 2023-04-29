@@ -2,69 +2,11 @@ import React, { Component } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import Image from "next/image";
-import { Unica_One, Quicksand, Bebas_Neue } from "next/font/google";
-import localFont from "next/font/local";
-import { Input } from "postcss";
 
-const myFont = localFont({ src: "./Karatone.ttf" });
-const play = Unica_One({
-  weight: ["400"],
-  style: ["normal"],
-  subsets: ["latin"],
-});
-const play2 = Bebas_Neue({
-  weight: ["400"],
-  style: ["normal"],
-  subsets: ["latin"],
-});
-
-const play3 = Bebas_Neue({
-  weight: ["400"],
-  style: ["normal"],
-  subsets: ["latin"],
-});
-
-export default function Corousel() {
+export default function CarouselPage() {
   return (
     <>
-      <div className="overlay-main-title">
-        <h1 className={play2.className}>SHAUKEENS.</h1>
-        <div className="carousel-search">
-          <input type="text" className={play.className} />
-          <button type="submit">
-            <span class="material-symbols-outlined">search</span>
-          </button>
-        </div>
-        <div>
-          <span>ONE SEARCH</span>
-          <span>•</span>
-          <span>200,000+ LISTINGS</span>
-          <span>•</span>
-          <span>7,000+ TRUSTED SELLERS</span>
-          <span>•</span>
-          <span>120 COUNTRIES</span>
-        </div>
-        <div className="carousel-icon-div">
-          <div className="carousel-icons">
-            <span class="material-symbols-outlined">directions_boat</span>
-          </div>
-          <div className="carousel-icons">
-            <span class="material-symbols-outlined">villa</span>
-          </div>
-          <div className="carousel-icons">
-            <span class="material-symbols-outlined">helicopter</span>
-          </div>
-          <div className="carousel-icons">
-            <span class="material-symbols-outlined">flight_takeoff</span>
-          </div>
-          <div className="carousel-icons">
-            <span class="material-symbols-outlined">two_wheeler</span>
-          </div>
-          <div className="carousel-icons">
-            <span class="material-symbols-outlined">directions_car</span>
-          </div>
-        </div>
-      </div>
+     
       <div className="img-sliders">
         <Carousel
           autoPlay={true}
@@ -152,3 +94,24 @@ export default function Corousel() {
     </>
   );
 }
+
+//  <div className="carousel-icon-div">
+//    <div className="carousel-icons">
+//      <span class="material-symbols-outlined">directions_boat</span>
+//    </div>
+//    <div className="carousel-icons">
+//      <span class="material-symbols-outlined">villa</span>
+//    </div>
+//    <div className="carousel-icons">
+//      <span class="material-symbols-outlined">helicopter</span>
+//    </div>
+//    <div className="carousel-icons">
+//      <span class="material-symbols-outlined">flight_takeoff</span>
+//    </div>
+//    <div className="carousel-icons">
+//      <span class="material-symbols-outlined">two_wheeler</span>
+//    </div>
+//    <div className="carousel-icons">
+//      <span class="material-symbols-outlined">directions_car</span>
+//    </div>
+//  </div>;
