@@ -11,7 +11,7 @@ import {
 
 export default function Footer() {
   return (
-    <MDBFooter className='text-center ' color='white' bgColor='black'>
+    <MDBFooter className='text-center footer-color' color='white' bgColor='black'>
       <MDBContainer className='p-4'>
         {/* <section className='mb-4'>
           <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
@@ -63,7 +63,7 @@ export default function Footer() {
 
        
 
-        <section className=''>
+        <section>
           <MDBRow>
             <MDBCol lg='3' md='6' className='mb-4 mb-md-0'>
               <h5 className='text-uppercase' style={{textAlign:"left" ,color:"grey"}}>Shaukeens</h5>
