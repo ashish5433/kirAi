@@ -1,10 +1,9 @@
 import Navbar from './navbar'
-import Corousel from './corousel'
 import { useState, useEffect } from 'react';
 import Image from "next/image";
 import ProgressBar from 'react-progressbar-on-scroll'
 // import { Card } from '@nextui-org/react';
-
+import CarouselPage from './Carousel';
 
 
 
