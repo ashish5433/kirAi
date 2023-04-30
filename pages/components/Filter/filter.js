@@ -85,7 +85,7 @@ export default function Filter() {
                                 expand_more
                             </span>
                         </div>
-                        <div className="overflow-y-auto length_filter">
+                        <div className="overflow-y-auto length_filter ">
                             <Datascroll_R data={list_length} />
                         </div>
                         {length_filter !== "160px" ? <Button style={{backgroundColor:"black",border:"none"}}  className={`${filter.btn_width}`}>Apply</Button> :""}

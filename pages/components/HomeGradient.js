@@ -135,14 +135,21 @@ export default function HomeGradient({
       changeCar(false);
       HomePropsFunction(false);
     } else {
-        changeYacht(false);
-        changeEstate(false);
-        changeHelicopter(false);
-        changeHome(true);
-        changeJet(false);
-        changeBike(false);
-        changeCar(false);
-        HomePropsFunction(true);
+      changeYacht(false);
+      changeEstate(false);
+      changeHelicopter(false);
+      changeHome(true);
+      changeJet(false);
+      changeBike(false);
+      changeCar(false);
+      HomePropsFunction(true);
+      YachtPropsFunction(false);
+      EstatePropsFunction(false);
+      HelicopterPropsFunction(false);
+      JetPropsFunction(false);
+
+      BikePropsFunction(false);
+      CarPropsFunction(false);
     }
   };
   const jetChangeHandler = () => {
@@ -228,7 +235,7 @@ export default function HomeGradient({
   };
   return (
     <>
-      <CarouselPage/>
+      <CarouselPage />
       <div className={classes.overlay_main_title}>
         <h1 className={fontBebas.className}>SHAUKEENS.</h1>
         <div className={classes.carousel_search}>
