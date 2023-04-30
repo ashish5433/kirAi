@@ -5,8 +5,8 @@ export default function Datascroll_R({data}){
         <div>
             <div className="">{
                 data.map((item)=>{
-                    return<div><input type="radio" id={item} name={item} value={item} />
-                    <label for="vehicle3">{item}</label>
+                    return<div><input className="p-1 mx-3" type="radio" id={item} name={item} value={item} />
+                    <label className="font-mono font-semibold" for="vehicle3">{item}</label>
                     </div>
                 })
             }</div>

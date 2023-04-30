@@ -40,12 +40,12 @@ export default function Filter() {
     const list_volume=["300 GT-","300 GT+","500 GT-","500 GT+","1000 GT+","3000 GT+"];
     return (
         <>
-        {collapse}
-            <div className={`bg-white h-auto ${filter.filter_width} p-3`}>
+        {/* {collapse} */}
+            <div className={`bg-white h-auto ${filter.filter_width} p-3 main_parent`}>
                 <div className="block ml-2 mt-20">
                     <h3 className="font-sans">Search</h3>
                     <div><input className={`${filter.btn_input}`} type="text" placeholder="Find yacht..." /></div>
-                    <div><Button className={`${filter.btn_width}`}>Search</Button></div>
+                    <div><Button style={{backgroundColor:"black",border:"none"}} className={`${filter.btn_width}`}>Search</Button></div>
                 </div>
                 <hr />
                 <div>
@@ -60,7 +60,7 @@ export default function Filter() {
                         </div>
                         <div className="overflow-y-auto saleStatus">
                         </div>
-                        {saleStatus !== "160px" ? <Button className={`${filter.btn_width}`}>Apply</Button> :""}
+                        {saleStatus !== "160px" ? <Button style={{backgroundColor:"black",border:"none"}}  className={`${filter.btn_width}`}>Apply</Button> :""}
 
                     </div>
                     <hr />
@@ -72,10 +72,10 @@ export default function Filter() {
                             </span>
                         </div>
                         <div className="overflow-y-auto yachtType grid grid-cols-2">
-                            <div className="w-32 h-24 m-auto border-slate-400 border-2 rounded-md hover:border-blue-500 hover:bg-sky-100"><Image className="h-24 p-2" src={motorboat} width={innerWidth} height={innerHeight} alt="MotorBoat" /><p className="text-center">Motor</p></div>
-                            <div className="w-32 h-24 m-auto border-slate-400 border-2 rounded-md hover:border-blue-500 hover:bg-sky-100"><Image className="h-24 p-2" src={sailboat} width={innerWidth} height={innerHeight} alt="MotorBoat" /><p className="text-center">Sailing</p></div>
+                            <div className="w-32 h-24 m-auto border-slate-400 border-2 rounded-md hover:border-blue-500 hover:bg-sky-100"><Image className="h-24 p-2" src={motorboat} alt="MotorBoat" /><p className="text-center">Motor</p></div>
+                            <div className="w-32 h-24 m-auto border-slate-400 border-2 rounded-md hover:border-blue-500 hover:bg-sky-100"><Image className="h-24 p-2" src={sailboat} alt="MotorBoat" /><p className="text-center">Sailing</p></div>
                         </div>
-                        {yachtType !== "160px" ? <Button className={`ml-3 ${filter.btn_width}`}>Apply</Button> :""}
+                        {yachtType !== "160px" ? <Button style={{backgroundColor:"black",border:"none"}}  className={`ml-3 ${filter.btn_width}`}>Apply</Button> :""}
                     </div>
                     <hr />
                     <div>
@@ -88,7 +88,7 @@ export default function Filter() {
                         <div className="overflow-y-auto length_filter">
                             <Datascroll_R data={list_length} />
                         </div>
-                        {length_filter !== "160px" ? <Button className={`${filter.btn_width}`}>Apply</Button> :""}
+                        {length_filter !== "160px" ? <Button style={{backgroundColor:"black",border:"none"}}  className={`${filter.btn_width}`}>Apply</Button> :""}
                     </div>
                     <hr />
                     <div>
@@ -101,7 +101,7 @@ export default function Filter() {
                         <div className="overflow-y-auto builder">
                             <Datascroll data={list_builder} />
                         </div>
-                        {builder !== "160px" ? <Button className={`${filter.btn_width}`}>Apply</Button> :""}
+                        {builder !== "160px" ? <Button style={{backgroundColor:"black",border:"none"}}  className={`${filter.btn_width}`}>Apply</Button> :""}
                     </div>
                     <hr />
                     <div>
@@ -114,7 +114,7 @@ export default function Filter() {
                         <div className="overflow-y-auto year">
                             <Datascroll_R data={list_year} />
                         </div>
-                        {year !== "160px" ? <Button className={`${filter.btn_width}`}>Apply</Button> :""}
+                        {year !== "160px" ? <Button style={{backgroundColor:"black",border:"none"}}  className={`${filter.btn_width}`}>Apply</Button> :""}
                     </div>
                     <hr />
                     <div>
@@ -127,7 +127,7 @@ export default function Filter() {
                         <div className="overflow-y-auto price">
                             <Datascroll_R data={list_price} />
                         </div>
-                        {price !== "160px" ? <Button className={`${filter.btn_width}`}>Apply</Button> :""}
+                        {price !== "160px" ? <Button style={{backgroundColor:"black",border:"none"}}  className={`${filter.btn_width}`}>Apply</Button> :""}
                     </div>
                     <hr />
                     <div>
@@ -140,7 +140,7 @@ export default function Filter() {
                         <div className="overflow-y-auto country">
                             <Datascroll data={list_country} />
                         </div>
-                        {country !== "160px" ? <Button className={`${filter.btn_width}`}>Apply</Button> :""}
+                        {country !== "160px" ? <Button style={{backgroundColor:"black",border:"none"}}  className={`${filter.btn_width}`}>Apply</Button> :""}
                     </div>
                     <hr />
                     <div>
@@ -153,7 +153,7 @@ export default function Filter() {
                         <div className="overflow-y-auto subtype">
                             <Datascroll_R data={list_subtype} />
                         </div>
-                        {subtype !== "160px" ? <Button className={`${filter.btn_width}`}>Apply</Button> :""}
+                        {subtype !== "160px" ? <Button style={{backgroundColor:"black",border:"none"}}  className={`${filter.btn_width}`}>Apply</Button> :""}
                     </div>
                     <hr />
                     <div>
@@ -166,7 +166,7 @@ export default function Filter() {
                         <div className="overflow-y-auto volume">
                             <Datascroll_R data={list_volume} />
                         </div>
-                        {volume !== "160px" ? <Button className={`${filter.btn_width}`}>Apply</Button> :""}
+                        {volume !== "160px" ? <Button style={{backgroundColor:"black",border:"none"}}  className={`${filter.btn_width}`}>Apply</Button> :""}
                     </div>
                 </div>
             </div>
