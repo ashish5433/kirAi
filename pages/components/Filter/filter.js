@@ -72,7 +72,7 @@ export default function Filter() {
                             </span>
                         </div>
                         <div className="overflow-y-auto yachtType grid grid-cols-2">
-                            <div className="w-32 h-24 m-auto border-slate-400 border-2 rounded-md hover:border-blue-100 hover:bg-sky-100"><Image className="h-24 p-2" src={motorboat} alt="MotorBoat" /><p className="text-center">Motor</p></div>
+                            <div className="w-32 h-24 m-auto border-slate-400 border-2 rounded-md hover:border-blue-500 hover:bg-sky-100"><Image className="h-24 p-2" src={motorboat} alt="MotorBoat" /><p className="text-center">Motor</p></div>
                             <div className="w-32 h-24 m-auto border-slate-400 border-2 rounded-md hover:border-blue-500 hover:bg-sky-100"><Image className="h-24 p-2" src={sailboat} alt="MotorBoat" /><p className="text-center">Sailing</p></div>
                         </div>
                         {yachtType !== "160px" ? <Button className={`ml-3 ${filter.btn_width}`}>Apply</Button> :""}
