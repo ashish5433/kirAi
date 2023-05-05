@@ -39,20 +39,21 @@ export default function Filter() {
     const list_subtype=["Conversion","Explorer","Flybridge","Gulet","J Class","Maxi","Motor Sailer","Sport Boat","Sport Fisherman","Support Yacht"];
     const list_volume=["300 GT-","300 GT+","500 GT-","500 GT+","1000 GT+","3000 GT+"];
     return (
-        <div className={filter.fix}>
+        <div style={{maxHeight:"1000px"}} className={`${filter.fixx}`}>
         {/* {collapse} */}
             <div className={`bg-white h-auto ${filter.filter_width}`}>
-            <div className="h-10 bg-purple-900 border-b-4 border-purple-950"></div>
+            <div className="h-10 bg-slate-800 border-b-4 border-t-4 border-b-black"></div>
             <div className="p-3">
                 <div className="block ml-2 ">
                     <h3 style={{fontFamily:"monospace",fontSize:"24px", marginLeft:"5px"}}>Search</h3>
                     <div><input className={`border-2 border-purple-600 ${filter.btn_input}`} type="text" placeholder="Find yacht..." /></div>
                     <div><Button style={{backgroundColor:"black",border:"none",fontSize:"12px"}} className={`${filter.btn_width}`}>Search</Button></div>
                 </div>
-                <hr />
+                <hr />  
                 <div>
                     <h3 className="text-center mt-10">Filters</h3>
                     <hr />
+                    <div style={{maxHeight:"800px", overflowY:"scroll"}}>
                     <div>
                         <div className="flex">
                             <h5>Sale Status</h5>
@@ -170,6 +171,7 @@ export default function Filter() {
                         </div>
                         {volume !== "160px" ? <Button style={{backgroundColor:"black",border:"none",fontSize:"12px"}}  className={`${filter.btn_width}`}>Apply</Button> :""}
                     </div>
+                </div>
                 </div>
             </div>
             </div>

@@ -1,11 +1,15 @@
-.fix{
-position: fixed;
-z-index: 100000;
+.fixx{
+    z-index: 100000;
+    position: absolute;
+    top: -0px;
+    height: 100%;
 }
+
 .filter_width{
-    width: 300px;
+    width: 315px;
+    height: 1000px;
     min-width: 200px;
-    padding-top: 50px;
+    /* padding-top: 50px; */
     border-right: 2px solid black;
     box-shadow: 1px 0px 100px 1px black;
 }
@@ -56,4 +60,33 @@ z-index: 100000;
 
 .main_parent > Button{
     background-color: black;
+}
+
+.topfilter_btn{
+    margin: 4px;
+    text-align: center;
+    /* border: 1px solid b  lack; */
+}
+
+.topfilter_btn_all{
+    margin: 4px;
+    text-align: center;
+}
+
+.slidecontainer {
+    width: 100%;
+}
+
+.border_1{
+    border:1px solid rgba(0, 0, 0, 0.344);
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.458);
+}
+
+.ml_full{
+    left:80%;
+    position: sticky;
+    border:1px solid rgba(0, 0, 0, 0.344);
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.458);
 }

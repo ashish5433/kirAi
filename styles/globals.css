@@ -559,7 +559,7 @@ width: 100px;
 border: 1px solid rgba(0, 0, 0, 0.229);
 }
 .product-card-div {
-  margin-top: 4rem;
+  /* margin-top: 4rem; */
   margin-bottom: 4rem;
   width: 100%;
   display: flex;

@@ -22,6 +22,7 @@ import atvCarousel from "@/CarouselImageData/atvCarousel";
 import rvCarousel from "@/CarouselImageData/rvCarousel";
 import amphibiousCarousel from "@/CarouselImageData/amphibiousCarousel";
 import Filter from "../Filter/filter";
+import Topfilter from "../Filter/topfilter";
 const fontBebas = Bebas_Neue({
   weight: ["400"],
   style: ["normal"],
@@ -34,6 +35,9 @@ const fontUnica = Unica_One({
 });
 
 export default function ProductsList() {
+
+  const [showFilter,setShowFilter] = useState(false);
+
   const router = useRouter();
   const categoryDetail = router.query.categoryId;
   // console.log(categoryDetail);
@@ -112,7 +116,7 @@ export default function ProductsList() {
   const [yacht, changeYacht] = useState(false);
   return (
     <div>
-      <Filter/>
+
       {carouselImages === "yachtCarousel" ? (
         <CarouselPage CarouselImages={yachtCarousel} />
       ) : carouselImages === "estateCarousel" ? (
@@ -132,6 +136,10 @@ export default function ProductsList() {
       ) : (
         <CarouselPage CarouselImages={rvCarousel} />
       )}
+      {showFilter ? <Filter/> :""}   
+
+      <Topfilter show={showFilter} showFunc={setShowFilter}/>
+
       <div className={classes.overlay_main_title}>
         <h1 className={fontBebas.className}>{categoryDetail}.</h1>
         <div className={classes.carousel_search}>
