@@ -21,7 +21,7 @@ import submarineCarousel from "@/CarouselImageData/submarineCarousel";
 import atvCarousel from "@/CarouselImageData/atvCarousel";
 import rvCarousel from "@/CarouselImageData/rvCarousel";
 import amphibiousCarousel from "@/CarouselImageData/amphibiousCarousel";
-
+import Filter from "../Filter/filter";
 const fontBebas = Bebas_Neue({
   weight: ["400"],
   style: ["normal"],
@@ -38,7 +38,62 @@ export default function ProductsList() {
   const categoryDetail = router.query.categoryId;
   // console.log(categoryDetail);
   const [subcategory, setSubcategory] = useState([]);
-  const [carouselImages, setCarouselImages] = useState([]);
+  const [carouselImages, setCarouselImages] = useState("");
+  useEffect(() => {
+    if (categoryDetail === "amphibious") {
+      setCarouselImages("amphibiousCarousel");
+    } else if (
+      categoryDetail === "motor yachts" ||
+      categoryDetail === "sail boats" ||
+      categoryDetail === "solar yachts" ||
+      categoryDetail === "tenders"
+    ) {
+      setCarouselImages("yachtCarousel");
+    } else if (
+      categoryDetail === "villas" ||
+      categoryDetail === "private islands" ||
+      categoryDetail === "castle" ||
+      categoryDetail === "land" ||
+      categoryDetail === "beachside properties"
+    ) {
+      setCarouselImages("estateCarousel");
+    } else if (
+      categoryDetail === "jets" ||
+      categoryDetail === "helicopters" ||
+      categoryDetail === "hovercars" ||
+      categoryDetail === "vtols"
+    ) {
+      setCarouselImages("jetCarousel");
+    } else if (
+      categoryDetail === "superbike" ||
+      categoryDetail === "naked" ||
+      categoryDetail === "electric" ||
+      categoryDetail === "cruiser" ||
+      categoryDetail === "touring & adventure" ||
+      categoryDetail === "dual sport" ||
+      categoryDetail === "cafe racer" ||
+      categoryDetail === "retro & classic"
+    ) {
+      setCarouselImages("bikeCarousel");
+    } else if (
+      categoryDetail === "coupe" ||
+      categoryDetail === "hyper cars" ||
+      categoryDetail === "super cars" ||
+      categoryDetail === "vintage cars" ||
+      categoryDetail === "sedan" ||
+      categoryDetail === "suv" ||
+      categoryDetail === "hatchback" ||
+      categoryDetail === "convertible"
+    ) {
+      setCarouselImages("carCarousel");
+    } else if (categoryDetail === "submarines") {
+      setCarouselImages("submarineCarousel");
+    } else if (categoryDetail === "atv") {
+      setCarouselImages("atvCarousel");
+    } else if (categoryDetail === "rv") {
+      setCarouselImages("rvCarousel");
+    }
+  });
   useEffect(() => {
     if (categoryDetail === "jets") {
       setSubcategory(jets);
@@ -51,114 +106,32 @@ export default function ProductsList() {
     } else if (categoryDetail === "sail boats") {
       setSubcategory(sailBoats);
     }
-  }, []);
-  useEffect(() => {
-    if (categoryDetail === "amphibious") {
-      setCarouselImages(amphibiousCarousel);
-    }
-    else if (categoryDetail === "motor yachts") {
-      setCarouselImages(yachtCarousel);
-    }
-    else if (categoryDetail === "sail boats") {
-      setCarouselImages(yachtCarousel);
-    }
-    else if (categoryDetail === "solar yachts") {
-      setCarouselImages(yachtCarousel);
-    }
-    else if (categoryDetail === "tenders") {
-      setCarouselImages(yachtCarousel);
-    }
-    else if (categoryDetail === "villas") {
-      setCarouselImages(estateCarousel);
-    }
-    else if (categoryDetail === "private islands") {
-      setCarouselImages(estateCarousel);
-    }
-    else if (categoryDetail === "castle") {
-      setCarouselImages(estateCarousel);
-    }
-    else if (categoryDetail === "land") {
-      setCarouselImages(estateCarousel);
-    }
-    else if (categoryDetail === "beachside properties") {
-      setCarouselImages(estateCarousel);
-    }
-    else if (categoryDetail === "jets") {
-      setCarouselImages(jetCarousel);
-    }
-    else if (categoryDetail === "helicopters") {
-      setCarouselImages(jetCarousel);
-    }
-    else if (categoryDetail === "hovercars") {
-      setCarouselImages(jetCarousel);
-    }
-    else if (categoryDetail === "vtols") {
-      setCarouselImages(jetCarousel);
-    }
-    else if (categoryDetail === "superbike") {
-      setCarouselImages(bikeCarousel);
-    }
-    else if (categoryDetail === "naked") {
-      setCarouselImages(bikeCarousel);
-    }
-    else if (categoryDetail === "electric") {
-      setCarouselImages(bikeCarousel);
-    }
-    else if (categoryDetail === "cruiser") {
-      setCarouselImages(bikeCarousel);
-    }
-    else if (categoryDetail === "touring & adventure") {
-      setCarouselImages(bikeCarousel);
-    }
-    else if (categoryDetail === "dual sport") {
-      setCarouselImages(bikeCarousel);
-    }
-    else if (categoryDetail === "cafe racer") {
-      setCarouselImages(bikeCarousel);
-    }
-    else if (categoryDetail === "retro & classic") {
-      setCarouselImages(bikeCarousel);
-    }
-    else if (categoryDetail === "coupe") {
-      setCarouselImages(carCarousel);
-    }
-    else if (categoryDetail === "hyper cars") {
-      setCarouselImages(carCarousel);
-    }
-    else if (categoryDetail === "super cars") {
-      setCarouselImages(carCarousel);
-    }
-    else if (categoryDetail === "vintage cars") {
-      setCarouselImages(carCarousel);
-    }
-    else if (categoryDetail === "sedan") {
-      setCarouselImages(carCarousel);
-    }
-    else if (categoryDetail === "suv") {
-      setCarouselImages(carCarousel);
-    }
-    else if (categoryDetail === "hatchback") {
-      setCarouselImages(carCarousel);
-    }
-    else if (categoryDetail === "convertible") {
-      setCarouselImages(carCarousel);
-    }
-    else if (categoryDetail === "submarines") {
-      setCarouselImages(submarineCarousel);
-    }
-    else if (categoryDetail === "atv") {
-      setCarouselImages(atvCarousel);
-    }
-    else if (categoryDetail === "rv") {
-      setCarouselImages(rvCarousel);
-    }
-   
-  }, []);
+  });
 
+  let mainCarousel = [...carouselImages];
   const [yacht, changeYacht] = useState(false);
   return (
     <div>
-      <CarouselPage CarouselImages={carouselImages} />
+      <Filter/>
+      {carouselImages === "yachtCarousel" ? (
+        <CarouselPage CarouselImages={yachtCarousel} />
+      ) : carouselImages === "estateCarousel" ? (
+        <CarouselPage CarouselImages={estateCarousel} />
+      ) : carouselImages === "jetCarousel" ? (
+        <CarouselPage CarouselImages={jetCarousel} />
+      ) : carouselImages === "bikeCarousel" ? (
+        <CarouselPage CarouselImages={bikeCarousel} />
+      ) : carouselImages === "carCarousel" ? (
+        <CarouselPage CarouselImages={carCarousel} />
+      ) : carouselImages === "amphibiousCarousel" ? (
+        <CarouselPage CarouselImages={amphibiousCarousel} />
+      ) : carouselImages === "submarineCarousel" ? (
+        <CarouselPage CarouselImages={submarineCarousel} />
+      ) : carouselImages === "atvCarousel" ? (
+        <CarouselPage CarouselImages={atvCarousel} />
+      ) : (
+        <CarouselPage CarouselImages={rvCarousel} />
+      )}
       <div className={classes.overlay_main_title}>
         <h1 className={fontBebas.className}>{categoryDetail}.</h1>
         <div className={classes.carousel_search}>

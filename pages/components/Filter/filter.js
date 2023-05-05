@@ -39,9 +39,9 @@ export default function Filter() {
     const list_subtype=["Conversion","Explorer","Flybridge","Gulet","J Class","Maxi","Motor Sailer","Sport Boat","Sport Fisherman","Support Yacht"];
     const list_volume=["300 GT-","300 GT+","500 GT-","500 GT+","1000 GT+","3000 GT+"];
     return (
-        <>
+        <div className={filter.fix}>
         {/* {collapse} */}
-            <div className={`bg-white h-auto ${filter.filter_width} main_parent`}>
+            <div className={`bg-white h-auto ${filter.filter_width}`}>
             <div className="h-10 bg-purple-900 border-b-4 border-purple-950"></div>
             <div className="p-3">
                 <div className="block ml-2 ">
@@ -173,6 +173,6 @@ export default function Filter() {
                 </div>
             </div>
             </div>
-        </>
+        </div>
     );
 }
