@@ -3,10 +3,9 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import Image from "next/image";
 
-export default function CarouselPage() {
+export default function CarouselPage({CarouselImages}) {
   return (
     <>
-     
       <div className="img-sliders">
         <Carousel
           autoPlay={true}
@@ -16,79 +15,18 @@ export default function CarouselPage() {
           autoFocus={true}
           showThumbs={false}
           stopOnHover={false}
-        >
-          <div>
+        >       
+          {CarouselImages?.map((data) => (
+            <div>
             <div className="overlay"></div>
             <Image
               className="img-slider"
-              src="/real_estate.jpg"
+              src={data.image}
               width={1920}
               height={1080}
             />
           </div>
-
-          <div>
-            <div className="overlay"></div>
-
-            <Image
-              className="img-slider"
-              src="/in_estate.jpg"
-              width={1920}
-              height={1080}
-            />
-          </div>
-
-          <div>
-            <div className="overlay"></div>
-
-            <Image
-              className="img-slider"
-              src="/in_estate_3.jpg"
-              width={1920}
-              height={1080}
-            />
-          </div>
-
-          <div>
-            <div className="overlay"></div>
-
-            <Image
-              className="img-slider"
-              src="/yacht.jpg"
-              width={1920}
-              height={1080}
-            />
-          </div>
-          <div>
-            <div className="overlay"></div>
-
-            <Image
-              className="img-slider"
-              src="/real_estate_2.jpg"
-              width={1920}
-              height={1080}
-            />
-          </div>
-          <div>
-            <div className="overlay"></div>
-
-            <Image
-              className="img-slider"
-              src="/cars_3.jpg"
-              width={1920}
-              height={1080}
-            />
-          </div>
-          <div>
-            <div className="overlay"></div>
-
-            <Image
-              className="img-slider"
-              src="/in_estate_2.jpg"
-              width={1920}
-              height={1080}
-            />
-          </div>
+          ))}
         </Carousel>
       </div>
     </>
