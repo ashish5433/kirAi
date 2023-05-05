@@ -5,8 +5,8 @@ export default function Datascroll({data}){
         <div>
             <div className="">{
                 data.map((item)=>{
-                    return<div><input type="checkbox" id={item} name={item} value={item} />
-                    <label for="vehicle3">{item}</label>
+                    return<div><input className="p-1 mx-3 scale-125"  type="checkbox" id={item} name={item} value={item} />
+                    <label className="font-mono" for="vehicle3">{item}</label>
                     </div>
                 })
             }</div>

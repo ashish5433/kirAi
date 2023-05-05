@@ -1,5 +1,5 @@
 .filter_width{
-    width: 340px;
+    width: 300px;
     min-width: 200px;
     padding-top: 50px;
     border-right: 2px solid black;
@@ -10,6 +10,7 @@
     width: 93%;
     margin-top: 10px;
     border-radius: 10px;
+    height: 30px;
 }
 .btn_input{
     width: 93%;
@@ -47,4 +48,8 @@
 }
 .volume{
     height: 0px;
+}
+
+.main_parent > Button{
+    background-color: black;
 }
