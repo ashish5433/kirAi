@@ -39,7 +39,7 @@ export default function Filter() {
     const list_subtype=["Conversion","Explorer","Flybridge","Gulet","J Class","Maxi","Motor Sailer","Sport Boat","Sport Fisherman","Support Yacht"];
     const list_volume=["300 GT-","300 GT+","500 GT-","500 GT+","1000 GT+","3000 GT+"];
     return (
-        <div style={{maxHeight:"1000px"}} className={`${filter.fixx}`}>
+        <div  className={`${filter.fixx}`}>
         {/* {collapse} */}
             <div className={`bg-white h-auto ${filter.filter_width}`}>
             <div className="h-10 bg-slate-800 border-b-4 border-t-4 border-b-black"></div>
@@ -53,7 +53,7 @@ export default function Filter() {
                 <div>
                     <h3 className="text-center mt-10">Filters</h3>
                     <hr />
-                    <div style={{maxHeight:"800px", overflowY:"scroll"}}>
+                    <div style={{overflowY:"scroll"}}>
                     <div>
                         <div className="flex">
                             <h5>Sale Status</h5>

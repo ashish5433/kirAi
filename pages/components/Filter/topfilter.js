@@ -40,7 +40,7 @@ export default function Topfilter({ show, showFunc }) {
                 </div></div>
             </div>
             <div className='flex justify-end ml-full -mt-[60px]'>
-                <div onClick={() => { show ? showFunc(false) : showFunc(true) }} className={` flex px-2 pointer ${filter.topfilter_btn_all}`}><div className='mt-2' >More Filters</div><div><span class="material-symbols-outlined -mt-1 ">filter_list   </span></div></div>
+                {/* <div onClick={() => { show ? showFunc(false) : showFunc(true) }} className={` flex px-2 pointer ${filter.topfilter_btn_all}`}><div className='mt-2' >More Filters</div><div><span class="material-symbols-outlined -mt-1 ">filter_list   </span></div></div> */}
                 <div onClick={() => { showLength ? setShowLength(false) : setShowLength(true) }} className={` flex px-2 pointer ${filter.topfilter_btn}`}><div className='mt-2 ml-2' >Length</div><div><span class="material-symbols-outlined ml-auto">expand_more</span></div></div>
                 <div className={` flex px-2 pointer ${filter.topfilter_btn}`}><div className='mt-2 ml-2' >Volume</div><div><span class="material-symbols-outlined ml-auto">expand_more</span></div></div>
                 <div className='pointer'>

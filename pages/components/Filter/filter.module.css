@@ -1,17 +1,16 @@
 .fixx{
-    z-index: 100000;
-    position: absolute;
+    position: relative;
     top: -0px;
     height: 100%;
 }
 
 .filter_width{
     width: 315px;
-    height: 1000px;
+    /* height: 1000px; */
     min-width: 200px;
     /* padding-top: 50px; */
     border-right: 2px solid black;
-    box-shadow: 1px 0px 100px 1px black;
+    /* box-shadow: 1px 0px 100px 1px black; */
 }
 
 .btn_width{

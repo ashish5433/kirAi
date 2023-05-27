@@ -556,12 +556,12 @@ border-radius: 50%;
 width: 100px;
 }
 .product-wrapper{
-border: 1px solid rgba(0, 0, 0, 0.229);
+/* border: 1px solid rgba(0, 0, 0, 0.229); */
 }
 .product-card-div {
   /* margin-top: 4rem; */
   margin-bottom: 4rem;
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -570,10 +570,10 @@ border: 1px solid rgba(0, 0, 0, 0.229);
 }
 
 .product-cards {
-  height: 280px;
-  width: 480px;
+  /* height: 280px;
+  width: 480px; */
   /* background-size: 450px !important; */
-  background-color: #000000;
+  /* background-color: #000000; */
   transition-duration: 500ms;
   /* overflow: hidden; */
   /* border-radius: 12px; */
@@ -590,7 +590,7 @@ height:300px;
 .product-name {
   margin: 0;
   margin-top: 7px !important;
-  font-size: 1rem;
+  /* font-size: 1rem; */
   /* font-weight:bold; */
 }
 
@@ -606,7 +606,7 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 padding: 0px 20px 10px 10px;
-background: #151515;
+/* background: #151515; */
 color: white;
 /* font-weight: bold; */
 letter-spacing: 1px;
@@ -616,6 +616,8 @@ letter-spacing: 1px;
   padding-left: 5px;
   text-transform: capitalize;
   font-family: 'Economica', sans-serif !important;
+  background-color: #000000;
+  border-radius: 20px;
 }
 .product-details p{
 font-size: 1.8rem;
@@ -630,13 +632,30 @@ margin: 3px 0 6px 0;
 .product--image{
   height:280px;
   width: 480px;
+  border-radius: 40px;
   /* filter: blur(10px); */
 }
 
-.product--icon{
-width: 70px;
-height: 70px;
-/* border-radius: 50%; */
+.product-company-icon{
+width: 100px;
+height: 30px;
+padding: 10px;
+margin: 10px;
+border-radius: 50px;
+margin-top: -15px;
+}
+
+.product-div-price{
+  background-color: gray;
+  border-radius: 10px;
+
+}
+
+.product-buynow{
+  background-color: rgb(124, 1, 206);
+  padding-top: 2px;
+  padding-bottom: 2px;
+  height: 25px;
 }
 /*   //////////////////////// Nav2  //////////////////////// */
 
