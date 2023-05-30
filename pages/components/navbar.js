@@ -19,70 +19,198 @@ function Navbar1() {
 
   const [color, setColor] = useState(false);
 
-  const li_default = [[[],],]
+  const li_default = [[[]]];
 
   const [default_item, setdefaultItem] = useState("");
 
-  const li1_items = [[["Popular Builders"],
-  ["Sunseeker", "Azimut", "Riva", "Benetti", "Custom", "Cranchi", "Beneteau", "Ferretti"],
-  ["Sea Ray", "Sunreef", "Chris Craft", "Heesen", "Pershing", "Hatteras", "Princess", "Viking"]],]
-  const li2_items = [[["Top Countries"],
-  ["United States", "Spain", "Italy", "France", "Portugal", "Canada", "United Kingdom", "Greece"],
-  ["Switzerland", "United Arab Emirates", "Mexico", "South Africa", "Australia", "Germany", "Netherlands", "Japan"]],
+  const li1_items = [
+    [
+      ["Popular Builders"],
+      [
+        "Sunseeker",
+        "Azimut",
+        "Riva",
+        "Benetti",
+        "Custom",
+        "Cranchi",
+        "Beneteau",
+        "Ferretti",
+      ],
+      [
+        "Sea Ray",
+        "Sunreef",
+        "Chris Craft",
+        "Heesen",
+        "Pershing",
+        "Hatteras",
+        "Princess",
+        "Viking",
+      ],
+    ],
+  ];
+  const li2_items = [
+    [
+      ["Top Countries"],
+      [
+        "United States",
+        "Spain",
+        "Italy",
+        "France",
+        "Portugal",
+        "Canada",
+        "United Kingdom",
+        "Greece",
+      ],
+      [
+        "Switzerland",
+        "United Arab Emirates",
+        "Mexico",
+        "South Africa",
+        "Australia",
+        "Germany",
+        "Netherlands",
+        "Japan",
+      ],
+    ],
 
-  [["Top Cities"],
-  ["Los Angeles", "Marbella", "London", "New York", "Paris", "Miami", "Ibiza", "Beverly Hills"],
-  ["Cannes", "Mallorca", "Madrid", "Lisbon", "Rome", "Milan", "Nice", "Toronto"]],
+    [
+      ["Top Cities"],
+      [
+        "Los Angeles",
+        "Marbella",
+        "London",
+        "New York",
+        "Paris",
+        "Miami",
+        "Ibiza",
+        "Beverly Hills",
+      ],
+      [
+        "Cannes",
+        "Mallorca",
+        "Madrid",
+        "Lisbon",
+        "Rome",
+        "Milan",
+        "Nice",
+        "Toronto",
+      ],
+    ],
 
-  [["Top Regions"],
-  ["French Riviera", "Costa del Sol", "French and Swiss Alps", "Costa Blanca", "California, USA", "Hamptons, NY, USA", "Florida, USA", "Tuscany"],
-  ["Algarve", "Greek Islands", "Balearic Islands", "Caribbean", "Dubai", "Amalfi Coast", "Lombardy", "Costa Brava"]],
-  ]
-  const li6_items = [[["Popular Makes"],
-  ["Bugatti", "Pagani", "Koenigsegg", "Ferrari", "Lamborghini", "Mercedes", "Rolls-Royce", "McLaren"],
-  ["Brabus", "Porsche", "Aston Martin", "Bentley", "Maybach", "BMW", "Ford", "Audi"]],
-  [["Popular Models"],
-  ["Ferrari LaFerrari", "Bugatti Chiron", "Ferrari F40", "Lamborghini Aventador", "McLaren P1", "Porsche 918", "Ford GT", "Mercedes SLR McLaren"],
-  ["Pagani Huayra", "Porsche Carrera GT", "Lamborghini Urus", "Lamborghini Murcielago", "Ferrari Enzo", "Lexus LFA", "Brabus G-Class", "Rolls-Royce Cullinan"]
-  ],]
-  const li4_items = [[["Popular Manufacturer"], ["Embraer", "Dassault", "Gulfstream", "Bombardier", "Cessna", "Boeing", "Pilatus"],],]
+    [
+      ["Top Regions"],
+      [
+        "French Riviera",
+        "Costa del Sol",
+        "French and Swiss Alps",
+        "Costa Blanca",
+        "California, USA",
+        "Hamptons, NY, USA",
+        "Florida, USA",
+        "Tuscany",
+      ],
+      [
+        "Algarve",
+        "Greek Islands",
+        "Balearic Islands",
+        "Caribbean",
+        "Dubai",
+        "Amalfi Coast",
+        "Lombardy",
+        "Costa Brava",
+      ],
+    ],
+  ];
+  const li6_items = [
+    [
+      ["Popular Makes"],
+      [
+        "Bugatti",
+        "Pagani",
+        "Koenigsegg",
+        "Ferrari",
+        "Lamborghini",
+        "Mercedes",
+        "Rolls-Royce",
+        "McLaren",
+      ],
+      [
+        "Brabus",
+        "Porsche",
+        "Aston Martin",
+        "Bentley",
+        "Maybach",
+        "BMW",
+        "Ford",
+        "Audi",
+      ],
+    ],
+    [
+      ["Popular Models"],
+      [
+        "Ferrari LaFerrari",
+        "Bugatti Chiron",
+        "Ferrari F40",
+        "Lamborghini Aventador",
+        "McLaren P1",
+        "Porsche 918",
+        "Ford GT",
+        "Mercedes SLR McLaren",
+      ],
+      [
+        "Pagani Huayra",
+        "Porsche Carrera GT",
+        "Lamborghini Urus",
+        "Lamborghini Murcielago",
+        "Ferrari Enzo",
+        "Lexus LFA",
+        "Brabus G-Class",
+        "Rolls-Royce Cullinan",
+      ],
+    ],
+  ];
+  const li4_items = [
+    [
+      ["Popular Manufacturer"],
+      [
+        "Embraer",
+        "Dassault",
+        "Gulfstream",
+        "Bombardier",
+        "Cessna",
+        "Boeing",
+        "Pilatus",
+      ],
+    ],
+  ];
 
   const [li_content, set_li_content] = useState(li_default);
-
 
   const [nav2, setNav2] = useState(false);
   const [searchbar, setSearchbar] = useState(false);
   const handleChange = () => {
     if (window.scrollY >= 50) {
-      setColor(true)
-
+      setColor(true);
+    } else {
+      setColor(false);
     }
-    else {
-      setColor(false)
+    if (window.scrollY >= 400) {
+      setNav2(false);
+      setSearchbar(false);
+    } else {
+      setNav2(true);
+      setSearchbar(true);
     }
-    if(window.scrollY>=400){
-      setNav2(false)
-      setSearchbar(false)
-    }
-    else{
-      setNav2(true)
-      setSearchbar(true)
-    }
-  }
-  
-
+  };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleChange)
-  })
-
-
+    window.addEventListener("scroll", handleChange);
+  });
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   // window.addEventListener('scroll',handleChange)
-
 
   // const [showsidenav, setShowsidenav] = useState("65px")
   // const changeWidth = () => showsidenav === "65px" ? setShowsidenav("220px") : setShowsidenav("65px");
@@ -98,7 +226,11 @@ function Navbar1() {
     <>
       {["lg"].map((expand) => (
         <div>
-          <Navbar key={expand} expand={expand} className={color ? 'mb-3 navbar nav-bg' : 'mb-3 navbar nav'}>
+          <Navbar
+            key={expand}
+            expand={expand}
+            className={color ? "mb-3 navbar nav-bg" : "mb-3 navbar nav"}
+          >
             <script></script>
             <Container fluid>
               <div className="left-nav">
@@ -106,20 +238,52 @@ function Navbar1() {
                   variant="primary"
                   onClick={handleShow}
                   className="me-2 nav-btn"
-
                 >
-                  <svg className="-ml-0 scale-125 " xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-list" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                  <svg
+                    className="-ml-0 scale-125 "
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    fill="white"
+                    class="bi bi-list"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+                    />
                   </svg>
                 </Button>
-                <h1 style={{ fontSize: "1.5rem", fontWeight: "bold" }} className={play.className}>ShauKeens</h1>
+                <h1
+                  style={{ fontSize: "1.5rem", fontWeight: "bold" }}
+                  className={play.className}
+                >
+                  ShauKeens
+                </h1>
               </div>
-              
-              <div className={searchbar ? 'hidden fadeout' : 'flex justify-end fadein'}>
+
+              <div
+                className={
+                  searchbar ? "hidden fadeout" : "flex justify-end fadein"
+                }
+              >
                 <div className="carousel-search">
-                  <input style={{maxWidth:"500px", minWidth:"400px"}}  type="text" className={play.className} />
+                  <input
+                    style={{ maxWidth: "500px", minWidth: "400px" }}
+                    type="text"
+                    className={play.className}
+                  />
                   <button type="submit">
-                    <span style={{padding:"9px",position:"relative", marginLeft:"-60px"}} className="material-symbols-outlined ">search</span>
+                    <span
+                      style={{
+                        padding: "9px",
+                        position: "relative",
+                        marginLeft: "-60px",
+                      }}
+                      className="material-symbols-outlined "
+                    >
+                      search
+                    </span>
                   </button>
                 </div>
               </div>
@@ -207,27 +371,85 @@ function Navbar1() {
               </Offcanvas>
             </Container>
           </Navbar>
-          <div className={nav2 ? 'hidden' : 'absolute w-full'}>
-            <div className={color ? 'second_nav' : 'second_nav2'}>
-
+          <div className={nav2 ? "hidden" : "absolute w-full"}>
+            <div className={color ? "second_nav" : "second_nav2"}>
               <ul className="flex bg-transparent -mt-4 space-x-4 p-2 border-t-1 text-white responsive_nav2">
-                <li onMouseEnter={() => { document.getElementsByClassName("li_1_div")[0].style.visibility = "visible"; set_li_content(li1_items); setdefaultItem("Yachts") }}
-                  className="left_li1 pointer px-2 py-1 rounded-md bg-semi-white">Yachts</li>
-                <li onMouseEnter={() => { document.getElementsByClassName("li_1_div")[0].style.visibility = "visible"; set_li_content(li2_items); setdefaultItem("Real Estates") }}
-                  className="pointer px-2 py-1 rounded-md bg-semi-white">Real Estates</li>
-                <li onMouseEnter={() => { document.getElementsByClassName("li_1_div")[0].style.visibility = "visible"; set_li_content(li_default); setdefaultItem("Helicopter") }}
-                  className="pointer px-2 py-1 rounded-md bg-semi-white">Helicopter</li>
-                <li onMouseEnter={() => { document.getElementsByClassName("li_1_div")[0].style.visibility = "visible"; set_li_content(li4_items); setdefaultItem("Jets") }}
-                  className="pointer px-2 py-1 rounded-md bg-semi-white">Jets</li>
-                <li onMouseEnter={() => { document.getElementsByClassName("li_1_div")[0].style.visibility = "visible"; set_li_content(li_default); setdefaultItem("Bikes") }}
-                  className="pointer px-2 py-1 rounded-md bg-semi-white">Bikes</li>
-                <li onMouseEnter={() => { document.getElementsByClassName("li_1_div")[0].style.visibility = "visible"; set_li_content(li6_items); setdefaultItem("Cars") }}
-                  className="pointer px-2 py-1 rounded-md bg-semi-white">Cars</li>
+                <li
+                  onMouseEnter={() => {
+                    document.getElementsByClassName(
+                      "li_1_div"
+                    )[0].style.visibility = "visible";
+                    set_li_content(li1_items);
+                    setdefaultItem("Yachts");
+                  }}
+                  className="left_li1 pointer px-2 py-1 rounded-md bg-semi-white"
+                >
+                  Yachts
+                </li>
+                <li
+                  onMouseEnter={() => {
+                    document.getElementsByClassName(
+                      "li_1_div"
+                    )[0].style.visibility = "visible";
+                    set_li_content(li2_items);
+                    setdefaultItem("Real Estates");
+                  }}
+                  className="pointer px-2 py-1 rounded-md bg-semi-white"
+                >
+                  Real Estates
+                </li>
+                <li
+                  onMouseEnter={() => {
+                    document.getElementsByClassName(
+                      "li_1_div"
+                    )[0].style.visibility = "visible";
+                    set_li_content(li_default);
+                    setdefaultItem("Helicopter");
+                  }}
+                  className="pointer px-2 py-1 rounded-md bg-semi-white"
+                >
+                  Helicopter
+                </li>
+                <li
+                  onMouseEnter={() => {
+                    document.getElementsByClassName(
+                      "li_1_div"
+                    )[0].style.visibility = "visible";
+                    set_li_content(li4_items);
+                    setdefaultItem("Jets");
+                  }}
+                  className="pointer px-2 py-1 rounded-md bg-semi-white"
+                >
+                  Jets
+                </li>
+                <li
+                  onMouseEnter={() => {
+                    document.getElementsByClassName(
+                      "li_1_div"
+                    )[0].style.visibility = "visible";
+                    set_li_content(li_default);
+                    setdefaultItem("Bikes");
+                  }}
+                  className="pointer px-2 py-1 rounded-md bg-semi-white"
+                >
+                  Bikes
+                </li>
+                <li
+                  onMouseEnter={() => {
+                    document.getElementsByClassName(
+                      "li_1_div"
+                    )[0].style.visibility = "visible";
+                    set_li_content(li6_items);
+                    setdefaultItem("Cars");
+                  }}
+                  className="pointer px-2 py-1 rounded-md bg-semi-white"
+                >
+                  Cars
+                </li>
               </ul>
             </div>
 
             <Nav_li_items props={li_content} item={default_item} />
-
           </div>
           <div style={{ marginTop: "-222px" }}>
             <Sidenav />

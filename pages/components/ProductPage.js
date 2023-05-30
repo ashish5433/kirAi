@@ -1,245 +1,506 @@
-import Navbar from './navbar'
-import Corousel from './corousel'
-import { useState, useEffect } from 'react';
+import Link from "next/link";
+import classes from "../../styles/ProductPage.module.css";
+import Navbar1 from "./navbar";
 import Image from "next/image";
-import ProgressBar from 'react-progressbar-on-scroll'
-// import { Card } from '@nextui-org/react';
-import CarouselPage from './Carousel';
-import Filter from './Filter/filter';
 
-
-
-export default function Product() {
-    const [color1, setColor1] = useState(false);
-    const [color2, setColor2] = useState(false);
-    const [color3, setColor3] = useState(false);
-
-    const handleChange = () => {
-        if (window.scrollY >= 0 && window.scrollY < 300) {
-            setColor1(true)
-        }
-        else setColor1(false)
-        if (window.scrollY > 300 && window.scrollY < 600) {
-            setColor2(true)
-        }
-        else setColor2(false)
-        if (window.scrollY > 600 && window.scrollY < 1300) {
-            setColor3(true)
-        }
-        else setColor3(false)
-
-    }
-
-    useEffect(() => {
-        window.addEventListener('scroll', handleChange)
-    })
-    const [photo, setPhoto] = useState("/real_estate.jpg")
-
-    const changePhoto = (newsrc) => {
-        setPhoto(newsrc)
-    }
-
-    return (
-        <>
-            <div className="product_page">
-                <div className="nav22 ">
-                    <ul>
-                        <li className={color1 ? 'li1 ' : 'li2'}>Overview</li>
-                        <li className={color2 ? 'li1 ' : 'li2'}>Description</li>
-                        <li className={color3 ? 'li1 ' : 'li2'}>Parameters</li>
-
-                        <li className='li2'>Review</li>
-                        <li className='li2'>Similar Products</li>
-
-                    </ul>
-                </div>
-                <div className='flex flex-row'>
-                <div><Filter/></div>
-                <div>
-                    <div className="progressbar">
-                        <ProgressBar
-                            position="bottom"
-                            height={10}
-                            color='black'
-
-                        />
-                    </div>
-
-                    <div className="card22 rounded-lg">
-                        <div className="main_card">
-
-                            <Image
-                                className="main-image s"
-                                src={photo}
-                                width={1920}
-                                height={1080}
-                            />
-                            <div className='flex  flex-row -mt-[520px]'>
-                                <div className='mx-2 px-3 py-1 rounded-lg bg-white text-black  '><button>First</button></div>
-                                <div className='mx-2 px-3 py-1 rounded-lg bg-white text-black  '><button>Second</button></div>
-                                <div className='mx-2 px-3 py-1 rounded-lg bg-white text-black  '><button>Third</button></div>
-                                <div className='mx-2 px-3 py-1 rounded-lg bg-white text-black  '><button>Fourth</button></div>
-                            </div>
-                        </div>
-                        <div className="side_card">
-                            <h5 className='text-slate-900' >Related Images :</h5>
-                            <div className="side_card1 border-2">
-                                <Image onClick={() => changePhoto("/real_estate.jpg")}
-                                    className="side-images"
-                                    src="/real_estate.jpg"
-                                    width={1920}
-                                    height={1080}
-                                />
-                            </div>
-                            <div className="side_card1 border-2">
-                                <Image onClick={() => changePhoto("/in_estate.jpg")}
-                                    className="side-images"
-                                    src="/in_estate.jpg"
-                                    width={1920}
-                                    height={1080}
-                                />
-                            </div>
-                            <div className="side_card1 border-2">
-                                <Image onClick={() => changePhoto("/in_estate_3.jpg")}
-                                    className="side-images"
-                                    src="/in_estate_3.jpg"
-                                    width={1920}
-                                    height={1080}
-                                />
-                            </div>
-                            <div className="side_card1 border-2">
-                                <Image onClick={() => changePhoto("/in_estate_2.jpg")}
-                                    className="side-images"
-                                    src="/in_estate_2.jpg"
-                                    width={1920}
-                                    height={1080}
-                                />
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="description">
-                        <div className='flex flex-row'>
-                            <div><h1 className='text-slate-900'>Description</h1></div>
-                            <div style={{ marginLeft: "60%" }} className="seller flex flex-row ">
-                                <div>
-                                    <span className="material-symbols-outlined m1 seller_photo shadow" >
-                                        person
-                                    </span>
-                                </div>
-                                <div><h4>Raunak</h4></div>
-                            </div>
-                        </div>
-
-                        <hr />
-                        <div className="desc_details">
-                            <div className="desc_details1 dd1 ">
-                                <h2 className='mb-8'>Product Details:</h2>
-                                <h5>Product: Real Estate</h5>
-                                <h5>Price: $133,434,679</h5>
-                                <div className='flex flex-row'><div><h5>Location: </h5></div><div className="price -mt-3">
-                                    <span class="material-symbols-outlined loc1 ml-2 rounded-2xl">location_on
-                                    </span>
-                                    <h4>Kolkata</h4>
-                                </div></div>
-
-
-                            </div>
-                            <div className="desc_details1 dd2"></div>
-                            <div className="desc_details1 dd3">
-                                <h4>Contact Information</h4>
-                                <div className='flex flex-row'><div className=''><svg className='mr-2 mt-2' xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="Green" class="bi bi-telephone-fill" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
-                                </svg></div><div><button>Call </button></div></div>
-                                <div className='flex flex-row'><div className=''><svg className='mr-2 mt-2' xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="Green" class="bi bi-chat-square-dots-fill" viewBox="0 0 16 16">
-                                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2V2zm5 4a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
-                                </svg></div><div><button>Message </button></div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="parameters-main">
-                        <h1>Parameters</h1><hr />
-                        <div className="parameters">
-                            <div>No of Rooms :7 </div>
-                            <div><button>View Rooms</button></div>
-                            <div>Location :Urban </div>
-                            <div>Area : 3400sq.ft </div>
-
-                        </div>
-                    </div>
-                    <div className="similar_products-main-div">
-                        <h1>Similar Products</h1><hr />
-                        <div className="similar_products">
-                            <div> <Image
-                                className="similar_products_image"
-                                src="/product_4.jpg"
-                                width={1920}
-                                height={1080}
-                            />
-                            </div>
-                            <div><Image
-                                className="similar_products_image"
-                                src="/product_1.jpg"
-                                width={1920}
-                                height={1080}
-                            /></div>
-                            <div><Image
-                                className="similar_products_image"
-                                src="/product_2.jpg"
-                                width={1920}
-                                height={1080}
-                            /></div>
-                            <div><Image
-                                className="similar_products_image"
-                                src="/product_3.jpg"
-                                width={1920}
-                                height={1080}
-                            /></div>
-                            <div><Image
-                                className="similar_products_image"
-                                src="/product_5.jpg"
-                                width={1920}
-                                height={1080}
-                            /></div>
-                            <div> <Image
-                                className="similar_products_image"
-                                src="/product_5.jpg"
-                                width={1920}
-                                height={1080}
-                            /></div>
-                            <div> <Image
-                                className="similar_products_image"
-                                src="/product_1.jpg"
-                                width={1920}
-                                height={1080}
-                            /></div>
-                            <div> <Image
-                                className="similar_products_image"
-                                src="/product_3.jpg"
-                                width={1920}
-                                height={1080}
-                            />
-                            </div>
-                            <div> <Image
-                                className="similar_products_image"
-                                src="/product_2.jpg"
-                                width={1920}
-                                height={1080}
-                            /></div>
-                            <div> <Image
-                                className="similar_products_image"
-                                src="/product_4.jpg"
-                                width={1920}
-                                height={1080}
-                            /></div>
-                        </div>
-                    </div>
-                </div>
-</div>
+export default function ProductPage() {
+  return (
+    <div>
+      <div className={classes.main_info_div}>
+        <div className={classes.name_and_like}>
+          <div className={classes.name}>
+            <div className={classes.product_name}>
+              <h1>PRODUCT NAME</h1>
             </div>
-        </>
+            <div className={classes.brand_name}>
+              <h3>BRAND NAME</h3>
+            </div>
+          </div>
+          <div className={classes.likenshare}>
+            <div className={classes.share}>
+              <h1>S</h1>
+            </div>
+            <div className={classes.like}>
+              <h1>L</h1>
+            </div>
+          </div>
+        </div>
+        <div className={classes.product_image_and_agentinfo}>
+          <div className={classes.product_image}>
+            <Image
+              className={classes.product_images}
+              src="/yachtcarousel5.jpg"
+              width={1920}
+              height={1080}
+            />
+          </div>
+          <div className={classes.agentinfo}>
+            <div className={classes.agent_backimg}>
+              <Image
+                className={classes.product_images}
+                src="/yachtcarousel5.jpg"
+                width={1920}
+                height={1080}
+              />
+            </div>
+            <div className={classes.agent_img}>
+              <Image
+                className={classes.product_images}
+                src="/profilepic.jpg"
+                width={1920}
+                height={1080}
+              />
+            </div>
+            <div className={classes.agent_details}>
+              <h4>Listed By : </h4>
+              <h2>Agent Name</h2>
+            </div>
+          </div>
+        </div>
+        <div className={classes.price_contact_buynow}>
+          <div className={classes.price}>
+            <div className={classes.curr}>
+              <h3>In USD</h3>
+            </div>
+            <div className={classes.money}>
+              <h2>$ 500,000,000</h2>
+            </div>
+            <div className={classes.next_curr}>
+              <Link href="#" className={classes.links}>
+                <h3>EUR</h3>
+              </Link>
+              <Link href="#" className={classes.links}>
+                <h3>USD</h3>
+              </Link>
+              <Link href="#" className={classes.links}>
+                <h3>IND</h3>
+              </Link>
+            </div>
+          </div>
+          <div className={classes.contact}>
+            <button>VISIT</button>
+            <button>CALL</button>
+            <button>CHAT</button>
+            <button>LIVE View</button>
+            <button>Book A Visit</button>
+          </div>
+          <div className={classes.buynow}>
+            <div className={classes.buy_btn}>
+              <button>BUY NOW</button>
+              <div>
+                <h3>Delivery in 15 day.</h3>
+              </div>
+            </div>
+            <div className={classes.cart_btn}>
+              <button>Cart</button>
+              <button>wishlist</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={classes.sub_info_div}>
+        <div className={classes.sssss}>
+          <div>
+            <div className={classes.ideation}>
+              <h3>Design Thinking Ideation</h3>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste
+                ex quaerat vitae alias expedita a similique, quos tempora maxime
+                deserunt.
+              </p>
+            </div>
+            <div className={classes.specifications}>
+              <h3>General Specifications</h3>
+              <div className={classes.inner_specifications}>
+                <div>
+                  <p>lorem</p>
+                  <p>lorem</p>
+                  <p>lorem</p>
+                </div>
+                <div>
+                  <p>lorem</p>
+                  <p>lorem</p>
+                  <p>lorem</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={classes.gallery}>
+            <div className={classes.big_image}>
+              <Image
+                className={classes.product_images_1}
+                src="/yachtcarousel5.jpg"
+                width={1920}
+                height={1080}
+              />
+            </div>
+            <div className={classes.big_imag}>
+              <Image
+                className={classes.product_images_2}
+                src="/yachtcarousel5.jpg"
+                width={1920}
+                height={1080}
+              />
+              <Image
+                className={classes.product_images_2}
+                src="/yachtcarousel5.jpg"
+                width={1920}
+                height={1080}
+              />
+              <Image
+                className={classes.product_images_2}
+                src="/yachtcarousel5.jpg"
+                width={1920}
+                height={1080}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={classes.sub_info_div_2}>
+        <div className={classes.sssss2}>
+          <div>
+            <div className={classes.specifications}>
+              <h3>General Specifications</h3>
+              <div className={classes.inner_specifications_2}>
+                <div>
+                  <p>lorem</p>
+                  <p>lorem</p>
+                  <p>lorem</p>
+                </div>
+                <div>
+                  <p>lorem</p>
+                  <p>lorem</p>
+                  <p>lorem</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={classes.gallery}>
+            <div className={classes.two_image}>
+              <Image
+                className={classes.category_images}
+                src="/yachtcarousel5.jpg"
+                width={1920}
+                height={1080}
+              />{" "}
+              <Image
+                className={classes.category_images}
+                src="/yachtcarousel5.jpg"
+                width={1920}
+                height={1080}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={classes.sub_info_div_2}>
+        <div className={classes.sssss2}>
+          <div>
+            <div className={classes.specifications}>
+              <h3>General Specifications</h3>
+              <div className={classes.inner_specifications_2}>
+                <div>
+                  <p>lorem</p>
+                  <p>lorem</p>
+                  <p>lorem</p>
+                </div>
+                <div>
+                  <p>lorem</p>
+                  <p>lorem</p>
+                  <p>lorem</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={classes.gallery}>
+            <div className={classes.two_image}>
+              <Image
+                className={classes.category_images}
+                src="/yachtcarousel5.jpg"
+                width={1920}
+                height={1080}
+              />{" "}
+              <Image
+                className={classes.category_images}
+                src="/yachtcarousel5.jpg"
+                width={1920}
+                height={1080}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={classes.sub_info_div_2}>
+        <div className={classes.sssss2}>
+          <div>
+            <div className={classes.specifications}>
+              <h3>General Specifications</h3>
+              <div className={classes.inner_specifications_2}>
+                <div>
+                  <p>lorem</p>
+                  <p>lorem</p>
+                  <p>lorem</p>
+                </div>
+                <div>
+                  <p>lorem</p>
+                  <p>lorem</p>
+                  <p>lorem</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={classes.gallery}>
+            <div className={classes.two_image}>
+              <Image
+                className={classes.category_images}
+                src="/yachtcarousel5.jpg"
+                width={1920}
+                height={1080}
+              />{" "}
+              <Image
+                className={classes.category_images}
+                src="/yachtcarousel5.jpg"
+                width={1920}
+                height={1080}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={classes.sub_info_div_2}>
+        <div className={classes.sssss2}>
+          <div>
+            <div className={classes.specifications}>
+              <h3>General Specifications</h3>
+              <div className={classes.inner_specifications_2}>
+                <div>
+                  <p>lorem</p>
+                  <p>lorem</p>
+                  <p>lorem</p>
+                </div>
+                <div>
+                  <p>lorem</p>
+                  <p>lorem</p>
+                  <p>lorem</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={classes.gallery}>
+            <div className={classes.two_image}>
+              <Image
+                className={classes.category_images}
+                src="/yachtcarousel5.jpg"
+                width={1920}
+                height={1080}
+              />{" "}
+              <Image
+                className={classes.category_images}
+                src="/yachtcarousel5.jpg"
+                width={1920}
+                height={1080}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={classes.sub_info_div_2}>
+        <div className={classes.sssss2}>
+          <div>
+            <div className={classes.specifications}>
+              <h3>General Specifications</h3>
+              <div className={classes.inner_specifications_2}>
+                <div>
+                  <p>lorem</p>
+                  <p>lorem</p>
+                  <p>lorem</p>
+                </div>
+                <div>
+                  <p>lorem</p>
+                  <p>lorem</p>
+                  <p>lorem</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={classes.gallery}>
+            <div className={classes.two_image}>
+              <Image
+                className={classes.category_images}
+                src="/yachtcarousel5.jpg"
+                width={1920}
+                height={1080}
+              />{" "}
+              <Image
+                className={classes.category_images}
+                src="/yachtcarousel5.jpg"
+                width={1920}
+                height={1080}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={classes.sub_info_div_2}>
+        <div className={classes.sssss2}>
+          <div>
+            <div className={classes.specifications}>
+              <h3>General Specifications</h3>
+              <div className={classes.inner_specifications_2}>
+                <div>
+                  <p>lorem</p>
+                  <p>lorem</p>
+                  <p>lorem</p>
+                </div>
+                <div>
+                  <p>lorem</p>
+                  <p>lorem</p>
+                  <p>lorem</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={classes.gallery}>
+            <div className={classes.two_image}>
+              <Image
+                className={classes.category_images}
+                src="/yachtcarousel5.jpg"
+                width={1920}
+                height={1080}
+              />{" "}
+              <Image
+                className={classes.category_images}
+                src="/yachtcarousel5.jpg"
+                width={1920}
+                height={1080}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={classes.sub_info_div_2}>
+        <div className={classes.sssss2}>
+          <div>
+            <div className={classes.specifications}>
+              <h3>General Specifications</h3>
+              <div className={classes.inner_specifications_2}>
+                <div>
+                  <p>lorem</p>
+                  <p>lorem</p>
+                  <p>lorem</p>
+                </div>
+                <div>
+                  <p>lorem</p>
+                  <p>lorem</p>
+                  <p>lorem</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={classes.gallery}>
+            <div className={classes.two_image}>
+              <Image
+                className={classes.category_images}
+                src="/yachtcarousel5.jpg"
+                width={1920}
+                height={1080}
+              />{" "}
+              <Image
+                className={classes.category_images}
+                src="/yachtcarousel5.jpg"
+                width={1920}
+                height={1080}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
 
-
-
-    )
+      <div className={classes.about}>
+        <div className={classes.about_product}>
+          <h1>About</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit,
+            error distinctio accusamus enim vitae maxime repellendus totam
+            aliquam, recusandae possimus, vero sit dolorem perspiciatis sunt
+            voluptas nesciunt dicta quos quasi quas dolorum! Aliquid facere
+            dolor in sapiente optio excepturi autem, perspiciatis rerum impedit.
+            Asperiores, consequatur perferendis. Quam a id eius. Repellat porro
+            aliquam culpa amet placeat dignissimos, debitis aut, labore dolorum
+            quae aperiam quasi reprehenderit molestias tempora assumenda!
+            Quibusdam maiores tempore fuga sed cum nesciunt sint fugit magni
+            praesentium vel excepturi id odio quasi, accusantium non commodi
+            minus, necessitatibus omnis adipisci dolor ex modi exercitationem.
+            Deserunt voluptas architecto maxime, iure ullam explicabo corporis
+            sapiente temporibus expedita saepe repellendus eaque hic ab, unde
+            tempora officia eligendi vel perspiciatis. Est facilis rem
+            voluptatum blanditiis perferendis? Recusandae minus beatae fugit
+            officiis, provident cum numquam nesciunt nemo incidunt accusantium
+            aliquid laboriosam illo voluptates quis quod hic repellendus quia
+            enim nobis quaerat dolorem. Sed, fugiat dolores magni nobis illum
+            quas eius? Dicta tempore sequi nihil! Corporis ipsa consequuntur
+            pariatur error vel soluta laborum, atque aperiam doloribus, nobis
+            culpa maxime, quas sint nihil magnam. Tenetur impedit et amet,
+            accusantium ullam nulla eos commodi neque hic? Eligendi esse eius
+            explicabo blanditiis illum ab optio, natus doloribus! Deserunt!
+          </p>
+        </div>
+        <div className={classes.about_agent}>
+          <div className={classes.about_agent_backimg}>
+            <Image
+              className={classes.product_images}
+              src="/yachtcarousel5.jpg"
+              width={1920}
+              height={1080}
+            />
+          </div>
+          <div className={classes.about_agent_img}>
+            <Image
+              className={classes.product_images}
+              src="/profilepic.jpg"
+              width={1920}
+              height={1080}
+            />
+          </div>
+          <div className={classes.about_agent_details}>
+            <h4>Listed By : </h4>
+            <h1>Agent Name</h1>
+          </div>
+        </div>
+      </div>
+      <div className={classes.lower_cart}>
+        <div className={classes.price_contact_buynow}>
+          <div className={classes.price}>
+            
+            <div className={classes.money_det}>
+            <h5>Brand Name</h5>
+              <h3>Product Name</h3>
+              <h1>$ 500,000,000</h1>
+            </div>
+            
+          </div>
+          <div className={classes.contact}>
+            <button>VISIT</button>
+            <button>CALL</button>
+            <button>CHAT</button>
+            <button>LIVE View</button>
+            <button>Book A Visit</button>
+          </div>
+          <div className={classes.buynow}>
+            <div className={classes.buy_btn}>
+              <button>BUY NOW</button>
+              <div>
+                <h3>Delivery in 15 day.</h3>
+              </div>
+            </div>
+            <div className={classes.cart_btn}>
+              <button>Cart</button>
+              <button>wishlist</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
