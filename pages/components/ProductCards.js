@@ -9,7 +9,7 @@ const play = Raleway({
 
 export default function ProductCard({products}) {
   return (
-    <div>
+    <div className="products-outer-div">
       <div className="product-card-div">
         {products?.map((data) => (
           <div className="product-wrapper">

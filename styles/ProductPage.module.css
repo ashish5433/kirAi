@@ -1,0 +1,277 @@
+.main_info_div{
+/* background-color: #00purple */
+padding:2rem;
+color: aliceblue;
+width: 100vw;
+overflow: hidden;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+/* font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+}
+
+.name_and_like{
+    /* background: #fff; */
+display: flex;
+justify-content: space-between;
+}
+.name{
+background: plum;
+background: rgba(128, 128, 128, 0.375);
+
+padding: 0.6rem 5rem 0.6rem 1rem;
+/* border-radius: 5px; */
+color: #000;
+}
+.name h1{
+font-size: 2.3rem;
+}
+.name h3{
+font-size: 1.3rem;
+}
+.likenshare{
+display: flex;
+/* background: gray; */
+/* padding: 1rem 2rem; */
+border-radius: 5px;
+color: #000;
+text-align: center;
+}
+
+.like{
+    padding-top: 10px;
+    background: plum;
+background: rgba(128, 128, 128, 0.375);
+
+    border-radius: 50%;
+    width: 70px;
+    margin: 1rem;
+}
+.share{
+    padding-top: 10px;
+    background: plum;
+background: rgba(128, 128, 128, 0.375);
+
+border-radius: 50%;
+width: 70px;
+margin: 1rem;
+}
+
+.product_image_and_agentinfo{
+/* background-color: #be2424; */
+display: flex;
+margin-top: 1rem;
+}
+.product_image{
+width: 75%;
+height: 400px;
+background-color: plum;
+
+overflow: hidden;
+}
+.product_images{
+object-fit: cover;
+
+}
+.agentinfo{
+margin-left: 40px;
+background: rgba(128, 128, 128, 0.375);
+width: 25%;
+overflow: hidden;
+height: 400px;
+}
+.agent_backimg{
+height: 30%;
+overflow: hidden;
+}
+.agent_img{
+    position: relative;
+right: -70%;
+top: -10%;
+/* border-radius: 50%; */
+height: 100px !important;
+width: 100px !important;
+overflow: hidden;
+
+}
+.agent_details{
+position: relative;
+top: -20%;
+display: inline-block;
+overflow: hidden;
+color: #000;
+}
+
+.price_contact_buynow{
+background-color: #000;
+background: rgba(128, 128, 128, 0.375);
+color: #000;
+display: flex;
+justify-content: space-between;
+padding: 3rem 10rem;
+text-align: center;
+margin-top: 1rem;
+}
+
+.links{
+text-decoration: none;
+color: black;
+/* text-decoration: underline; */
+display: inline-block;
+padding: 0 1rem;
+}
+
+.contact button{
+margin: 1rem;
+/* background: #000; */
+}
+
+.buynow{
+display: flex;
+}
+.buy_btn button{
+background-color: plum;
+background: #0044ff;
+color: aliceblue;
+padding: 1rem 3rem;
+font-size: 1.5rem;
+border-radius: 3rem;
+margin: 0 1rem 1rem 1rem;
+}
+.cart_btn button{
+display: block;
+}
+
+
+.sssss{
+display: flex;
+padding: 10px;
+padding:2rem;
+width: 100%;
+justify-content: space-around;
+/* background: #000; */
+
+}
+.gallery{
+display: flex;
+padding: 10px 0 0 10px;
+background: rgba(128, 128, 128, 0.375);
+}
+.big_image{
+/* padding: 10px; */
+}
+.big_imag{
+/* padding: 10px; */
+}
+.ideation{
+background: rgba(128, 128, 128, 0.375);
+padding: 20px;
+}
+.specifications{
+padding-top: 10px;
+width: 100%;
+}
+.inner_specifications{
+background: rgba(128, 128, 128, 0.375);
+display: flex;
+justify-content: space-around;
+padding-top: 10px;
+width: 100%;
+
+}
+.product_images_1{
+width: 400px;
+height: 310px;
+}
+.product_images_2{
+width: 180px;
+height:106px;
+padding: 0 10px 10px 10px;
+}
+.two_image{
+display: flex;
+}
+.category_images{
+width: 250px;
+height: 150px;
+margin: 0 1rem;
+}
+.sub_info_div{
+width: 100vw !important;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+.sub_info_div_2{
+width: 100vw !important;
+padding: 2rem;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+.sssss2{
+/* background: rgba(128, 128, 128, 0.375); */
+display: flex;
+justify-content: space-between;
+padding-right: 1rem;
+}
+
+.inner_specifications_2{
+background: rgba(128, 128, 128, 0.375);
+display: flex;
+justify-content: space-around;
+padding-top: 10px;
+width: 360%;
+}
+.about{
+padding: 2rem;
+display: flex;
+}
+.about>div{
+width: 50%;
+}
+.about_product{
+width: 65% !important;
+}
+.about_product p{
+font-size: 1.25rem;
+}
+
+.about_agent{
+margin-left: 40px;
+background: rgba(128, 128, 128, 0.375);
+width: 25%;
+/* overflow: hidden; */
+height: 800px;
+}
+.about_agent_backimg{
+height: 35%;
+overflow: hidden;
+
+}
+.about_agent_img{
+    position: relative;
+right: -70%;
+top: -15%;
+/* border-radius: 50%; */
+height: 180px !important;
+width: 180px !important;
+overflow: hidden;
+
+}
+.about_agent_details{
+position: relative;
+top: -22%;
+padding-left: 2rem;
+display: inline-block;
+overflow: hidden;
+color: #000;
+}
+.about_agent_details h1{
+text-transform: capitalize;
+font-weight: bold;
+}
+
+.lower_cart{
+padding: 2rem;
+}
+.money_det{
+    font-weight: bold;
+text-align: left;
+}
