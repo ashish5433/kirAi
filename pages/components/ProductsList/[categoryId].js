@@ -115,6 +115,10 @@ export default function ProductsList() {
   let mainCarousel = [...carouselImages];
   const [yacht, changeYacht] = useState(false);
   return (
+    <div className="flex flex-row">
+    <div>
+      <Filter/>
+    </div>
     <div>
 
       {carouselImages === "yachtCarousel" ? (
@@ -178,6 +182,6 @@ export default function ProductsList() {
         <ProductCard products={yachtCarousel} />
       </div>
       <Footer />
-    </div>
+    </div></div>
   );
 }
