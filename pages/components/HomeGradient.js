@@ -2,6 +2,7 @@ import classes from "./../../styles/Home.module.css";
 import { Unica_One, Quicksand, Bebas_Neue, Raleway } from "next/font/google";
 import { useState } from "react";
 import CarouselPage from "./Carousel";
+import Link from "next/link";
 
 const fontUnica = Unica_One({
   weight: ["400"],
@@ -22,213 +23,430 @@ const fontRaleway = Raleway({
 export default function HomeGradient({
   YachtProps,
   EstateProps,
-  HelicopterProps,
+  AircraftProps,
   HomeProps,
-  JetProps,
   BikeProps,
   CarProps,
+  AmphibiousProps,
+  SubmarineProps,
+  ATVProps,
+  RVProps,
   YachtPropsFunction,
   EstatePropsFunction,
-  HelicopterPropsFunction,
+  AircraftsPropsFunction,
   HomePropsFunction,
-  JetPropsFunction,
   BikePropsFunction,
   CarPropsFunction,
+  AmphibiousPropsFunction,
+  SubmarinePropsFunction,
+  ATVPropsFunction,
+  RVPropsFunction,
 }) {
   const [yacht, changeYacht] = useState(false);
   const [estate, changeEstate] = useState(false);
-  const [helicopter, changeHelicopter] = useState(false);
+  const [aircrafts, changeAircrafts] = useState(false);
   const [home, changeHome] = useState(true);
-  const [jet, changeJet] = useState(false);
   const [bike, changeBike] = useState(false);
   const [car, changeCar] = useState(false);
+  const [amphibious, changeAmphibious] = useState(false);
+  const [submarine, changeSubmarines] = useState(false);
+  const [atv, changeATVs] = useState(false);
+  const [rv, changeRVs] = useState(false);
 
   const yachtChangeHandler = () => {
     if (YachtProps) {
       changeYacht(false);
       changeEstate(false);
-      changeHelicopter(false);
+      changeAircrafts(false);
       changeHome(false);
-      changeJet(false);
       changeBike(false);
       changeCar(false);
+      changeAmphibious(false);
+      changeSubmarines(false);
+      changeATVs(false);
+      changeRVs(false);
       YachtPropsFunction(false);
     } else {
       changeYacht(true);
       changeEstate(false);
-      changeHelicopter(false);
+      changeAircrafts(false);
       changeHome(false);
-      changeJet(false);
       changeBike(false);
       changeCar(false);
+      changeAmphibious(false);
+      changeSubmarines(false);
+      changeATVs(false);
+      changeRVs(false);
       YachtPropsFunction(true);
       EstatePropsFunction(false);
-      HelicopterPropsFunction(false);
+      AircraftsPropsFunction(false);
       HomePropsFunction(false);
-      JetPropsFunction(false);
       BikePropsFunction(false);
       CarPropsFunction(false);
+      AmphibiousPropsFunction(false);
+      SubmarinePropsFunction(false);
+      ATVPropsFunction(false);
+      RVPropsFunction(false);
     }
   };
   const estateChangeHandler = () => {
     if (EstateProps) {
       changeYacht(false);
       changeEstate(false);
-      changeHelicopter(false);
+      changeAircrafts(false);
       changeHome(false);
-      changeJet(false);
       changeBike(false);
       changeCar(false);
+      changeAmphibious(false);
+      changeSubmarines(false);
+      changeATVs(false);
+      changeRVs(false);
       EstatePropsFunction(false);
     } else {
       changeYacht(false);
       changeEstate(true);
-      changeHelicopter(false);
+      changeAircrafts(false);
       changeHome(false);
-      changeJet(false);
       changeBike(false);
       changeCar(false);
+      changeAmphibious(false);
+      changeSubmarines(false);
+      changeATVs(false);
+      changeRVs(false);
       EstatePropsFunction(true);
       YachtPropsFunction(false);
-      HelicopterPropsFunction(false);
+      AircraftsPropsFunction(false);
       HomePropsFunction(false);
-      JetPropsFunction(false);
       BikePropsFunction(false);
       CarPropsFunction(false);
+      AmphibiousPropsFunction(false);
+      SubmarinePropsFunction(false);
+      ATVPropsFunction(false);
+      RVPropsFunction(false);
     }
   };
-  const helicopterChangeHandler = () => {
-    if (HelicopterProps) {
+  const aircraftChangeHandler = () => {
+    if (AircraftProps) {
       changeYacht(false);
       changeEstate(false);
-      changeHelicopter(false);
+      changeAircrafts(false);
       changeHome(false);
-      changeJet(false);
       changeBike(false);
       changeCar(false);
-      HelicopterPropsFunction(false);
+      changeAmphibious(false);
+      changeSubmarines(false);
+      changeATVs(false);
+      changeRVs(false);
+      AircraftsPropsFunction(false);
     } else {
       changeYacht(false);
       changeEstate(false);
-      changeHelicopter(true);
+      changeAircrafts(true);
       changeHome(false);
-      changeJet(false);
       changeBike(false);
       changeCar(false);
-      HelicopterPropsFunction(true);
+      changeAmphibious(false);
+      changeSubmarines(false);
+      changeATVs(false);
+      changeRVs(false);
+      AircraftsPropsFunction(true);
       YachtPropsFunction(false);
       EstatePropsFunction(false);
       HomePropsFunction(false);
-      JetPropsFunction(false);
       BikePropsFunction(false);
       CarPropsFunction(false);
+      AmphibiousPropsFunction(false);
+      SubmarinePropsFunction(false);
+      ATVPropsFunction(false);
+      RVPropsFunction(false);
     }
   };
-  const homeChangeHandler = () => {
-    if (HomeProps) {
-      changeYacht(false);
-      changeEstate(false);
-      changeHelicopter(false);
-      changeHome(false);
-      changeJet(false);
-      changeBike(false);
-      changeCar(false);
-      HomePropsFunction(false);
-    } else {
-        changeYacht(false);
-        changeEstate(false);
-        changeHelicopter(false);
-        changeHome(true);
-        changeJet(false);
-        changeBike(false);
-        changeCar(false);
-        HomePropsFunction(true);
-    }
-  };
-  const jetChangeHandler = () => {
-    if (JetProps) {
-      changeYacht(false);
-      changeEstate(false);
-      changeHelicopter(false);
-      changeHome(false);
-      changeJet(false);
-      changeBike(false);
-      changeCar(false);
-      JetPropsFunction(false);
-    } else {
-      changeYacht(false);
-      changeEstate(false);
-      changeHelicopter(false);
-      changeHome(false);
-      changeJet(true);
-      changeBike(false);
-      changeCar(false);
-      JetPropsFunction(true);
-      YachtPropsFunction(false);
-      EstatePropsFunction(false);
-      HelicopterPropsFunction(false);
-      HomePropsFunction(false);
-      BikePropsFunction(false);
-      CarPropsFunction(false);
-    }
-  };
+  // const homeChangeHandler = () => {
+  //   if (HomeProps) {
+  //     changeYacht(false);
+  //     changeEstate(false);
+  //     changeAircrafts(false);
+  //     changeHome(false);
+  //     changeBike(false);
+  //     changeCar(false);
+  //     changeAmphibious(false);
+  //     changeSubmarines(false);
+  //     changeATVs(false);
+  //     changeRVs(false);
+  //     HomePropsFunction(false);
+  //   } else {
+  //     changeYacht(false);
+  //     changeEstate(false);
+  //     changeAircrafts(false);
+  //     changeHome(true);
+  //     changeBike(false);
+  //     changeCar(false);
+  //     changeAmphibious(false);
+  //     changeSubmarines(false);
+  //     changeATVs(false);
+  //     changeRVs(false);
+  //     HomePropsFunction(true);
+  //     YachtPropsFunction(false);
+  //     EstatePropsFunction(false);
+  //     AircraftsPropsFunction(false);
+  //     BikePropsFunction(false);
+  //     CarPropsFunction(false);
+  //     AmphibiousPropsFunction(false);
+  //     SubmarinePropsFunction(false);
+  //     ATVPropsFunction(false);
+  //     RVPropsFunction(false);
+  //   }
+  // };
   const bikeChangeHandler = () => {
     if (BikeProps) {
       changeYacht(false);
       changeEstate(false);
-      changeHelicopter(false);
+      changeAircrafts(false);
       changeHome(false);
-      changeJet(false);
       changeBike(false);
       changeCar(false);
+      changeAmphibious(false);
+      changeSubmarines(false);
+      changeATVs(false);
+      changeRVs(false);
       BikePropsFunction(false);
     } else {
       changeYacht(false);
       changeEstate(false);
-      changeHelicopter(false);
+      changeAircrafts(false);
       changeHome(false);
-      changeJet(false);
       changeBike(true);
       changeCar(false);
+      changeAmphibious(false);
+      changeSubmarines(false);
+      changeATVs(false);
+      changeRVs(false);
       BikePropsFunction(true);
       YachtPropsFunction(false);
       EstatePropsFunction(false);
-      HelicopterPropsFunction(false);
+      AircraftsPropsFunction(false);
       HomePropsFunction(false);
-      JetPropsFunction(false);
       CarPropsFunction(false);
+      AmphibiousPropsFunction(false);
+      SubmarinePropsFunction(false);
+      ATVPropsFunction(false);
+      RVPropsFunction(false);
     }
   };
   const carChangeHandler = () => {
     if (CarProps) {
       changeYacht(false);
       changeEstate(false);
-      changeHelicopter(false);
+      changeAircrafts(false);
       changeHome(false);
-      changeJet(false);
       changeBike(false);
       changeCar(false);
+      changeAmphibious(false);
+      changeSubmarines(false);
+      changeATVs(false);
+      changeRVs(false);
       CarPropsFunction(false);
     } else {
       changeYacht(false);
       changeEstate(false);
-      changeHelicopter(false);
+      changeAircrafts(false);
       changeHome(false);
-      changeJet(false);
       changeBike(false);
       changeCar(true);
+      changeAmphibious(false);
+      changeSubmarines(false);
+      changeATVs(false);
+      changeRVs(false);
       CarPropsFunction(true);
       YachtPropsFunction(false);
       EstatePropsFunction(false);
-      HelicopterPropsFunction(false);
+      AircraftsPropsFunction(false);
       HomePropsFunction(false);
-      JetPropsFunction(false);
       BikePropsFunction(false);
+      AmphibiousPropsFunction(false);
+      SubmarinePropsFunction(false);
+      ATVPropsFunction(false);
+      RVPropsFunction(false);
     }
   };
+  const amphibiousChangeHandler = () => {
+    if (AmphibiousProps) {
+      changeYacht(false);
+      changeEstate(false);
+      changeAircrafts(false);
+      changeHome(false);
+      changeBike(false);
+      changeCar(false);
+      changeAmphibious(false);
+      changeSubmarines(false);
+      changeATVs(false);
+      changeRVs(false);
+      AmphibiousPropsFunction(false);
+    } else {
+      changeYacht(false);
+      changeEstate(false);
+      changeAircrafts(false);
+      changeHome(false);
+      changeBike(false);
+      changeCar(false);
+      changeAmphibious(true);
+      changeSubmarines(false);
+      changeATVs(false);
+      changeRVs(false);
+      AmphibiousPropsFunction(true);
+      YachtPropsFunction(false);
+      EstatePropsFunction(false);
+      AircraftsPropsFunction(false);
+      HomePropsFunction(false);
+      BikePropsFunction(false);
+      CarPropsFunction(false);
+      SubmarinePropsFunction(false);
+      ATVPropsFunction(false);
+      RVPropsFunction(false);
+    }
+  };
+  const submarineChangeHandler = () => {
+    if (SubmarineProps) {
+      changeYacht(false);
+      changeEstate(false);
+      changeAircrafts(false);
+      changeHome(false);
+      changeBike(false);
+      changeCar(false);
+      changeAmphibious(false);
+      changeSubmarines(false);
+      changeATVs(false);
+      changeRVs(false);
+      SubmarinePropsFunction(false);
+    } else {
+      changeYacht(false);
+      changeEstate(false);
+      changeAircrafts(false);
+      changeHome(false);
+      changeBike(false);
+      changeCar(false);
+      changeAmphibious(false);
+      changeSubmarines(true);
+      changeATVs(false);
+      changeRVs(false);
+      CarPropsFunction(false);
+      YachtPropsFunction(false);
+      EstatePropsFunction(false);
+      AircraftsPropsFunction(false);
+      HomePropsFunction(false);
+      BikePropsFunction(false);
+      AmphibiousPropsFunction(false);
+      SubmarinePropsFunction(true);
+      ATVPropsFunction(false);
+      RVPropsFunction(false);
+    }
+  };
+  const atvChangeHandler = () => {
+    if (ATVProps) {
+      changeYacht(false);
+      changeEstate(false);
+      changeAircrafts(false);
+      changeHome(false);
+      changeBike(false);
+      changeCar(false);
+      changeAmphibious(false);
+      changeSubmarines(false);
+      changeATVs(false);
+      changeRVs(false);
+      ATVPropsFunction(false);
+    } else {
+      changeYacht(false);
+      changeEstate(false);
+      changeAircrafts(false);
+      changeHome(false);
+      changeBike(false);
+      changeCar(false);
+      changeAmphibious(false);
+      changeSubmarines(false);
+      changeATVs(true);
+      changeRVs(false);
+      CarPropsFunction(false);
+      YachtPropsFunction(false);
+      EstatePropsFunction(false);
+      AircraftsPropsFunction(false);
+      HomePropsFunction(false);
+      BikePropsFunction(false);
+      AmphibiousPropsFunction(false);
+      SubmarinePropsFunction(false);
+      ATVPropsFunction(true);
+      RVPropsFunction(false);
+    }
+  };
+  const rvChangeHandler = () => {
+    if (RVProps) {
+      changeYacht(false);
+      changeEstate(false);
+      changeAircrafts(false);
+      changeHome(false);
+      changeBike(false);
+      changeCar(false);
+      changeAmphibious(false);
+      changeSubmarines(false);
+      changeATVs(false);
+      changeRVs(false);
+      RVPropsFunction(false);
+    } else {
+      changeYacht(false);
+      changeEstate(false);
+      changeAircrafts(false);
+      changeHome(false);
+      changeBike(false);
+      changeCar(false);
+      changeAmphibious(false);
+      changeSubmarines(false);
+      changeATVs(false);
+      changeRVs(true);
+      CarPropsFunction(false);
+      YachtPropsFunction(false);
+      EstatePropsFunction(false);
+      AircraftsPropsFunction(false);
+      HomePropsFunction(false);
+      BikePropsFunction(false);
+      AmphibiousPropsFunction(false);
+      SubmarinePropsFunction(false);
+      ATVPropsFunction(false);
+      RVPropsFunction(true);
+    }
+  };
+
+  const homeCarouselImages = [
+    {
+      name: "Home Carousel Image 1",
+      image: "/real_estate.jpg",
+    },
+    {
+      name: "Home Carousel Image 2",
+      image: "/in_estate.jpg",
+    },
+    {
+      name: "Home Carousel Image 3",
+      image: "/in_estate_3.jpg",
+    },
+    {
+      name: "Home Carousel Image 4",
+      image: "/yacht.jpg",
+    },
+    {
+      name: "Home Carousel Image 5",
+      image: "/real_estate_2.jpg",
+    },
+    {
+      name: "Home Carousel Image 6",
+      image: "/cars_3.jpg",
+    },
+    {
+      name: "Home Carousel Image 7",
+      image: "/in_estate_2.jpg",
+    },
+  ];
   return (
     <>
-      <CarouselPage/>
+      <CarouselPage CarouselImages={homeCarouselImages} />
       <div className={classes.overlay_main_title}>
         <h1 className={fontBebas.className}>SHAUKEENS.</h1>
         <div className={classes.carousel_search}>
@@ -269,15 +487,15 @@ export default function HomeGradient({
           </div>
           <div
             className={
-              helicopter
+              aircrafts
                 ? `${classes.carousel_icons} ${classes.selected}`
                 : `${classes.carousel_icons}`
             }
-            onClick={helicopterChangeHandler}
+            onClick={aircraftChangeHandler}
           >
             <span className="material-symbols-outlined">helicopter</span>
           </div>
-          <div
+          {/*  <div
             className={
               home
                 ? `${classes.carousel_icons} ${classes.selected}`
@@ -286,17 +504,7 @@ export default function HomeGradient({
             onClick={homeChangeHandler}
           >
             <span className="material-symbols-outlined">Home</span>
-          </div>
-          <div
-            className={
-              jet
-                ? `${classes.carousel_icons} ${classes.selected}`
-                : `${classes.carousel_icons}`
-            }
-            onClick={jetChangeHandler}
-          >
-            <span className="material-symbols-outlined">flight_takeoff</span>
-          </div>
+          </div>*/}
           <div
             className={
               bike
@@ -317,6 +525,50 @@ export default function HomeGradient({
           >
             <span className="material-symbols-outlined">directions_car</span>
           </div>
+          <Link
+            href="/components/ProductsList/amphibious"
+            className={
+              amphibious
+                ? `${classes.carousel_icons} ${classes.selected}`
+                : `${classes.carousel_icons}`
+            }
+            // onClick={amphibiousChangeHandler}
+          >
+            <span className="material-symbols-outlined">local_car_wash</span>
+          </Link>
+          <Link
+            href="/components/ProductsList/submarines"
+            className={
+              submarine
+                ? `${classes.carousel_icons} ${classes.selected}`
+                : `${classes.carousel_icons}`
+            }
+            // onClick={submarineChangeHandler}
+          >
+            <span className="material-symbols-outlined">directions_boat</span>
+          </Link>
+          <Link
+            href="/components/ProductsList/atv"
+            className={
+              atv
+                ? `${classes.carousel_icons} ${classes.selected}`
+                : `${classes.carousel_icons}`
+            }
+            // onClick={atvChangeHandler}
+          >
+            <span className="material-symbols-outlined">snowmobile</span>
+          </Link>
+          <Link
+            href="/components/ProductsList/rv"
+            className={
+              rv
+                ? `${classes.carousel_icons} ${classes.selected}`
+                : `${classes.carousel_icons}`
+            }
+            // onClick={rvChangeHandler}
+          >
+            <span className="material-symbols-outlined">airport_shuttle</span>
+          </Link>
         </div>
       </div>
     </>

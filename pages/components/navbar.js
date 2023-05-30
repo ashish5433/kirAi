@@ -95,7 +95,7 @@ function Navbar1() {
               <div className="left-nav">
                 <Button
                   variant="primary"
-                  // onClick={changeWidth}
+                  onClick={handleShow}
                   className="me-2 nav-btn"
 
                 >
@@ -126,7 +126,7 @@ function Navbar1() {
                   <span id="signin">Login</span>
                 </Button>
               </div>
-              {/* <Offcanvas show={show} onHide={handleClose}>
+              <Offcanvas show={show} onHide={handleClose}>
                 <Offcanvas.Header>
                   <Offcanvas.Title className={play.className}>
                     Shaukeens
@@ -195,7 +195,7 @@ function Navbar1() {
                   </div>
                   <hr />
                 </Offcanvas.Body>
-              </Offcanvas> */}
+              </Offcanvas>
             </Container>
           </Navbar>
           <div className={nav2 ? 'hidden' : 'absolute w-full'}>

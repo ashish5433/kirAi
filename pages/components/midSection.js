@@ -1,30 +1,35 @@
 import BikePage from "./BikePage";
 import CarPage from "./CarPage";
 import EstatePage from "./EstatePage";
-import HelicopterPage from "./HelicopterPage";
+import AirCraftPage from "./AirCraftPage";
 import HomePage from "./HomePage";
 import JetPage from "./JetPage";
 import MidSectionGallery from "./MidSectionGallery";
 import YachtPage from "./YachtPage";
 import FeaturedCategories from "./featuredCategoreis";
 import NewAndTrending from "./newAndTrending";
+import AmphibiousPage from "./AmphibiousPage";
+import SubmarinePage from "./SubmarinePage";
+import ATVPage from "./ATVPage";
+import RVPage from "./RVPage";
 
 export default function midSection({
   YachtProps,
   EstateProps,
-  HelicopterProps,
+  AircraftProps,
   HomeProps,
-  JetProps,
   BikeProps,
   CarProps,
+  AmphibiousProps,
+  SubmarineProps,
+  ATVProps,
+  RVProps,
 }) {
   return (
     <div>
       {YachtProps && <YachtPage />}
       {EstateProps && <EstatePage />}
-      {HelicopterProps && <HelicopterPage />}
-      {HomeProps && <HomePage />}
-      {JetProps && <JetPage />}
+      {AircraftProps && <AirCraftPage />}
       {BikeProps && <BikePage />}
       {CarProps && <CarPage />}
       <FeaturedCategories />

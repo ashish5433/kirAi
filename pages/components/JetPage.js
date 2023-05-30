@@ -1,5 +1,5 @@
 import { Unica_One, Quicksand, Bebas_Neue } from "next/font/google";
-import ProductCard from "./ProductCards";
+import CategoryCard from "./CategoryCards";
 
 const play = Bebas_Neue({
   weight: ["400"],
@@ -10,59 +10,16 @@ const play = Bebas_Neue({
 export default function JetPage() {
   const jet = [
     {
-      name: "yacht1",
-      price: 1289298,
-      image: "/real_estate.jpg",
+      name: "jet image 1",
+      image: "/jet1.png",
     },
     {
-      name: "yacht1",
-      price: 1289298,
-      image: "/in_estate.jpg",
+      name: "jet image 2",
+      image: "/jet2.png",
     },
     {
-      name: "yacht1",
-      price: 1289298,
-      image: "/card_1.jpg",
-    },
-    {
-      name: "yacht1",
-      price: 1289298,
-      image: "/card_2.jpg",
-    },
-    {
-      name: "yacht1",
-      price: 1289298,
-      image: "/card_3.jpg",
-    },
-    {
-      name: "yacht1",
-      price: 1289298,
-      image: "/card_4.jpg",
-    },
-    {
-      name: "yacht1",
-      price: 1289298,
-      image: "/small-image-1.jpg",
-    },
-    {
-      name: "yacht1",
-      price: 1289298,
-      image: "/real_estate.jpg",
-    },
-    {
-      name: "yacht1",
-      price: 1289298,
-      image: "/in_estate.jpg",
-    },
-    {
-      name: "yacht1",
-      price: 1289298,
-      image: "/card_1.jpg",
-    },
-    {
-      name: "yacht1",
-      price: 1289298,
-      image: "/card_2.jpg",
+      name: "jet image 3",
+      image: "/jet3.png",
     },
   ];
 
@@ -71,7 +28,7 @@ export default function JetPage() {
       <h1 className={play.className}>Jets</h1>
       <hr className="hr_rule" />
       <div>
-        <ProductCard products={jet} />
+        <CategoryCard products={jet} />
       </div>
     </div>
   );

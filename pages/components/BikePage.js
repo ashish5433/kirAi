@@ -1,5 +1,5 @@
 import { Unica_One, Quicksand, Bebas_Neue } from "next/font/google";
-import ProductCard from "./ProductCards";
+import CategoryCard from "./CategoryCards";
 
 const play = Bebas_Neue({
   weight: ["400"],
@@ -10,59 +10,36 @@ const play = Bebas_Neue({
 export default function BikePage() {
   const bikes = [
     {
-      name: "yacht1",
-      price: 1289298,
-      image: "/real_estate.jpg",
+      name: "superbike",
+      image: "/bike3.png",
     },
     {
-      name: "yacht1",
-      price: 1289298,
-      image: "/in_estate.jpg",
+      name: "naked",
+      image: "/bike2.png",
     },
     {
-      name: "yacht1",
-      price: 1289298,
-      image: "/card_1.jpg",
+      name: "electric",
+      image: "/bike1.png",
     },
     {
-      name: "yacht1",
-      price: 1289298,
-      image: "/card_2.jpg",
+      name: "cruiser",
+      image: "/bike3.png",
     },
     {
-      name: "yacht1",
-      price: 1289298,
-      image: "/card_3.jpg",
+      name: "touring & adventure",
+      image: "/bike2.png",
     },
     {
-      name: "yacht1",
-      price: 1289298,
-      image: "/card_4.jpg",
+      name: "dual sport",
+      image: "/bike1.png",
     },
     {
-      name: "yacht1",
-      price: 1289298,
-      image: "/small-image-1.jpg",
+      name: "cafe racer",
+      image: "/bike3.png",
     },
     {
-      name: "yacht1",
-      price: 1289298,
-      image: "/real_estate.jpg",
-    },
-    {
-      name: "yacht1",
-      price: 1289298,
-      image: "/in_estate.jpg",
-    },
-    {
-      name: "yacht1",
-      price: 1289298,
-      image: "/card_1.jpg",
-    },
-    {
-      name: "yacht1",
-      price: 1289298,
-      image: "/card_2.jpg",
+      name: "retro & classic",
+      image: "/bike2.png",
     },
   ];
 
@@ -71,7 +48,7 @@ export default function BikePage() {
       <h1 className={play.className}>Bikes</h1>
       <hr className="hr_rule" />
       <div>
-        <ProductCard products={bikes} />
+        <CategoryCard products={bikes} />
       </div>
     </div>
   );

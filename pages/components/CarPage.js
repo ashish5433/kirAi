@@ -1,5 +1,5 @@
 import { Unica_One, Quicksand, Bebas_Neue } from "next/font/google";
-import ProductCard from "./ProductCards";
+import CategoryCard from "./CategoryCards";
 
 const play = Bebas_Neue({
   weight: ["400"],
@@ -10,59 +10,36 @@ const play = Bebas_Neue({
 export default function CarPage() {
   const cars = [
     {
-      name: "yacht1",
-      price: 1289298,
-      image: "/real_estate.jpg",
+      name: "coupe",
+      image: "/car1.png",
     },
     {
-      name: "yacht1",
-      price: 1289298,
-      image: "/in_estate.jpg",
+      name: "hyper cars",
+      image: "/car3.png",
     },
     {
-      name: "yacht1",
-      price: 1289298,
-      image: "/card_1.jpg",
+      name: "super cars",
+      image: "/car2.png",
     },
     {
-      name: "yacht1",
-      price: 1289298,
-      image: "/card_2.jpg",
+      name: "vintage cars",
+      image: "/car4.png",
     },
     {
-      name: "yacht1",
-      price: 1289298,
-      image: "/card_3.jpg",
+      name: "sedan",
+      image: "/car1.png",
     },
     {
-      name: "yacht1",
-      price: 1289298,
-      image: "/card_4.jpg",
+      name: "suv",
+      image: "/car3.png",
     },
     {
-      name: "yacht1",
-      price: 1289298,
-      image: "/small-image-1.jpg",
+      name: "hatchback",
+      image: "/car2.png",
     },
     {
-      name: "yacht1",
-      price: 1289298,
-      image: "/real_estate.jpg",
-    },
-    {
-      name: "yacht1",
-      price: 1289298,
-      image: "/in_estate.jpg",
-    },
-    {
-      name: "yacht1",
-      price: 1289298,
-      image: "/card_1.jpg",
-    },
-    {
-      name: "yacht1",
-      price: 1289298,
-      image: "/card_2.jpg",
+      name: "convertible",
+      image: "/car4.png",
     },
   ];
 
@@ -71,7 +48,7 @@ export default function CarPage() {
       <h1 className={play.className}>Cars</h1>
       <hr className="hr_rule" />
       <div>
-        <ProductCard products={cars} />
+        <CategoryCard products={cars} />
       </div>
     </div>
   );
