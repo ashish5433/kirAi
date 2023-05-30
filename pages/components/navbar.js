@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { useEffect, useState } from "react";
+import { useRouter } from 'next/router';
 import { Unica_One, Quicksand, Bebas_Neue } from "next/font/google";
 import Nav_li_items from "./nav_li_items";
 import Sidenav from "./sidenav";
@@ -85,6 +86,14 @@ function Navbar1() {
 
   // const [showsidenav, setShowsidenav] = useState("65px")
   // const changeWidth = () => showsidenav === "65px" ? setShowsidenav("220px") : setShowsidenav("65px");
+
+  // Router for SignIn And SignUp Page.........
+
+  const router = useRouter();
+
+  const signInClick = ()=>{
+    router.push('/components/signIn')
+  }
   return (
     <>
       {["lg"].map((expand) => (
@@ -146,7 +155,7 @@ function Navbar1() {
                       <span class="material-symbols-outlined">
                         account_circle
                       </span>
-                      <Button>Sign in / Register</Button>
+                      <Button onClick={signInClick}>Sign in / Register</Button>
                     </div>
                     <div>
                       <span class="material-symbols-outlined">recommend</span>
