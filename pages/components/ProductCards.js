@@ -3,13 +3,13 @@ import ProductCardContent from "./ProductCardContent";
 
 
 
-export default function ProductCard({ products }) {
+export default function ProductCard({ products , view}) {
 
   return (
-    <div className="products-outer-div">
-      <div className="product-card-div">
+    <div >
+      <div className={view ? "product-card-div-row" : "product-card-div-col"}>
         {products?.map((data) => (
-          <ProductCardContent data={data}/>
+          <ProductCardContent data={data} view={view}/>
         ))}
       </div>
       

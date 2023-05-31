@@ -14,7 +14,7 @@ const play = Bebas_Neue({
   subsets: ["latin"],
 });
 
-function Navbar1() {
+function Navbar2() {
   const [show, setShow] = useState(false);
 
   const [color, setColor] = useState(false);
@@ -222,7 +222,7 @@ function Navbar1() {
           <Navbar
             key={expand}
             expand={expand}
-            className={color ? "mb-3 navbar nav-bg" : "mb-3 navbar nav"}
+            className={color ? "navbar nav-bg" : "navbar nav-bg"}
           >
             <script></script>
             <Container fluid>
@@ -364,93 +364,10 @@ function Navbar1() {
               </Offcanvas>
             </Container>
           </Navbar>
-          <div className={nav2 ? "hidden" : "absolute w-full"}>
-            <div className={color ? "second_nav" : "second_nav2"}>
-              <ul className="flex bg-transparent -mt-4 space-x-4 p-2 border-t-1 text-white responsive_nav2">
-                <li
-                  onMouseEnter={() => {
-                    document.getElementsByClassName(
-                      "li_1_div"
-                    )[0].style.visibility = "visible";
-                    set_li_content(li1_items);
-                    setdefaultItem("Yachts");
-                  }}
-                  className="left_li1 pointer px-2 py-1 rounded-md bg-semi-white"
-                >
-                  Yachts
-                </li>
-                <li
-                  onMouseEnter={() => {
-                    document.getElementsByClassName(
-                      "li_1_div"
-                    )[0].style.visibility = "visible";
-                    set_li_content(li2_items);
-                    setdefaultItem("Real Estates");
-                  }}
-                  className="pointer px-2 py-1 rounded-md bg-semi-white"
-                >
-                  Real Estates
-                </li>
-                <li
-                  onMouseEnter={() => {
-                    document.getElementsByClassName(
-                      "li_1_div"
-                    )[0].style.visibility = "visible";
-                    set_li_content(li_default);
-                    setdefaultItem("Helicopter");
-                  }}
-                  className="pointer px-2 py-1 rounded-md bg-semi-white"
-                >
-                  Helicopter
-                </li>
-                <li
-                  onMouseEnter={() => {
-                    document.getElementsByClassName(
-                      "li_1_div"
-                    )[0].style.visibility = "visible";
-                    set_li_content(li4_items);
-                    setdefaultItem("Jets");
-                  }}
-                  className="pointer px-2 py-1 rounded-md bg-semi-white"
-                >
-                  Jets
-                </li>
-                <li
-                  onMouseEnter={() => {
-                    document.getElementsByClassName(
-                      "li_1_div"
-                    )[0].style.visibility = "visible";
-                    set_li_content(li_default);
-                    setdefaultItem("Bikes");
-                  }}
-                  className="pointer px-2 py-1 rounded-md bg-semi-white"
-                >
-                  Bikes
-                </li>
-                <li
-                  onMouseEnter={() => {
-                    document.getElementsByClassName(
-                      "li_1_div"
-                    )[0].style.visibility = "visible";
-                    set_li_content(li6_items);
-                    setdefaultItem("Cars");
-                  }}
-                  className="pointer px-2 py-1 rounded-md bg-semi-white"
-                >
-                  Cars
-                </li>
-              </ul>
-            </div>
-
-            <Nav_li_items props={li_content} item={default_item} />
           </div>
-          <div style={{ marginTop: "-222px" }}>
-            <Sidenav />
-          </div>
-        </div>
       ))}
     </>
   );
 }
 
-export default Navbar1;
+export default Navbar2;
