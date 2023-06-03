@@ -26,6 +26,7 @@ import Topfilter from "../Filter/topfilter";
 import Sidenav from "../sidenav";
 import Navbar1 from "../navbar";
 import Navbar2 from "../navbar2";
+import Relatedtags from "./relatedtags";
 const fontBebas = Bebas_Neue({
   weight: ["400"],
   style: ["normal"],
@@ -42,6 +43,9 @@ export default function ProductsList() {
   const [showFilter, setShowFilter] = useState(false);
   const [gridOrList,setGridOrList] = useState(false)
 
+
+// sample tags 
+const tags=["yacht","yachtlife","yachting","boat","sailing","yachts","luxury","boatlife","sea","boating","superyacht","boat","travel","luxuryyacht","yachtdesign","luxurylifestyle","yachtcharter","yachtlifestyle","summer","sail","megayach","ocean","sailboat","yachtworld","lifestyle","ailinglife","yachtclub","motoryacht","superyachts","sunset"]
 
   const router = useRouter();
   const categoryDetail = router.query.categoryId;
@@ -121,12 +125,13 @@ export default function ProductsList() {
   const [yacht, changeYacht] = useState(false);
   return (
     <div>
-    <Navbar2/>
+    <Navbar2/>  {/*........................... navbar */}
     <div className="flex flex-row ">
       <div>
         {showFilter ? <Filter /> : ""}
       </div>
       <div>
+      <Relatedtags tags={tags}/>
       <div>
         {carouselImages === "yachtCarousel" ? (
           <CarouselPage CarouselImages={yachtCarousel} />
@@ -188,13 +193,14 @@ export default function ProductsList() {
           </div>
       </div>
       <Topfilter show={showFilter} showFunc={setShowFilter} gridOrList={gridOrList} setGridOrList={setGridOrList} />
-      <div>
+      <div className="mx-10">
           <ProductCard products={yachtCarousel} view={gridOrList} />
         </div>
-      <Footer />
       </div>
 
       </div>
+      <Footer />
+
     </div>
   );
 }

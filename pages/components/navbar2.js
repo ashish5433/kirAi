@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import { useRouter } from 'next/router';
 import { Unica_One, Quicksand, Bebas_Neue } from "next/font/google";
 import Nav_li_items from "./nav_li_items";
-import Sidenav from "./sidenav";
 
 const play = Bebas_Neue({
   weight: ["400"],
@@ -20,173 +19,6 @@ function Navbar2() {
   const [color, setColor] = useState(false);
 
   const li_default = [[[]]];
-
-  const [default_item, setdefaultItem] = useState("");
-
-  const li1_items = [
-    [
-      ["Popular Builders"],
-      [
-        "Sunseeker",
-        "Azimut",
-        "Riva",
-        "Benetti",
-        "Custom",
-        "Cranchi",
-        "Beneteau",
-        "Ferretti",
-      ],
-      [
-        "Sea Ray",
-        "Sunreef",
-        "Chris Craft",
-        "Heesen",
-        "Pershing",
-        "Hatteras",
-        "Princess",
-        "Viking",
-      ],
-    ],
-  ];
-  const li2_items = [
-    [
-      ["Top Countries"],
-      [
-        "United States",
-        "Spain",
-        "Italy",
-        "France",
-        "Portugal",
-        "Canada",
-        "United Kingdom",
-        "Greece",
-      ],
-      [
-        "Switzerland",
-        "United Arab Emirates",
-        "Mexico",
-        "South Africa",
-        "Australia",
-        "Germany",
-        "Netherlands",
-        "Japan",
-      ],
-    ],
-
-    [
-      ["Top Cities"],
-      [
-        "Los Angeles",
-        "Marbella",
-        "London",
-        "New York",
-        "Paris",
-        "Miami",
-        "Ibiza",
-        "Beverly Hills",
-      ],
-      [
-        "Cannes",
-        "Mallorca",
-        "Madrid",
-        "Lisbon",
-        "Rome",
-        "Milan",
-        "Nice",
-        "Toronto",
-      ],
-    ],
-
-    [
-      ["Top Regions"],
-      [
-        "French Riviera",
-        "Costa del Sol",
-        "French and Swiss Alps",
-        "Costa Blanca",
-        "California, USA",
-        "Hamptons, NY, USA",
-        "Florida, USA",
-        "Tuscany",
-      ],
-      [
-        "Algarve",
-        "Greek Islands",
-        "Balearic Islands",
-        "Caribbean",
-        "Dubai",
-        "Amalfi Coast",
-        "Lombardy",
-        "Costa Brava",
-      ],
-    ],
-  ];
-  const li6_items = [
-    [
-      ["Popular Makes"],
-      [
-        "Bugatti",
-        "Pagani",
-        "Koenigsegg",
-        "Ferrari",
-        "Lamborghini",
-        "Mercedes",
-        "Rolls-Royce",
-        "McLaren",
-      ],
-      [
-        "Brabus",
-        "Porsche",
-        "Aston Martin",
-        "Bentley",
-        "Maybach",
-        "BMW",
-        "Ford",
-        "Audi",
-      ],
-    ],
-    [
-      ["Popular Models"],
-      [
-        "Ferrari LaFerrari",
-        "Bugatti Chiron",
-        "Ferrari F40",
-        "Lamborghini Aventador",
-        "McLaren P1",
-        "Porsche 918",
-        "Ford GT",
-        "Mercedes SLR McLaren",
-      ],
-      [
-        "Pagani Huayra",
-        "Porsche Carrera GT",
-        "Lamborghini Urus",
-        "Lamborghini Murcielago",
-        "Ferrari Enzo",
-        "Lexus LFA",
-        "Brabus G-Class",
-        "Rolls-Royce Cullinan",
-      ],
-    ],
-  ];
-  const li4_items = [
-    [
-      ["Popular Manufacturer"],
-      [
-        "Embraer",
-        "Dassault",
-        "Gulfstream",
-        "Bombardier",
-        "Cessna",
-        "Boeing",
-        "Pilatus",
-      ],
-    ],
-  ];
-
-  const [li_content, set_li_content] = useState(li_default);
-
-  const [nav2, setNav2] = useState(false);
   const [searchbar, setSearchbar] = useState(false);
   const handleChange = () => {
     if (window.scrollY >= 50) {
@@ -203,9 +35,9 @@ function Navbar2() {
     }
   };
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleChange);
-  });
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleChange);
+  // });
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -262,34 +94,42 @@ function Navbar2() {
               >
                 <div className="carousel-search">
                   <input
-                    style={{ maxWidth: "500px", minWidth: "400px" }}
+                    style={{ maxWidth: "600px", minWidth: "400px", fontSize:"10px", padding:"10px", textAlign:"left"}}
                     type="text"
                     className={play.className}
+                    placeholder="Search Products and Brands Anywhere"
                   />
                   <button type="submit">
                     <span
                       style={{
-                        padding: "9px",
+                        padding: "5px",
+                        paddingLeft:"10px",
+                        paddingRight:"10px",
                         position: "relative",
                         marginLeft: "-60px",
+                        backgroundColor:"white",
+                        color:"black",
+                        borderRadius:"40px",
+                        fontSize:"16px"
                       }}
-                      className="material-symbols-outlined "
                     >
-                      search
+                      Search
                     </span>
                   </button>
                 </div>
               </div>
               <div className="all-nav-btns">
-                <Button className="me-2 nav-btn">
-                  <span className="nav-btns">Just For You</span>
+              <Button className="me-2 nav-btn">
+                  <span className="nav-btns">For Sale</span>
                 </Button>
                 <Button className="me-2 nav-btn">
-                  <span className="nav-btns">List With Us</span>
+                  <span className="nav-btns">For Charter</span>
+                </Button>
+                <Button className="me-2 nav-btn">
+                  <span className="nav-btns">Join Clubs</span>
                 </Button>
                 <Button className="me-2 nav-btn sign-in-btn">
-                  <span className="material-symbols-outlined">person</span>
-                  <span id="signin">Login</span>
+                List With Us
                 </Button>
               </div>
               <Offcanvas show={show} onHide={handleClose}>

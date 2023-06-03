@@ -1192,10 +1192,6 @@ nav {
 
 }
 
-img{
-  width: 300px;
-  margin: 10px;
-}
 
 
 /*////////////////////////// imageUpload Background ////////////////////////////// */
@@ -1256,4 +1252,9 @@ img{
   cursor: pointer;
   border: #fff;
   color: #fff;
+}
+
+/* //////////////////realted tags css */
+.bg-trans-black{
+  background-color: #000000e7;
 }

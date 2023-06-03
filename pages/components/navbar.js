@@ -224,7 +224,6 @@ function Navbar1() {
             expand={expand}
             className={color ? "mb-3 navbar nav-bg" : "mb-3 navbar nav"}
           >
-            <script></script>
             <Container fluid>
               <div className="left-nav">
                 <Button
