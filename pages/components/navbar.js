@@ -210,13 +210,6 @@ function Navbar1() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  // window.addEventListener('scroll',handleChange)
-
-  // const [showsidenav, setShowsidenav] = useState("65px")
-  // const changeWidth = () => showsidenav === "65px" ? setShowsidenav("220px") : setShowsidenav("65px");
-
-  // Router for SignIn And SignUp Page.........
-
   const router = useRouter();
 
   const signInClick = ()=>{
@@ -231,7 +224,6 @@ function Navbar1() {
             expand={expand}
             className={color ? "mb-3 navbar nav-bg" : "mb-3 navbar nav"}
           >
-            <script></script>
             <Container fluid>
               <div className="left-nav">
                 <Button
