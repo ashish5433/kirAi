@@ -201,8 +201,9 @@ body {
 /* //////////// Slider _Image ////////// */
 
 .img-slider {
-  height: 80vh;
+  height: 80vh;`
   z-index: 3;
+  object-fit: cover;
   /* position: absolute; */
 }
 
@@ -1155,12 +1156,12 @@ nav {
   color: #fff;
 
 }
-
+/* 
 img{
   width: 300px;
   margin: 10px;
 }
-
+ */
 
 /*////////////////////////// imageUpload Background ////////////////////////////// */
 .forms-uploadimage{
