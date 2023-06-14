@@ -7,6 +7,8 @@ import { useRouter } from 'next/router';
 import { Unica_One, Quicksand, Bebas_Neue } from "next/font/google";
 import Nav_li_items from "./nav_li_items";
 import Sidenav from "./sidenav";
+import Link from "next/link";
+import Dashboard from "./Dashboard/Dashboard";
 
 const play = Bebas_Neue({
   weight: ["400"],
@@ -215,6 +217,11 @@ function Navbar1() {
   const signInClick = ()=>{
     router.push('/components/signIn')
   }
+
+  const dashboardClick = ()=>{
+    router.push("/components/Dashboard/Dashboard")
+  }
+
   return (
     <>
       {["lg"].map((expand) => (
@@ -353,6 +360,7 @@ function Navbar1() {
                   </div>
                   <hr />
                   <div className="btn-div-2">
+                  <Button onClick={dashboardClick}>Dashboard</Button>
                     <Button>List With Us</Button>
                     <Button>Help & FAQ</Button>
                     <Button>About</Button>

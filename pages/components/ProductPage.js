@@ -1,18 +1,22 @@
 import Link from "next/link";
 import classes from "../../styles/ProductPage.module.css";
-import Navbar1 from "./navbar";
 import Image from "next/image";
+import { useEffect } from "react";
+import { useState } from "react";
+import bike from "../../public/yachtcarousel1.jpg";
+import Navbar2 from "./navbar2";
+import ProductCard from "./ProductCards";
+import yachtCarousel from "@/CarouselImageData/yachtCarousel";
 
 export default function ProductPage() {
   return (
     <>
-      {/*
-      <div className={classes.navfix}>
-      <Navbar1 />
+      <div className={`fixed w-full -mt-14 ${classes.navfix}`}>
+        <Navbar2 />
       </div>
-    */}
+
       <div>
-        <div className={classes.main_info_div}>
+        <div className={`mt-14 ${classes.main_info_div}`}>
           <div className={classes.name_and_like}>
             <div className={classes.name}>
               <div className={classes.product_name}>
@@ -43,14 +47,14 @@ export default function ProductPage() {
           </div>
           <div className={classes.product_image_and_agentinfo}>
             <div className={classes.product_image}>
-              <Image
+              {/* <Image
                 className={classes.product_images}
                 src="/yachtcarousel2.jpg"
-                width={1920}
-                height={1080}
-              />
+                width={}
+                height={100}
+              /> */}
             </div>
-            <div className={classes.agentinfo}>
+            {/* <div className={classes.agentinfo}>
               <div className={classes.agent_backimg}>
                 <Image
                   className={classes.product_images_fit}
@@ -71,25 +75,25 @@ export default function ProductPage() {
                 <h4>Listed By : </h4>
                 <h2>Agent Name</h2>
               </div>
-            </div>
+            </div> */}
           </div>
           <div className={classes.price_contact_buynow}>
             <div className={classes.price}>
               <div className={classes.curr}>
-                <h3>In USD</h3>
+                <h3 className="text-xl font-mono">In USD</h3>
               </div>
               <div className={classes.money}>
-                <h2>$ 500,000,000</h2>
+                <h2 className="text-indigo-800">$ 500,000,000</h2>
               </div>
               <div className={classes.next_curr}>
                 <Link href="#" className={classes.links}>
-                  <h3>EUR</h3>
+                  <h3 className="text-sm">EUR</h3>
                 </Link>
                 <Link href="#" className={classes.links}>
-                  <h3>USD</h3>
+                  <h3 className="text-sm">USD</h3>
                 </Link>
                 <Link href="#" className={classes.links}>
-                  <h3>IND</h3>
+                  <h3 className="text-sm">IND</h3>
                 </Link>
               </div>
             </div>
@@ -163,8 +167,8 @@ export default function ProductPage() {
           </div>
         </div>
         <div className={classes.sub_info_div}>
-          <div className={classes.sssss}>
-            <div>
+          <div className={`-mt-5 flex ${classes.sssss}`}>
+            <div className="mr-10">
               <div className={classes.ideation}>
                 <h3>Design Thinking Ideation</h3>
                 <p>
@@ -174,7 +178,85 @@ export default function ProductPage() {
                 </p>
               </div>
               <div className={classes.specifications}>
-                <h3>General Specifications</h3>
+                <h3 className="mt-3">General Specifications</h3>
+                <div className={classes.inner_specifications}>
+                  <div>
+                    <p>lorem</p>
+                    <p>lorem</p>
+                    <p>lorem</p>
+                  </div>
+                  <div>
+                    <p>lorem</p>
+                    <p>lorem</p>
+                    <p>lorem</p>
+                  </div>
+                </div>
+                <h3 className="mt-3">Accomodations</h3>
+                <div className={classes.inner_specifications}>
+                  <div>
+                    <p>lorem</p>
+                    <p>lorem</p>
+                    <p>lorem</p>
+                  </div>
+                  <div>
+                    <p>lorem</p>
+                    <p>lorem</p>
+                    <p>lorem</p>
+                  </div>
+                </div>
+                <h3 className="mt-3">Amenities</h3>
+                <div className={classes.inner_specifications}>
+                  <div>
+                    <p>lorem</p>
+                    <p>lorem</p>
+                    <p>lorem</p>
+                  </div>
+                  <div>
+                    <p>lorem</p>
+                    <p>lorem</p>
+                    <p>lorem</p>
+                  </div>
+                </div>
+                <h3 className="mt-3">Tender and Toys</h3>
+                <div className={classes.inner_specifications}>
+                  <div>
+                    <p>lorem</p>
+                    <p>lorem</p>
+                    <p>lorem</p>
+                  </div>
+                  <div>
+                    <p>lorem</p>
+                    <p>lorem</p>
+                    <p>lorem</p>
+                  </div>
+                </div>
+                <h3 className="mt-3">Interior</h3>
+                <div className={classes.inner_specifications}>
+                  <div>
+                    <p>lorem</p>
+                    <p>lorem</p>
+                    <p>lorem</p>
+                  </div>
+                  <div>
+                    <p>lorem</p>
+                    <p>lorem</p>
+                    <p>lorem</p>
+                  </div>
+                </div>
+                <h3 className="mt-3">Exterior</h3>
+                <div className={classes.inner_specifications}>
+                  <div>
+                    <p>lorem</p>
+                    <p>lorem</p>
+                    <p>lorem</p>
+                  </div>
+                  <div>
+                    <p>lorem</p>
+                    <p>lorem</p>
+                    <p>lorem</p>
+                  </div>
+                </div>
+                <h3 className="mt-3">Engine</h3>
                 <div className={classes.inner_specifications}>
                   <div>
                     <p>lorem</p>
@@ -189,256 +271,30 @@ export default function ProductPage() {
                 </div>
               </div>
             </div>
-            <div className={classes.gallery}>
-              <div className={classes.big_image}>
-                <Image
-                  className={classes.product_images_1}
-                  src="/yachtcarousel1.jpg"
-                  width={1920}
-                  height={1080}
-                />
-              </div>
-              <div className={classes.big_imag}>
-                <Image
-                  className={classes.product_images_2}
-                  src="/yachtcarousel2.jpg"
-                  width={1920}
-                  height={1080}
-                />
-                <Image
-                  className={classes.product_images_2}
-                  src="/yachtcarousel3.jpg"
-                  width={1920}
-                  height={1080}
-                />
-                <Image
-                  className={classes.product_images_2}
-                  src="/yachtcarousel4.jpg"
-                  width={1920}
-                  height={1080}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={classes.sub_info_div_2}>
-          <div className={classes.sssss2}>
-            <div className={classes.specdiv}>
-              <div className={classes.specifications}>
-                <h3>Accomodations</h3>
-                <div className={classes.inner_specifications_2}>
-                  <div>
-                    <p>lorem</p>
-                    <p>lorem</p>
-                    <p>lorem</p>
-                  </div>
-                  <div>
-                    <p>lorem</p>
-                    <p>lorem</p>
-                    <p>lorem</p>
-                  </div>
+
+            <div className="w-full">
+              <div className={classes.top0}></div>
+              <div className="flex flex-row w-full">
+                <div className="flex flex-col w-[50%]">
+                  <div className={classes.gallery0}></div>
+                  <div className={classes.gallery0}></div>
+                </div>
+                <div className="flex flex-row w-[46%]">
+                  <div className={classes.gallery1}></div>
+                  <div className={classes.gallery1}></div>
                 </div>
               </div>
-            </div>
-            <div className={classes.gallery}>
-              <div className={classes.two_image}>
-                <Image
-                  className={classes.category_images}
-                  src="/jetcarousel3.jpg"
-                  width={1920}
-                  height={1080}
-                />{" "}
-                <Image
-                  className={classes.category_images}
-                  src="/jetcarousel4.jpg"
-                  width={1920}
-                  height={1080}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={classes.sub_info_div_2}>
-          <div className={classes.sssss2}>
-            <div className={classes.specdiv}>
-              <div className={classes.specifications}>
-                <h3>Amenities</h3>
-                <div className={classes.inner_specifications_2}>
-                  <div>
-                    <p>lorem</p>
-                    <p>lorem</p>
-                    <p>lorem</p>
+
+              <div className="flex flex-row w-full">
+                <div className={classes.gallery2}></div>
+                <div className="flex flex-col w-[50%]">
+                  <div className={classes.gallery3}></div>
+                  <div className="flex flex-row w-[92%]">
+                    <div className={classes.gallery1}></div>
+                    <div className={classes.gallery1}></div>
                   </div>
-                  <div>
-                    <p>lorem</p>
-                    <p>lorem</p>
-                    <p>lorem</p>
-                  </div>
+                  <div className={classes.gallery4}></div>
                 </div>
-              </div>
-            </div>
-            <div className={classes.gallery}>
-              <div className={classes.two_image}>
-                <Image
-                  className={classes.category_images}
-                  src="/carcarousel3.jpg"
-                  width={1920}
-                  height={1080}
-                />{" "}
-                <Image
-                  className={classes.category_images}
-                  src="/carcarousel5.jpg"
-                  width={1920}
-                  height={1080}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={classes.sub_info_div_2}>
-          <div className={classes.sssss2}>
-            <div className={classes.specdiv}>
-              <div className={classes.specifications}>
-                <h3>Tenders And Toys</h3>
-                <div className={classes.inner_specifications_2}>
-                  <div>
-                    <p>lorem</p>
-                    <p>lorem</p>
-                    <p>lorem</p>
-                  </div>
-                  <div>
-                    <p>lorem</p>
-                    <p>lorem</p>
-                    <p>lorem</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={classes.gallery}>
-              <div className={classes.two_image}>
-                <Image
-                  className={classes.category_images}
-                  src="/bikecarousel2.jpg"
-                  width={1920}
-                  height={1080}
-                />{" "}
-                <Image
-                  className={classes.category_images}
-                  src="/bikecarousel3.jpg"
-                  width={1920}
-                  height={1080}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={classes.sub_info_div_2}>
-          <div className={classes.sssss2}>
-            <div className={classes.specdiv}>
-              <div className={classes.specifications}>
-                <h3>Interior</h3>
-                <div className={classes.inner_specifications_2}>
-                  <div>
-                    <p>lorem</p>
-                    <p>lorem</p>
-                    <p>lorem</p>
-                  </div>
-                  <div>
-                    <p>lorem</p>
-                    <p>lorem</p>
-                    <p>lorem</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={classes.gallery}>
-              <div className={classes.two_image}>
-                <Image
-                  className={classes.category_images}
-                  src="/rvcarousel2.jpg"
-                  width={1920}
-                  height={1080}
-                />{" "}
-                <Image
-                  className={classes.category_images}
-                  src="/rvcarousel5.jpg"
-                  width={1920}
-                  height={1080}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={classes.sub_info_div_2}>
-          <div className={classes.sssss2}>
-            <div className={classes.specdiv}>
-              <div className={classes.specifications}>
-                <h3>Exterior</h3>
-                <div className={classes.inner_specifications_2}>
-                  <div>
-                    <p>lorem</p>
-                    <p>lorem</p>
-                    <p>lorem</p>
-                  </div>
-                  <div>
-                    <p>lorem</p>
-                    <p>lorem</p>
-                    <p>lorem</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={classes.gallery}>
-              <div className={classes.two_image}>
-                <Image
-                  className={classes.category_images}
-                  src="/submarinecarousel2.jpg"
-                  width={1920}
-                  height={1080}
-                />{" "}
-                <Image
-                  className={classes.category_images}
-                  src="/submarinecarousel3.jpg"
-                  width={1920}
-                  height={1080}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={classes.sub_info_div_2}>
-          <div className={classes.sssss2}>
-            <div className={classes.specdiv}>
-              <div className={classes.specifications}>
-                <h3>Engine</h3>
-                <div className={classes.inner_specifications_2}>
-                  <div>
-                    <p>lorem</p>
-                    <p>lorem</p>
-                    <p>lorem</p>
-                  </div>
-                  <div>
-                    <p>lorem</p>
-                    <p>lorem</p>
-                    <p>lorem</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={classes.gallery}>
-              <div className={classes.two_image}>
-                <Image
-                  className={classes.category_images}
-                  src="/estatecarousel4.jpg"
-                  width={1920}
-                  height={1080}
-                />{" "}
-                <Image
-                  className={classes.category_images}
-                  src="/estatecarousel5.jpg"
-                  width={1920}
-                  height={1080}
-                />
               </div>
             </div>
           </div>
@@ -494,6 +350,99 @@ export default function ProductPage() {
             <div className={classes.about_agent_details}>
               <h4>Listed By : </h4>
               <h1>Agent Name</h1>
+              <h4>Direct Owner/ Broker at Sunseeker</h4>
+              <div className="flex">
+                <div>
+                  <ul>
+                    <li>
+                      <div className="flex">
+                        <span class="material-symbols-outlined scale-150">
+                          location_on
+                        </span>
+                        <span>
+                          <h5 className="mt-3">Chennai</h5>
+                        </span>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="flex">
+                        <span class="material-symbols-outlined scale-150">
+                          location_on
+                        </span>
+                        <span>
+                          <h5 className="mt-3">24 Listings</h5>
+                        </span>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="flex">
+                        <span class="material-symbols-outlined scale-150">
+                          location_on
+                        </span>
+                        <span>
+                          <h5 className="mt-3">15 Sold</h5>
+                        </span>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="flex">
+                        <span class="material-symbols-outlined scale-150">
+                          location_on
+                        </span>
+                        <span>
+                          <h5 className="mt-3">Broker/Owner</h5>
+                        </span>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="flex">
+                        <span class="material-symbols-outlined scale-150">
+                          location_on
+                        </span>
+                        <span>
+                          <h5 className="mt-3">19 Reviews</h5>
+                        </span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <div className={classes.company0}></div>
+                  <h3 className="ml-10 font-bold">Company</h3>
+                  <h4 className="ml-10 -mt-3">Direct Owner/ Broker</h4>
+                </div>
+              </div>
+              <div className="flex justify-end">
+                <div className="justify-between">
+                  <button className="m-3">
+                    <Image
+                      className={classes.icons}
+                      src="/call_2.png"
+                      width={64}
+                      height={64}
+                    />
+                    <p>CALL</p>
+                  </button>
+                  <button className="m-3">
+                    <Image
+                      className={classes.icons}
+                      src="/chat_1.png"
+                      width={64}
+                      height={64}
+                    />
+                    <p>CHAT</p>
+                  </button>
+                  <button className="m-3">
+                    <Image
+                      className={classes.icons}
+                      src="/bookavisit_2.png"
+                      width={64}
+                      height={64}
+                    />
+                    <p>BOOK A VISIT</p>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -571,6 +520,28 @@ export default function ProductPage() {
                   <p>Add To Cart</p>
                 </button>
                 <button>Add To Wishlist</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div className="mx-10">
+            <h3>More from Seller</h3>
+            <ProductCard products={yachtCarousel} view={true} />
+            <h3 className="-mt-10">Similiar Listings</h3>
+            <ProductCard products={yachtCarousel} view={true} />
+          </div>
+          <div className="mt-full">
+          <div className=" flex justify-end "><div className="m-3 w-20 h-20 p-3 bg-teal-700 rounded-full pointer"><span style={{scale:"2", padding:"10px",color:"white"}} className="material-symbols-outlined">
+support_agent
+</span></div></div>
+            <div className="w-full h-14 bg-indigo-950 flex justify-center">
+              <div  className="flex space-x-6 dec mt-3">
+                <span><Link style={{textDecoration:"none", color:"white"}} href={"#"}>About Us</Link></span>
+                <span><Link style={{textDecoration:"none", color:"white"}} href={"#"}>Contact</Link></span>
+                <span><Link style={{textDecoration:"none", color:"white"}} href={"#"}>Career at Shawkeen</Link></span>
+                <span><Link style={{textDecoration:"none", color:"white"}} href={"#"}>Become Partners</Link></span>
+                <span><Link style={{textDecoration:"none", color:"pink"}} href={"#"}>Invest in Shaukeens</Link></span>
               </div>
             </div>
           </div>

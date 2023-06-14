@@ -42,7 +42,7 @@ export default function Filter() {
         <div  className={`${filter.fixx}`}>
         {/* {collapse} */}
             <div className={`bg-white h-auto ${filter.filter_width}`}>
-            <div className="h-10 bg-slate-800 border-b-4 border-t-4 border-b-black"></div>
+            {/* <div className="h-10 bg-slate-800 border-b-4 border-t-4 border-b-black"></div> */}
             <div className="p-3">
                 <div className="block ml-2 ">
                     <h3 style={{fontFamily:"monospace",fontSize:"24px", marginLeft:"5px"}}>Search</h3>
@@ -67,7 +67,7 @@ export default function Filter() {
 
                     </div>
                     <hr />
-                    <div>
+                    {/* <div>
                     <div className="flex">
                             <h5>Yacht Type</h5>
                             <span onClick={()=>collapse(yachtType,setYachtType,"yachtType")} class="material-symbols-outlined -mt-2 ml-auto pointer">
@@ -80,7 +80,7 @@ export default function Filter() {
                         </div>
                         {yachtType !== "160px" ? <Button style={{backgroundColor:"black",border:"none",fontSize:"12px"}}  className={`ml-3 ${filter.btn_width}`}>Apply</Button> :""}
                     </div>
-                    <hr />
+                    <hr /> */}
                     <div>
                     <div className="flex">
                             <h5>Length</h5>
