@@ -2,6 +2,7 @@ import React from 'react'
 import Navdash from './Navdash'
 import dashboard from "./dashboard.module.css"
 import Image from 'next/image';
+
 setTimeout(() => {
   google.charts.load('current', { 'packages': ['corechart'] });
   google.charts.setOnLoadCallback(drawChart);
