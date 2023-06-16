@@ -10,7 +10,9 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 import Nav_li_items from "./nav_li_items";
 import Sidenav from "./sidenav";
-import { app } from "../firebase/firebase";
+import { app } from "../firebase/firebase";import Link from "next/link";
+import Dashboard from "./Dashboard/Dashboard";
+
 const play = Bebas_Neue({
   weight: ["400"],
   style: ["normal"],
@@ -232,19 +234,11 @@ function Navbar1() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  // window.addEventListener('scroll',handleChange)
-
-  // const [showsidenav, setShowsidenav] = useState("65px")
-  // const changeWidth = () => showsidenav === "65px" ? setShowsidenav("220px") : setShowsidenav("65px");
-
-  // Router for SignIn And SignUp Page.........
-
   const router = useRouter();
 
   const signInClick = () => {
     router.push('/components/signUp3')
   }
-
   return (
     <>
 
@@ -255,7 +249,6 @@ function Navbar1() {
             expand={expand}
             className={color ? "mb-3 navbar nav-bg" : "mb-3 navbar nav"}
           >
-            <script></script>
             <Container fluid>
               <div className="left-nav">
                 <Button
@@ -385,6 +378,7 @@ function Navbar1() {
                   </div>
                   <hr />
                   <div className="btn-div-2">
+                  <Button onClick={dashboardClick}>Dashboard</Button>
                     <Button>List With Us</Button>
                     <Button>Help & FAQ</Button>
                     <Button>About</Button>

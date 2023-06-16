@@ -203,6 +203,7 @@ body {
 .img-slider {
   height: 80vh;
   z-index: 3;
+  object-fit: cover;
   /* position: absolute; */
 }
 
@@ -555,18 +556,23 @@ border-radius: 50%;
 /* filter: blur(1px); */
 width: 100px;
 }
-.product-wrapper{
-/* border: 1px solid rgba(0, 0, 0, 0.229); */
-}
-.product-card-div {
+
+.product-card-div-row {
   /* margin-top: 4rem; */
   margin-bottom: 4rem;
   /* width: 100%; */
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 17px;
+}
+.product-card-div-col {
+  /* margin-top: 4rem; */
+  /* width: 100%; */
+  margin: 20px;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .product-cards {
@@ -601,17 +607,42 @@ height:300px;
   letter-spacing: 1px;
   /* font-weight:bold; */
 }
-.product-details-div{
+.product-details-div-row{
 display: flex;
+flex-direction: column;
 justify-content: space-between;
-align-items: center;
-padding: 0px 20px 10px 10px;
-/* background: #151515; */
 color: white;
-/* font-weight: bold; */
 letter-spacing: 1px;
-
 }
+
+.product-details-div-col{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+  letter-spacing: 1px;
+  margin-top: 80px;
+  }
+
+.product-wrapper-col{
+  display: flex;
+  flex-direction: column;
+}
+.product-wrapper-row{
+  display: flex;
+  flex-direction: row;
+}
+.product-details-inner{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* padding: 0px 20px 10px 10px; */
+  /* background: #151515; */
+  color: white;
+  /* font-weight: bold; */
+  letter-spacing: 1px;
+  
+  }
 .product-details {
   padding-left: 5px;
   text-transform: capitalize;
@@ -632,7 +663,7 @@ margin: 3px 0 6px 0;
 .product--image{
   height:280px;
   width: 480px;
-  border-radius: 40px;
+  /* border-radius: 40px; */
   /* filter: blur(10px); */
 }
 
@@ -650,9 +681,15 @@ margin-top: -15px;
   border-radius: 10px;
 
 }
+.brand-name{
+  background-color: rgb(222, 218, 227);
+  padding-top: 2px;
+  padding-bottom: 2px;
+  height: 40px;
+}
 
 .product-buynow{
-  background-color: rgb(124, 1, 206);
+  background-color: rgb(17, 12, 21);
   padding-top: 2px;
   padding-bottom: 2px;
   height: 25px;
@@ -1154,11 +1191,6 @@ nav {
   background-color: green;
   color: #fff;
 
-}
-
-img{
-  width: 300px;
-  margin: 10px;
 }
 
 
