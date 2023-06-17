@@ -239,6 +239,9 @@ function Navbar1() {
   const signInClick = () => {
     router.push('/components/signUp3')
   }
+  const dashboardClick = ()=>{
+    router.push("/components/Dashboard/Dashboard")
+  }
   return (
     <>
 
