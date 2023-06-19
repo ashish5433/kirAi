@@ -165,3 +165,9 @@
 
 }
 
+.pass_btn{
+    display: flex !important;
+    flex-direction: row;
+    background-color: aqua;
+}
+
