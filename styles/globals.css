@@ -1228,20 +1228,16 @@ nav {
 /* ////////////////////////  New SignUp Page ///////////////////////////////// */
 
 /* .mainSignUpcont{
-  display: flex;
+  /* display: flex;
   justify-content: left;
   padding-left: 5%;
   align-items: center;
-  height: 100vh;
-<<<<<<< HEAD
+  height: 100vh; */
   /* background-color: #f3d9d7; */
-background-color:rgb(93,23,235);
-=======
-background-image: url(../images/yacht2.png);
->>>>>>> 3c714657c3e775018773003b141dd5374ec03c16
-background-size: cover;
-background-position: center;
-} */
+/* /* background-color:rgb(93,23,235);
+/* background-size: cover; */
+/* background-position: center;  */
+/* }  */ */
 
 .login_content {
   display: flex;
@@ -1250,13 +1246,8 @@ background-position: center;
   width: 100%;
   padding: 40px;
   margin-right: 30px;
-<<<<<<< HEAD
   background-color: #ffffff;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-=======
-  background-color: none;
-  /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); */
->>>>>>> 3c714657c3e775018773003b141dd5374ec03c16
   border-radius: 16px;
 }
 
@@ -1343,10 +1334,10 @@ background-position: center;
   margin-bottom: 30px;
 }
 .signupicon {
-  font-size: 1rem;
-  color: blue;
+  font-size: 3rem;
+  /* color: blue; */
   /* margin-left: -40px; */
-  transform: translate(-2rem, 0rem);
+  margin-top: -60px;
 }
 .button_div {
   margin-top: 1rem;
@@ -1565,3 +1556,6 @@ padding-top: 2rem;
   background-color: #005ae6;
   background-color: rgba(192, 18, 18, 0.85);
 }
+
+
+

@@ -73,17 +73,19 @@ const SignUp = () => {
   const Register = async () => {
     const emailExists = await checkEmailExistence(registerEmail);
     // console.log(emailExists)
-    if (!emailExists) alert("Email Doesn't Exist");
-    else if (
+    
+    if (
       registerEmail === "" ||
       registerPassword === "" ||
       registercnfrmPassword === "" ||
       registerName === ""
     ) {
       alert("Please Fill the form properly");
-    } else if (registerPassword !== registercnfrmPassword) {
+
+    }else if(!emailExists) alert("Email Doesn't Exist"); 
+    else if (registerPassword !== registercnfrmPassword) {
       alert("Password doesn't match!!!");
-    } else if (isChecked === false) {
+    } else if (isChecked1 === false) {
       alert("Please Accept terms and conditions");
     } else {
       try {

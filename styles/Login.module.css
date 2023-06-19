@@ -6,7 +6,8 @@ display: flex;
 overflow: hidden;
 }
 .login_div{
-flex: 50%;
+margin-top: 10%;
+flex: 40%;
 }
 .signup_div{
 flex: 50%;
