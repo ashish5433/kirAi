@@ -5,9 +5,12 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import { useEffect, useState } from "react";
 import { useRouter } from 'next/router';
 import { Unica_One, Quicksand, Bebas_Neue } from "next/font/google";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+
+
 import Nav_li_items from "./nav_li_items";
 import Sidenav from "./sidenav";
-import Link from "next/link";
+import { app } from "../firebase/firebase";import Link from "next/link";
 import Dashboard from "./Dashboard/Dashboard";
 const play = Bebas_Neue({
   weight: ["400"],
@@ -16,8 +19,11 @@ const play = Bebas_Neue({
 });
 
 function Navbar1() {
-  const [show, setShow] = useState(false);
 
+  const [userName,setUserName]=useState("")
+  const [show, setShow] = useState(false);
+  const [isUser,setisUser]=useState(true)
+  const [btnDisable,setbtnDisable]=useState(false)
   const [color, setColor] = useState(false);
 
   const li_default = [[[]]];
@@ -184,6 +190,22 @@ function Navbar1() {
       ],
     ],
   ];
+  const auth = getAuth(app);
+  useEffect(()=>{
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUserName(auth.currentUser.displayName)
+        setisUser(false)
+        setbtnDisable(true)
+        console.log(auth.currentUser.displayName)
+      
+      } else {
+        console.log("User Not Found")
+       
+      }
+    });
+  },[])
+  
 
   const [li_content, set_li_content] = useState(li_default);
 
@@ -213,20 +235,20 @@ function Navbar1() {
 
   const router = useRouter();
 
-  const signInClick = ()=>{
-    router.push('/components/signIn')
+  const signInClick = () => {
+    router.push('/components/signUp3')
   }
-
   const dashboardClick = ()=>{
     router.push("/components/Dashboard/Dashboard")
   }
 
-  const Explorer_account = ()=>{
+  const Explorer_account = () => {
     router.push('/components/Explorer')
   }
 
   return (
     <>
+
       {["lg"].map((expand) => (
         <div>
           <Navbar
@@ -296,9 +318,9 @@ function Navbar1() {
                 <Button className="me-2 nav-btn">
                   <span className="nav-btns">List With Us</span>
                 </Button>
-                <Button className="me-2 nav-btn sign-in-btn">
+                <Button className="me-2 nav-btn sign-in-btn" disabled={btnDisable}>
                   <span className="material-symbols-outlined">person</span>
-                  <span id="signin">Login</span>
+                  {isUser?<span id="signin">Login</span>:<span>{userName}</span>}
                 </Button>
               </div>
               <Offcanvas show={show} onHide={handleClose}>
@@ -320,8 +342,8 @@ function Navbar1() {
                     <div>
                       <span class="material-symbols-outlined">
                         account_circle
-                      </span>
-                      <Button onClick={signInClick}>Sign in / Register</Button>
+                    </span>
+                    {isUser ? <Button onClick={signInClick}>Sign in / Register</Button>:<p style={{marginLeft:"3rem",marginTop:"-37px"}}>{userName}</p>}
                     </div>
                     <div>
                       <span class="material-symbols-outlined">recommend</span>
