@@ -69,6 +69,7 @@ const Seller = () => {
                         </div>
                         <div>
                             <label>Create Your Password</label>
+                           
                             <input
 
                                 type={passWord}
@@ -77,8 +78,9 @@ const Seller = () => {
                             />
                             <button className=""onClick={passwordShow}> <FontAwesomeIcon
                                 icon={showPass ? faEye : faEyeSlash}
-                                className={`${cls.icon}`}
+                                className={cls.icon}
                             /></button>
+                            
                         </div>
                         <div>
                             <label>Confirm Your Password</label>
