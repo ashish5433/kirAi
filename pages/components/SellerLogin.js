@@ -15,7 +15,7 @@ const Seller = () => {
 
     return <>
         <div className={cls.login_div}>
-            <button className={cls.login_btn}>Login To Shaukheens</button>
+            <button className={cls.login_btn} >Login To Shaukheens</button>
         </div>
         <div className={cls.main_div}>
 
@@ -191,7 +191,7 @@ const Seller = () => {
 
 
                         <div className={cls.btn_div}>
-                            <button className={cls.sub_btn}><span className="material-symbols-outlined md-48"
+                            <button className={cls.sub_btn} ><span className="material-symbols-outlined md-48"
                             >
                                 arrow_right_alt
                             </span></button>

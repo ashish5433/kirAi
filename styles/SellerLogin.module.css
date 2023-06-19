@@ -4,12 +4,13 @@
    display: flex;
    justify-content: flex-end;
     background-color:  rgb(93, 23, 235);
+    position: sticky;
+    top: 0;
 }
 
 .login_btn{
     font-size: 24px;
-    /* width: 15%; */
-    ;
+    
     margin-right: 2rem ;
     padding: 0 5px;
     color: white;
@@ -17,9 +18,10 @@
     border-radius: 2rem;
 }
 .main_div{
-    /* background-color: black; */
+   
     background-color:  rgb(93, 23, 235);
     /* margin-top: -2%; */
+    /* height: 100vh; */
     /* height: 100vh; */
     width: 100%;
     display: flex;
@@ -27,8 +29,9 @@
     justify-content: center;
 }
 .center_div{
-    margin:40px;
-    height:85%; 
+    /* margin-top: -6%; */
+    /* height:85%; */
+    z-index: 1;
     width: 60%;
     background-color: white;
     border-radius: 2rem;
@@ -153,7 +156,7 @@
 }
 .sub_btn{
     font-size: 24px;
-    background-color: rgb(93, 23, 235);
+    background-color: rgb(249,115,22);
     width: 30%;
     padding: 5px 0;
     color: white;
