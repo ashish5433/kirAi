@@ -20,10 +20,6 @@ export default function SignInAndSignUp() {
 
    
 
-    // console.log(registerEmail)
-   
-
-
     return <>
         <div style={{ marginLeft: "40%", marginTop: "20px" }}>
 
