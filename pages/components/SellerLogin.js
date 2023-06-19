@@ -75,9 +75,9 @@ const Seller = () => {
                                 placeholder="Enter your Password"
 
                             />
-                            <button onClick={passwordShow}> <FontAwesomeIcon
+                            <button className=""onClick={passwordShow}> <FontAwesomeIcon
                                 icon={showPass ? faEye : faEyeSlash}
-                                className={cls.icon}
+                                className={`${cls.icon}`}
                             /></button>
                         </div>
                         <div>
