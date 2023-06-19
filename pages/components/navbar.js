@@ -12,7 +12,6 @@ import Nav_li_items from "./nav_li_items";
 import Sidenav from "./sidenav";
 import { app } from "../firebase/firebase";import Link from "next/link";
 import Dashboard from "./Dashboard/Dashboard";
-
 const play = Bebas_Neue({
   weight: ["400"],
   style: ["normal"],
@@ -242,6 +241,11 @@ function Navbar1() {
   const dashboardClick = ()=>{
     router.push("/components/Dashboard/Dashboard")
   }
+
+  const Explorer_account = () => {
+    router.push('/components/Explorer')
+  }
+
   return (
     <>
 
@@ -309,7 +313,7 @@ function Navbar1() {
               </div>
               <div className="all-nav-btns">
                 <Button className="me-2 nav-btn">
-                  <span className="nav-btns">Just For You</span>
+                  <span onClick={Explorer_account} className="nav-btns">Just For You</span>
                 </Button>
                 <Button className="me-2 nav-btn">
                   <span className="nav-btns">List With Us</span>
