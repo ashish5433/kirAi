@@ -6,6 +6,8 @@ const Seller = () => {
 
     const [showPass, setshowPass] = useState(false);
     const [passWord, setpassWord] = useState("password")
+    
+    
     const passwordShow = () => {
         setshowPass(!showPass);
         passWord === "password"
@@ -134,8 +136,9 @@ const Seller = () => {
                                 </label>
                             </div>
                             <div className={cls.rad_btn}>
-                                <label >
-                                    <input type="radio" name="category" /> Apartments
+                                <label  >
+                                    <input type="radio" name="category"   /> Apartments
+                                    <span ></span>
                                 </label>
                             </div>
                             <div className={cls.rad_btn}>

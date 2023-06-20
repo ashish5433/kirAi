@@ -56,7 +56,7 @@
 }
 .content_div>h4{
     margin-left: -4%;
-    color: rgb(113, 77, 10);
+    color: rgb(249,115,22);
 }
 
 .main_form_div{
@@ -115,6 +115,11 @@
     display: flex;
     flex-direction: row;
 }
+.right_div_content h2{
+    color: purple;
+    margin-top: 10px;
+    font-weight:bolder ;
+}
 .right_div_content input{
     margin: 1% 1%;
     width: 60%;
@@ -144,6 +149,8 @@
 .rad_btn input{
   width: 20px;
   height: 24px;
+  background-color: grey;
+  border-color: grey;
 }
 .rad_btn label{
  font-size: 24px;
@@ -170,4 +177,6 @@
     flex-direction: row;
     background-color: aqua;
 }
+
+
 
