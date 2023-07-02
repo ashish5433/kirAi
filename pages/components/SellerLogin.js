@@ -362,7 +362,7 @@ const Seller = () => {
                 </div>
               </div>
             </div>
-            <div className={` flex justify-center explorer ${changeTranslate ? "translate-x-[-1550px] transition delay-300" : "transition delay-300"}`}>
+            <div className={` flex justify-center explorer ${changeTranslate ? "translate-x-[-1750px] transition delay-300" : "transition delay-300"}`}>
                 <div className="mt-56 bg-neutral-200 w-[60%] h-4/6 p-10 rounded-xl m-14 flex flex-col">
                   <div className=" flex flex-col">
                     <span className="font-semibold text-3xl mb-1 ">
