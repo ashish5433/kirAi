@@ -1,9 +1,20 @@
-import React from "react";
-
+import React, { useState } from "react";
+import {useRouter} from "next/router";
+import { useEffect } from "react";
+import Cookies from "universal-cookie";
+const cookie = new Cookies();
 export default function Explorer() {
+ 
+  const router = useRouter();
+  
+  
+  
+  
   return (
     <div>
+    
       <div className="w-full h-[100vh] flex justify-center explorer">
+
         <div className="bg-neutral-200 w-[60%] h-4/6 p-10 rounded-xl m-14 flex flex-col">
           <div className=" flex flex-col">
             <span className="font-semibold text-3xl mb-1 ">
