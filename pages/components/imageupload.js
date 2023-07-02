@@ -13,24 +13,16 @@ export default function UplaodImage() {
     const [type, settype] = useState("")
     const [imgurl, setimgurl] = useState("")
     const allimagesref = ref(storage, "images")
-    // todo Firestore part....
 
     const imagedetailref = collection(db, "Image_details")
     useEffect(() => {
 
         getDocs(imagedetailref).then((res) => {
-            // console.log(res)
             settotalDetails(res.docs.map((data) => ({ ...data.data(), id: data.id })))
         })
 
 
-        // listAll(allimagesref).then((res)=>{
-        //     res.items.forEach((item)=>{
-        //         getDownloadURL(item).then((url)=>{
-        //             setfilelist((prev)=>[...prev,url])
-        //         })
-        //     })
-        // })
+
     }, [])
     const clearInputs =()=>{
         document.getElementById('seller-name').value=""
@@ -56,7 +48,6 @@ export default function UplaodImage() {
             alert("Images Uploaded")
             return getDownloadURL(snapshot.ref)
         }).then(dnloadUrl => {
-            // console.log("Url",dnloadUrl)
             setimgurl(dnloadUrl)
             createdata(dnloadUrl);
         });

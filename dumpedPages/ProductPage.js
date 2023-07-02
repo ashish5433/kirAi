@@ -2,7 +2,6 @@ import Navbar from "../pages/components/navbar";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import ProgressBar from "react-progressbar-on-scroll";
-// import { Card } from '@nextui-org/react';
 import CarouselPage from "../pages/components/Carousel";
 import Filter from "../pages/components/Filter/filter";
 
