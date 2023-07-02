@@ -1,4 +1,3 @@
-// utils/emailVerification.js
 import axios from 'axios';
 
 const checkEmailExistence = async (email) => {
@@ -9,7 +8,6 @@ const checkEmailExistence = async (email) => {
     console.log(response.status)
     const { data } = response;
 
-    // Check if email exists based on ZeroBounce API response
     return data.status === 'Valid';
   } catch (error) {
     console.log('Error checking email existence:', error);

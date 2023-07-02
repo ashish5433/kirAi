@@ -161,42 +161,6 @@ export default function HomeGradient({
       RVPropsFunction(false);
     }
   };
-  // const homeChangeHandler = () => {
-  //   if (HomeProps) {
-  //     changeYacht(false);
-  //     changeEstate(false);
-  //     changeAircrafts(false);
-  //     changeHome(false);
-  //     changeBike(false);
-  //     changeCar(false);
-  //     changeAmphibious(false);
-  //     changeSubmarines(false);
-  //     changeATVs(false);
-  //     changeRVs(false);
-  //     HomePropsFunction(false);
-  //   } else {
-  //     changeYacht(false);
-  //     changeEstate(false);
-  //     changeAircrafts(false);
-  //     changeHome(true);
-  //     changeBike(false);
-  //     changeCar(false);
-  //     changeAmphibious(false);
-  //     changeSubmarines(false);
-  //     changeATVs(false);
-  //     changeRVs(false);
-  //     HomePropsFunction(true);
-  //     YachtPropsFunction(false);
-  //     EstatePropsFunction(false);
-  //     AircraftsPropsFunction(false);
-  //     BikePropsFunction(false);
-  //     CarPropsFunction(false);
-  //     AmphibiousPropsFunction(false);
-  //     SubmarinePropsFunction(false);
-  //     ATVPropsFunction(false);
-  //     RVPropsFunction(false);
-  //   }
-  // };
   const bikeChangeHandler = () => {
     if (BikeProps) {
       changeYacht(false);
@@ -532,7 +496,6 @@ export default function HomeGradient({
                 ? `${classes.carousel_icons} ${classes.selected}`
                 : `${classes.carousel_icons}`
             }
-            // onClick={amphibiousChangeHandler}
           >
             <span className="material-symbols-outlined">local_car_wash</span>
           </Link>
@@ -543,7 +506,6 @@ export default function HomeGradient({
                 ? `${classes.carousel_icons} ${classes.selected}`
                 : `${classes.carousel_icons}`
             }
-            // onClick={submarineChangeHandler}
           >
             <span className="material-symbols-outlined">directions_boat</span>
           </Link>
@@ -554,7 +516,6 @@ export default function HomeGradient({
                 ? `${classes.carousel_icons} ${classes.selected}`
                 : `${classes.carousel_icons}`
             }
-            // onClick={atvChangeHandler}
           >
             <span className="material-symbols-outlined">snowmobile</span>
           </Link>
@@ -565,7 +526,6 @@ export default function HomeGradient({
                 ? `${classes.carousel_icons} ${classes.selected}`
                 : `${classes.carousel_icons}`
             }
-            // onClick={rvChangeHandler}
           >
             <span className="material-symbols-outlined">airport_shuttle</span>
           </Link>
