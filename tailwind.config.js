@@ -15,6 +15,7 @@ module.exports = {
       backgroundColor:{
         'semi-white': 'rgba(255,255,255,0.3)',
         'semi-white2': 'rgba(0,0,0,0.4)',
+        'loginbg':'rgb(93, 23, 235)',
       }
     },
   },

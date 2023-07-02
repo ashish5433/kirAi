@@ -1560,6 +1560,8 @@ padding-top: 2rem;
 
 .explorer{
   background-color: rgb(93, 23, 235);
+  min-width: 100vw;
+  margin-left: 100px;
 }
 
 .country-list::-webkit-scrollbar {
