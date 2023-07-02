@@ -31,6 +31,18 @@ const Seller = () => {
 
   const [check, setcheck] = useState(false);
 
+
+  const [legalName,setLegalName] = useState("");
+  const [businessAddress,setBusinessAddress] = useState("");
+  const [businessCategory,setBusinessCategory] = useState("");
+  const [CIFnumber,setCIFnumber] = useState("");
+  const [TAInumber,setTAInumber] = useState("");
+
+  
+  const printval =()=>{
+    console.log(legalName,businessAddress,businessCategory,CIFnumber,TAInumber);
+  }
+
   const passwordShow = () => {
     setshowPass(!showPass);
     passWord === "password" ? setpassWord("text") : setpassWord("password");
@@ -114,11 +126,12 @@ const Seller = () => {
     setChangeTranslate(false)
   }
 
+
   return (
       <div >
         <div className={`flex flex-col justify-center ${cls.main_div}`}>
           <div className="bg-loginbg flex flex-row logincoverbox w-[100vw]">
-            <div className={`${cls.center_div} ${changeTranslate ? "translate-x-[-1500px] transition delay-300" : "translate-x-[50px] transition delay-300"}`}>
+            <div className={`${cls.center_div} ${changeTranslate ? "translate-x-[-1500px] transition duration-500 delay-100" : "translate-x-[50px] duration-500 transition delay-100"}`}>
               <h1>Create Your Account And Start Selling</h1>
               <div className={cls.content_div}>
                 <p>Get Connected to Affluent Client across the World</p>
@@ -362,7 +375,7 @@ const Seller = () => {
                 </div>
               </div>
             </div>
-            <div className={` flex justify-center explorer ${changeTranslate ? "translate-x-[-1550px] transition delay-300" : "transition delay-300"}`}>
+            <div className={` flex justify-center explorer ${changeTranslate ? "translate-x-[-1550px] duration-500 transition delay-100" : "transition duration-500 delay-100"}`}>
                 <div className="mt-56 bg-neutral-200 w-[60%] h-4/6 p-10 rounded-xl m-14 flex flex-col">
                   <div className=" flex flex-col">
                     <span className="font-semibold text-3xl mb-1 ">
@@ -384,7 +397,10 @@ const Seller = () => {
                         <input
                           type="text"
                           placeholder="Raunak Biswas"
-                          className="w-3/6 h-10 p-2 rounded-full border-2 border-red-200"
+                          onChange={(e)=>{
+                            setLegalName(e.target.value);
+                          }}
+                          className="w-3/6 h-10 p-2 rounded-full border-2 border-violet-600"
                         ></input>
                       </div>
                       <div className="flex flex-col mt-2">
@@ -394,7 +410,10 @@ const Seller = () => {
                         <input
                           type="text"
                           placeholder="UAE, Dubai"
-                          className="w-3/6 h-10 p-2 rounded-full border-2 border-red-200"
+                          onChange={(e)=>{
+                            setBusinessAddress(e.target.value);
+                          }}
+                          className="w-3/6 h-10 p-2 rounded-full border-2 border-violet-600"
                         ></input>
                       </div>
                       <div className="flex flex-col mt-2">
@@ -404,7 +423,10 @@ const Seller = () => {
                         <input
                           type="text"
                           placeholder="Dealer"
-                          className="w-3/6 h-10 p-2 rounded-full border-2 border-red-200"
+                          onChange={(e)=>{
+                            setBusinessCategory(e.target.value);
+                          }}
+                          className="w-3/6 h-10 p-2 rounded-full border-2 border-violet-600"
                         ></input>
                       </div>
                       <div className="flex flex-col mt-2">
@@ -414,7 +436,10 @@ const Seller = () => {
                         <input
                           type="text"
                           placeholder="xxxx-xxxx-xxxx-xxxx"
-                          className="w-3/6 h-10 p-2 rounded-full border-2 border-red-200"
+                          onChange={(e)=>{
+                            setCIFnumber(e.target.value);
+                          }}
+                          className="w-3/6 h-10 p-2 rounded-full border-2 border-violet-600"
                         ></input>
                       </div>
                       <div className="flex flex-col mt-2">
@@ -424,7 +449,10 @@ const Seller = () => {
                         <input
                           type="text"
                           placeholder="xxx-xxx-xxxx"
-                          className="w-3/6 h-10 p-2 rounded-full border-2 border-red-200"
+                          onChange={(e)=>{
+                            setTAInumber(e.target.value);
+                          }}
+                          className="w-3/6 h-10 p-2 rounded-full border-2 border-violet-600"
                         ></input>
                       </div>
                       <button onClick={nextpage} className="w-24 mt-10 h-12 rounded-full bg-orange-500 text-neutral-100 font-bold text-lg">
@@ -509,7 +537,7 @@ const Seller = () => {
                             </span>
                           </li>
                         </ul>
-                        <button className="w-96 h-12 rounded-full bg-orange-500 text-neutral-100 font-bold text-lg">
+                        <button onClick={printval} className="w-96 h-12 rounded-full bg-orange-500 text-neutral-100 font-bold text-lg">
                           Submit Request
                         </button>
                       </div>
