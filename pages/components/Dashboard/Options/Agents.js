@@ -1,7 +1,7 @@
 import classes from "../../../../styles/DashboardAgent.module.css";
 import Image from "next/image";
 
-export default function Agent() {
+export default function Agents() {
   return (
     <>
       <div className={classes.recieved}>
