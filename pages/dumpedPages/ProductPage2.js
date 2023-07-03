@@ -1,8 +1,8 @@
 import Link from "next/link";
 import classes from "./ProductPage2.module.css";
-import Navbar1 from "../pages/components/navbar";
+import Navbar1 from "../components/navbar";
 import Image from "next/image";
-import Navbar2 from "../pages/components/navbar2";
+import Navbar2 from "../components/navbar2";
 
 export default function ProductPage2() {
   return (
