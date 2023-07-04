@@ -1,9 +1,9 @@
-import Navbar from "../pages/components/navbar";
+import Navbar from "../components/navbar";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import ProgressBar from "react-progressbar-on-scroll";
-import CarouselPage from "../pages/components/Carousel";
-import Filter from "../pages/components/Filter/filter";
+import CarouselPage from "../components/Carousel";
+import Filter from "../components/Filter/filter";
 
 export default function Product() {
   const [color1, setColor1] = useState(false);
