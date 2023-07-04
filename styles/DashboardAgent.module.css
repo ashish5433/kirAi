@@ -21,8 +21,14 @@ width: 100px;
 margin-bottom: 5px;
 margin-top: 10px;
 }
-
-.affiliate_products {
+.affiliate_products{
+margin: 2rem 0;
+}
+.affiliate_products>h2{
+  font-size: 1.6rem;
+margin-left: 2rem;
+}
+.affiliate_products>div {
   display: flex;
   /* justify-content: space-evenly; */
   justify-content: center;
@@ -77,6 +83,11 @@ margin-top: 10px;
 .agent_product_detail_lower > div > div > p {
   font-size: 0.5rem;
   margin: 0;
+  /* margin-bottom: 5px; */
+}
+.agent_product_detail_lower > div > div > svg{
+ 
+  margin-bottom: 5px !important;
 }
 
 .logos2 {
@@ -88,14 +99,22 @@ margin-top: 10px;
 }
 .logos2>div{
 width: 50px;
+
 }
 .affiliate_agents{
+margin-bottom: 2rem;
+}
+.affiliate_agents>h2{
+font-size: 1.6rem;
+margin-left: 2rem;
+}
+.affiliate_agents>div{
 display: flex;
 justify-content: center;
 align-items: center;
 gap: 30px;
 flex-wrap: wrap;
-margin-top: 2rem;
+/* margin-top: 2rem; */
 }
 .agent_profile {
   width: 353px;
@@ -105,7 +124,6 @@ margin-top: 2rem;
   border: 2px solid rgba(0, 0, 0, 0.453);
 
 }
-
 .agent_image {
   width: 100px;
   height: 100px;
@@ -126,7 +144,7 @@ justify-content: space-between;
 
 .social_logos{
     padding: 1rem;
-    padding-top: 0.5rem;
+    padding-top: 0.7rem;
 display: flex;
 justify-content: space-between;
 align-items: center;
@@ -141,4 +159,63 @@ color: white;
 padding: 5px 10px;
 font-size: 0.6rem;
 border-radius: 30px;
+}
+.profile_button_req{
+background: rgb(143, 76, 191);
+color: white;
+padding: 5px 10px;
+font-size: 0.6rem;
+border-radius: 30px;
+}
+
+
+.pending_agent_profile {
+  width: 450px;
+  height: 150px;
+  /* background-color: aquamarine; */
+  background-color: rgba(189, 198, 204, 0.687);
+  border: 2px solid rgba(0, 0, 0, 0.453);
+
+}
+.pending_requests{
+margin-bottom: 2rem;
+}
+.pending_requests>h2 {
+font-size: 1.6rem;
+margin-left: 2rem;
+/* margin-top: 2rem; */
+}
+.answer_div{
+width: 230px;
+text-align: center;
+margin-right: 15px;
+margin-left: 15px;
+}
+.answer_div>div{
+
+    background-color: rgba(189, 198, 204, 0.84);
+border-bottom-right-radius: 2rem;
+border-bottom-left-radius: 2rem;
+margin-bottom: 5px;
+padding-top: 5px;
+padding-bottom: 5px;
+}
+.answer_div>div>p{
+   font-size: 0.8rem;
+
+}
+.answer_div>p{
+    font-size: 0.6rem;
+    text-decoration: underline;
+margin: 0;
+}
+.answer_div>div>p{
+margin: 0;
+}
+.agent_pending_reqs{
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 30px;
+flex-wrap: wrap;
 }
