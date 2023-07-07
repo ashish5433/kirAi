@@ -1,5 +1,5 @@
 import React from "react";
-import ProductCardContent from "./ProductCardContent";
+import ProductCardContent from "../../Check/ProductCardContent";
 
 
 

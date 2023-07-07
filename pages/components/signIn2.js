@@ -17,7 +17,7 @@ import {
   signOut,
   sendPasswordResetEmail,
 } from "firebase/auth";
-import { auth, provider } from "../firebase/firebase";
+import { auth, provider } from "../../firebase/firebase";
 
 const GoogleIcon = styled(FontAwesomeIcon)`
   margin-right: 8px;

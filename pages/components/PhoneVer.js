@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { getAuth, RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
-import { app } from '../firebase/firebase';
+import { app } from '../../firebase/firebase';
 
 
 

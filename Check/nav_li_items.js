@@ -9,7 +9,6 @@ export default function Nav_li_items({ props,item}) {
                     <div className="flex flex-wrap  ">
                         {items.map((item)=>{
                         return<>
-                        {/* <h6 classN  ame="ml-8">{item}</h6> */}
                         <div className="li_1">
                             <div>
                                 <ul>

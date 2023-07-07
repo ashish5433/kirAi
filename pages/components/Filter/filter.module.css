@@ -6,11 +6,8 @@
 
 .filter_width{
     width: 315px;
-    /* height: 1000px; */
     min-width: 200px;
-    /* padding-top: 50px; */
     border-right: 2px solid black;
-    /* box-shadow: 1px 0px 100px 1px black; */
 }
 
 .btn_width{
@@ -64,7 +61,6 @@
 .topfilter_btn{
     margin: 4px;
     text-align: center;
-    /* border: 1px solid b  lack; */
 }
 
 .topfilter_btn_all{

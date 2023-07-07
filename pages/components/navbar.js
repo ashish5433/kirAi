@@ -8,9 +8,9 @@ import { Unica_One, Quicksand, Bebas_Neue } from "next/font/google";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 
-import Nav_li_items from "./nav_li_items";
+import Nav_li_items from "../../Check/nav_li_items";
 import Sidenav from "./sidenav";
-import { app } from "../firebase/firebase";
+import { app } from "../../firebase/firebase";
 import Link from "next/link";
 import Dashboard from "./Dashboard/Dashboard";
 const play = Bebas_Neue({

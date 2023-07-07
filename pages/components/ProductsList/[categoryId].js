@@ -26,7 +26,7 @@ import Topfilter from "../Filter/topfilter";
 import Sidenav from "../sidenav";
 import Navbar1 from "../navbar";
 import Navbar2 from "../navbar2";
-import Relatedtags from "./relatedtags";
+import Relatedtags from "../../../Check/relatedtags";
 const fontBebas = Bebas_Neue({
   weight: ["400"],
   style: ["normal"],

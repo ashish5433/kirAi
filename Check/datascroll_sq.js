@@ -1,5 +1,4 @@
-import { Button } from "react-bootstrap"
-import filter from "./filter.module.css"
+
 export default function Datascroll({data}){
     return(
         <div>

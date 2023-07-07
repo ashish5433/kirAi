@@ -1,13 +1,13 @@
-import { Unica_One, Quicksand, Bebas_Neue, Raleway } from "next/font/google";
+import { Raleway } from "next/font/google";
 import Image from "next/image";
 import React from "react";
 import { useState } from "react";
 
-const play = Raleway({
-  weight: ["400"],
-  style: ["normal"],
-  subsets: ["latin"],
-});
+// const play = Raleway({
+//   weight: ["400"],
+//   style: ["normal"],
+//   subsets: ["latin"],
+// });
 
 const specifications = ["200HP |", " 2019 |", " 44km/l", " Electric"]
 
