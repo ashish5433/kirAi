@@ -1,164 +1,232 @@
 import classes from "../../styles/AgentProfile.module.css";
 import Image from "next/image";
-import Navbar2 from "./navbar2";
 
 export default function AgentProfile() {
   return (
-    <div>
-      <Navbar2 />
-      <div className={classes.first}>
-        <div className={classes.bg_image}>
+    <>
+      <div className={classes.images}>
+        <div className={classes.bg_image_div}>
           <Image
-            className={classes.big_image}
-            src="/yachtcarousel4.jpg"
-            width={800}
-            height={800}
+            className={classes.bg_image}
+            src="/yachtcarousel2.jpg"
+            width={1000}
+            height={200}
           />
-          <div className={classes.overlay}></div>
-          <div className={classes.dash}>
-            <div className={classes.details}>
-              <div>
-                <h2>Location</h2>
-                <p>Chennai</p>
-              </div>
-              <h1>|</h1>
-              <div>
-                <h2>Ownership</h2>
-                <p>Direct Owner</p>
-              </div>
-              <h1>|</h1>
-              <div>
-                <h2>Listings</h2>
-                <p>7</p>
-              </div>
-            </div>
-            <div className={classes.details2}>
-              <div>
-                <h2>Membership</h2>
-                <p>Gold</p>
-              </div>
+          <div className={classes.membership_div}>
+          <Image
+          className={classes.membership_image}
+          src="/diamond_1.png"
+          width={80}
+          height={80}
+          />
+          </div>
 
-              <h1>|</h1>
-              <div>
-                <h2>Sold</h2>
-                <p>5</p>
-              </div>
-              <h1>|</h1>
-
-              <div>
-                <h2>Reviews</h2>
-                <p>19</p>
-              </div>
-            </div>
-            <div className={classes.functions}>
-              <div>
-                <Image
-                  className={classes.icons2}
-                  src="/location-svgrepo-com.svg"
-                  width={30}
-                  height={30}
-                />
-                <p>visit</p>
-              </div>
-              <div>
-                <Image
-                  className={classes.icons2}
-                  src="/call-phone-heart-svgrepo-com.svg"
-                  width={30}
-                  height={30}
-                />
-                <p>call</p>
-              </div>
-              <div>
-                <Image
-                  className={classes.icons2}
-                  src="/chat-svgrepo-com.svg"
-                  width={30}
-                  height={30}
-                />
-                <p>chat</p>
-              </div>
-              <div>
-                <Image
-                  className={classes.icons2}
-                  src="/live-svgrepo-com.svg"
-                  width={30}
-                  height={30}
-                />
-                <p>live view</p>
-              </div>
-              <div>
-                <Image
-                  className={classes.icons2}
-                  src="/meeting-of-a-couple-of-men-svgrepo-com.svg"
-                  width={30}
-                  height={30}
-                />
-                <p>meet</p>
-              </div>
-            </div>
-            <div className={classes.imgnname}>
-              <Image
-                className={`${classes.icons}`}
-                src="/profilepic.jpg"
-                width={150}
-                height={150}
-              />
-              <Image
-                className={`${classes.icons_mem}`}
-                src="/diamond_1.png"
-                width={50}
-                height={50}
-              />
-              <h4>Admin Name</h4>
-            </div>
-          </div>
+          {/*<div className={classes.bg_overlay}></div>*/}
         </div>
-        <div className={classes.height_adjuster}>
-          <div className={classes.border_adjuster}></div>
-        </div>
-        <div className={classes.grid_container}>
-          <div className={classes.item1}>
-            <h1>Reviews</h1>
-            <ul className={classes.ull}>
-              <li>Yacht</li>
-              <li>Yacalckht</li>
-              <li>Yaacacht</li>
-              <li>Yacqwqht</li>
-              <li>Yacvkht</li>
-            </ul>
+        <div className={classes.profile_image_div}>
+          <Image
+            className={classes.profile_image}
+            src="/profilepic.jpg"
+            width={250}
+            height={250}
+          />
+          <div className={classes.Agent_details}>
+            <h1>Agent Name </h1>
+            <h3>@agent_id</h3>
+            <h3>Broker / Owner</h3>
+            <div>
+              <span>0</span>
+              <span>Followers</span>
+              <span>|</span>
+              <span>0</span>
+              <span>Following</span>
+            </div>
           </div>
-          <div className={classes.items}>
-            <h1>About</h1>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum
-              labore doloribus quod sequi. Fuga, autem maiores soluta, repellat
-              quis eligendi expedita, nesciunt veritatis non a animi praesentium
-              temporibus earum dicta.
-            </p>
-          </div>
-          <div className={classes.items}>
-            <h1>Past Listings</h1>
-            <ul className={classes.ull}>
-              <li>Yacht</li>
-              <li>Yacalckht</li>
-              <li>Yaacacht</li>
-              <li>Yacqwqht</li>
-              <li>Yacvkht</li>
-            </ul>
-          </div>
-          <div className={classes.items}>
-            <h1>Sold</h1>
-            <ul className={classes.ull}>
-              <li>Yacht</li>
-              <li>Yacalckht</li>
-              <li>Yaacacht</li>
-              <li>Yacqwqht</li>
-              <li>Yacvkht</li>
-            </ul>
+          <div className={classes.Agent_socials}>
+            <Image
+              className={classes.social_image}
+              src="/black_facebook.png"
+              width={40}
+              height={40}
+            />
+            <Image
+              className={classes.social_image}
+              src="/black_twitter.png"
+              width={40}
+              height={40}
+            />
+            <Image
+              className={classes.social_image}
+              src="/black_instagram.png"
+              width={40}
+              height={40}
+            />
           </div>
         </div>
       </div>
-    </div>
+      <div className={classes.side_div}>
+        <h2>Also From The Brand</h2>
+        <div>
+          <div className={classes.related_product_name}>
+            <Image
+              className={classes.product_related_image}
+              src="/yachtcarousel1.jpg"
+              width={250}
+              height={150}
+            />
+            <div>
+              <div>
+                <h3>$800,000,000</h3>
+                <h5>Product Name</h5>
+              </div>
+              <button>view</button>
+            </div>
+          </div>
+
+          <div className={classes.related_product_name}>
+            <Image
+              className={classes.product_related_image}
+              src="/yachtcarousel2.jpg"
+              width={250}
+              height={150}
+            />
+            <div>
+              <div>
+                <h3>$800,000,000</h3>
+                <h5>Product Name</h5>
+              </div>
+              <button>view</button>
+            </div>
+          </div>
+          <div className={classes.related_product_name}>
+            <Image
+              className={classes.product_related_image}
+              src="/yachtcarousel3.jpg"
+              width={250}
+              height={150}
+            />
+            <div>
+              <div>
+                <h3>$800,000,000</h3>
+                <h5>Product Name</h5>
+              </div>
+              <button>view</button>
+            </div>
+          </div>
+          <div className={classes.related_product_name}>
+            <Image
+              className={classes.product_related_image}
+              src="/yachtcarousel4.jpg"
+              width={250}
+              height={150}
+            />
+            <div>
+              <div>
+                <h3>$800,000,000</h3>
+                <h5>Product Name</h5>
+              </div>
+              <button>view</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={classes.upper_second_div}>
+        <h3>About.</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quam
+          quaerat reprehenderit soluta corrupti aperiam in optio. Impedit,
+          provident repellendus!
+        </p>
+        <div className={classes.user_related_images}>
+          <div>
+            <Image
+              className={classes.product_related_image}
+              src="/yachtcarousel5.jpg"
+              width={250}
+              height={150}
+            />
+            <div>
+              <div>
+                <h3>$800,000,000</h3>
+                <h5>Product Name</h5>
+              </div>
+              <button>view</button>
+            </div>
+          </div>
+          <div>
+            <Image
+              className={classes.product_related_image}
+              src="/yachtcarousel6.jpg"
+              width={250}
+              height={150}
+            />
+            <div>
+              <div>
+                <h3>$800,000,000</h3>
+                <h5>Product Name</h5>
+              </div>
+              <button>view</button>
+            </div>
+          </div>
+          <div>
+            <Image
+              className={classes.product_related_image}
+              src="/yachtcarousel7.jpg"
+              width={250}
+              height={150}
+            />
+            <div>
+              <div>
+                <h3>$800,000,000</h3>
+                <h5>Product Name</h5>
+              </div>
+              <button>view</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={classes.second_div}>
+        <h1>~ Chennai</h1>
+        <h1>~ 24 Listings</h1>
+        <h1>~ 15 Sold</h1>
+        <h1>~ Broker / Owner</h1>
+        <h1>~ 19 Reviews</h1>
+      </div>
+      <div className={classes.third_div}>
+        <h1>My Orders</h1>
+
+        <div>
+          <h3>No Previous Orders.</h3>
+        </div>
+      </div>
+      <div className={classes.third_div}>
+        <h1>My Garage</h1>
+        <div>
+          <h3>No Items Found.</h3>
+        </div>
+      </div>
+      <div className={classes.third_div}>
+        <h1>My Reviews</h1>
+        <div>
+          <h3>No Reviews Found.</h3>
+        </div>
+      </div>
+      <div className={classes.message_div}>
+        <Image
+          className={classes.message_image}
+          src="/message.png"
+          width={32}
+          height={32}
+        />
+      </div>
+      <div className={classes.fourth_div}>
+        <h1>My Wall</h1>
+        <div>
+          <div>Post 1</div>
+          <div>Post 2</div>
+          <div>Post 3</div>
+        </div>
+      </div>
+    </>
   );
 }
