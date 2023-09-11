@@ -10,7 +10,7 @@ import {
   updateProfile,
   sendEmailVerification,
 } from "firebase/auth";
-import { auth, provider } from "../../firebase/firebase";
+import { auth, provider } from "../firebase/firebase";
 import { useRouter } from "next/router";
 import Cookies from "universal-cookie";
 import { createUserWithEmailAndPassword } from "firebase/auth";

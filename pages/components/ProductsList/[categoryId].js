@@ -130,10 +130,8 @@ export default function ProductsList() {
   return (
     <div>
     <Navbar2/>  {/*........................... navbar */}
-    <div className="flex flex-row ">
-      <div>
-        {showFilter ? <Filter /> : ""}
-      </div>
+    <div>
+      
       <div>
       <div>
         {carouselImages === "yachtCarousel" ? (
