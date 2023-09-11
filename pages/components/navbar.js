@@ -5,7 +5,8 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import { useEffect, useState } from "react";
 import { useRouter } from 'next/router';
 import { Unica_One, Quicksand, Bebas_Neue } from "next/font/google";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import Dropdown from 'react-bootstrap/Dropdown';
+import { getAuth, onAuthStateChanged ,signOut} from "firebase/auth";
 
 
 import Nav_li_items from "../../Check/nav_li_items";
@@ -204,10 +205,23 @@ function Navbar1() {
         console.log("User Not Found")
        
       }
+     
     });
   },[])
-  
 
+  
+  
+  const sign_Out = () => {
+  signOut(auth)
+    .then(() => {
+      alert("Signed Out Successfully....")
+      setisUser(true);
+    })
+    .catch((error) => {
+      // An error happened.
+    });
+  }
+  
   const [li_content, set_li_content] = useState(li_default);
 
   const [nav2, setNav2] = useState(false);
@@ -249,7 +263,6 @@ function Navbar1() {
 
   return (
     <>
-
       {["lg"].map((expand) => (
         <div>
           <Navbar
@@ -314,14 +327,56 @@ function Navbar1() {
               </div>
               <div className="all-nav-btns">
                 <Button className="me-2 nav-btn">
-                  <span onClick={Explorer_account} className="nav-btns">Just For You</span>
+                  <span onClick={Explorer_account} className="nav-btns">
+                    Just For You
+                  </span>
                 </Button>
                 <Button className="me-2 nav-btn">
                   <span className="nav-btns">List With Us</span>
                 </Button>
-                <Button className="me-2 nav-btn sign-in-btn" disabled={btnDisable}>
-                  <span className="material-symbols-outlined">person</span>
-                  {isUser?<span id="signin">Login</span>:<span>{userName}</span>}
+                <Button
+                  className="me-2 nav-btn login-name-button"
+                  // disabled={btnDisable}
+                >
+                  {isUser ? (
+                    <span id="signin" onClick={()=>{router.push("/login")}
+                    
+                    }>
+                      Login
+                    </span>
+                  ) : (
+                    <span>
+                      <Dropdown className="mt-3.5">
+                        <Dropdown.Toggle
+                          variant="transparent"
+                          id="dropdown-basic"
+                        >
+                          <p className="inline-flex  text-neutral-50">
+                            <span className="material-symbols-outlined py-3">
+                              person
+                            </span>
+                            <span className="py-3">{userName}</span>
+                          </p>
+                        </Dropdown.Toggle>
+
+                        <Dropdown.Menu className="hover:bg-slate-100">
+                          <Dropdown.Item
+                            className="focus:bg-slate-100"
+                            href="#/action-1"
+                          >
+                            Account Details
+                          </Dropdown.Item>
+                          <Dropdown.Item
+                            className="focus:bg-slate-100"
+                              //href="#/action-2"
+                              onClick={sign_Out}
+                          >
+                            Sign Out
+                          </Dropdown.Item>
+                        </Dropdown.Menu>
+                      </Dropdown>
+                    </span>
+                  )}
                 </Button>
               </div>
               <Offcanvas show={show} onHide={handleClose}>
@@ -343,8 +398,16 @@ function Navbar1() {
                     <div>
                       <span class="material-symbols-outlined">
                         account_circle
-                    </span>
-                    {isUser ? <Button onClick={signInClick}>Sign in / Register</Button>:<p style={{marginLeft:"3rem",marginTop:"-37px"}}>{userName}</p>}
+                      </span>
+                      {isUser ? (
+                        <Button onClick={signInClick}>
+                          Sign in / Register
+                        </Button>
+                      ) : (
+                        <p style={{ marginLeft: "3rem", marginTop: "-37px" }}>
+                          {userName}
+                        </p>
+                      )}
                     </div>
                     <div>
                       <span class="material-symbols-outlined">recommend</span>
@@ -386,7 +449,7 @@ function Navbar1() {
                   </div>
                   <hr />
                   <div className="btn-div-2">
-                  <Button onClick={dashboardClick}>Dashboard</Button>
+                    <Button onClick={dashboardClick}>Dashboard</Button>
                     <Button>List With Us</Button>
                     <Button>Help & FAQ</Button>
                     <Button>About</Button>
@@ -398,13 +461,10 @@ function Navbar1() {
             </Container>
           </Navbar>
           <div className={nav2 ? "hidden" : "absolute w-full"}>
-            <div className={color ? "second_nav" : "second_nav2"}>
-              
-            </div>
+            <div className={color ? "second_nav" : "second_nav2"}></div>
 
             <Nav_li_items props={li_content} item={default_item} />
           </div>
-          
         </div>
       ))}
     </>

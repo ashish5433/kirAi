@@ -144,6 +144,7 @@ body {
 
 #signin {
   font-size: 0.9rem !important;
+  color: white;
 }
 
 .sign-in-btn span:nth-child(1) {
@@ -1454,4 +1455,50 @@ top: 1rem;
 left: 2rem;
 font-size: 2rem;
 color: white;
+}
+
+.login-name-button{
+  background-color: transparent;
+}
+.login-name-button :focus{
+background-color: transparent !important;
+border-color: #00000000 !important;
+}
+
+.login-name-button :active{
+background-color: transparent !important;
+border-color: #00000000 !important;
+}
+
+.btn {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #0d6dfd00 !important;
+    --bs-btn-border-color: #0d6dfd00 !important;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #0b5dd700 !important;
+    --bs-btn-hover-border-color: #0a57ca00 !important;
+    --bs-btn-focus-shadow-rgb: 49,132,253 !important;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #0a57ca00 !important;
+    --bs-btn-active-border-color: #0a52be00 !important;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !important;
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #0d6dfd00 !important;
+    --bs-btn-disabled-border-color: #0d6dfd00 !important;
+}
+.btn-primary  {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #0d6dfd00 !important;
+    --bs-btn-border-color: #0d6dfd00 !important;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #0b5dd700 !important;
+    --bs-btn-hover-border-color: #0a57ca00 !important;
+    --bs-btn-focus-shadow-rgb: 49,132,253 !important;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #0a57ca00 !important;
+    --bs-btn-active-border-color: #0a52be00 !important;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !important;
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #0d6dfd00 !important;
+    --bs-btn-disabled-border-color: #0d6dfd00 !important;
 }
