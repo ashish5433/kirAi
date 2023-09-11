@@ -62,7 +62,7 @@ const SignUp = () => {
     console.log(cookie.get("UserName"));
     // console.log(user1)
     router.push({
-      pathname: "http://localhost:3000/",
+      pathname: "/",
     });
   };
 

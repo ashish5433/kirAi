@@ -62,7 +62,7 @@ function SignIn() {
     // console.log(cookie.get('UserName'))
     // console.log(user1)
     router.push({
-      pathname: "http://localhost:3000/",
+      pathname: "/",
     });
   };
   const login = async () => {
@@ -85,7 +85,7 @@ function SignIn() {
           console.log(user);
           console.log(user.user.auth.displayName);
            router.push({
-             pathname: "http://localhost:3000",
+             pathname: "/",
            });
         }
       } catch (e) {
@@ -114,7 +114,7 @@ function SignIn() {
   };
   
   const chnagepage = () => {
-  router.push("http://localhost:3000");
+  router.push("/");
   }
   return (
     <>
