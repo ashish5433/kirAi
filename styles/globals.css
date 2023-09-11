@@ -375,19 +375,19 @@ nav {
 }
 
 .card-comp-1 {
-  background: url("../public/card_1.jpg") center center no-repeat;
+  background: url("../images/card_1.jpg") center center no-repeat;
 }
 
 .card-comp-2 {
-  background: url("../public/card_2.jpg") center center no-repeat;
+  background: url("../images/card_2.jpg") center center no-repeat;
 }
 
 .card-comp-3 {
-  background: url("../public/card_3.jpg") center center no-repeat;
+  background: url("../images/card_3.jpg") center center no-repeat;
 }
 
 .card-comp-4 {
-  background: url("../public/card_4.jpg") center center no-repeat;
+  background: url("../images/card_4.jpg") center center no-repeat;
   overflow: hidden !important;
 }
 
