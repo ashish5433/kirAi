@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useState, useEffect } from "react";
+import Router, { useRouter } from "next/router";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import axios from "axios";
 import {
@@ -17,13 +18,14 @@ import {
   signOut,
   sendPasswordResetEmail,
 } from "firebase/auth";
-import { auth, provider } from "../../firebase/firebase";
+import { auth, provider } from "../firebase/firebase";
 
 const GoogleIcon = styled(FontAwesomeIcon)`
   margin-right: 8px;
 `;
 
 function SignIn() {
+  const router = useRouter();
   const auth = getAuth();
   const [signInEmail, setSignInEmail] = useState("");
   const [signInPassword, setSignInPassword] = useState("");
@@ -82,6 +84,9 @@ function SignIn() {
           alert("Successfully Logged in");
           console.log(user);
           console.log(user.user.auth.displayName);
+           router.push({
+             pathname: "http://localhost:3000",
+           });
         }
       } catch (e) {
         alert("Invalid Credentials");
@@ -106,12 +111,17 @@ function SignIn() {
     };
       const handleCheckboxChange = () => {
         setIsChecked(!isChecked);
-      };
+  };
+  
+  const chnagepage = () => {
+  router.push("http://localhost:3000");
+  }
   return (
     <>
       <div className="login_content">
         <div className="inner_login">
           <h2>Login</h2>
+          <button onClick={chnagepage}>Sjnwk</button>
           <label>EMAIL</label>
           <input
             className="signUpEnterEmail"
@@ -151,22 +161,18 @@ function SignIn() {
             </button>
           </div>
         </div>
+        </div>
         <p className="or_text">or login with</p>
         <div className="login_icons">
           <button className="signupsubmitbtngoogle" onClick={signInwithgoogle}>
             <GoogleIcon icon={faGoogle} />
           </button>
-        </div>
+      </div>
+      <div className="logo_name">
+      <h1>SHAUKEENS</h1>
       </div>
     </>
   );
 }
 
 export default SignIn;
-
-// <button onClick={forgetPassword}>
-//           <h5 style={{ color: "blue" }}>Forget Password</h5>
-//         </button>
-//         <button className="signupsubmitbtn" onClick={SignOut}>
-//           Sign Out
-//         </button>

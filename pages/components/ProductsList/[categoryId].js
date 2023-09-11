@@ -126,10 +126,8 @@ const tags=["yacht","yachtlife","yachting","boat","sailing","yachts","luxury","b
   return (
     <div>
     <Navbar2/>  {/*........................... navbar */}
-    <div className="flex flex-row ">
-      <div>
-        {showFilter ? <Filter /> : ""}
-      </div>
+    <div>
+      
       <div>
       <Relatedtags tags={tags}/>
       <div>

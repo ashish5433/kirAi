@@ -1,7 +1,7 @@
 import Image from "next/image";
 import classes from "../../styles/Login.module.css";
-import SignIn from "./signIn2";
-import SignUp from "./signUp3";
+import SignIn from "../../signs/signIn2";
+import SignUp from "../../signs/signUp3";
 export default function LoggingIn() {
   return (
       <div>
