@@ -177,7 +177,7 @@ export default function ProductsList() {
         )}
       </div>
       <div>
-      <div className="flex flex-col mb-40 -mt-[520px] text-neutral-50">
+      <div className="flex flex-col absolute left-[10vw] top-[250px] w-[80%] text-neutral-50">
           <h1 style={{fontSize:"8vw"}} className={`m-auto relative ${fontBebas.className}`}>{categoryDetail}.</h1>
             <div className={`m-auto  ${classes.carousel_search}`}>
               <div><input style={{width:"30vw"}}
@@ -215,9 +215,9 @@ export default function ProductsList() {
             </div>
           </div>
       </div>
-      <Topfilter show={showFilter} showFunc={setShowFilter} gridOrList={gridOrList} setGridOrList={setGridOrList} />
-      <div className="mx-10">
-          <ProductCard products={yachtCarousel} view={gridOrList} />
+      {/* <Topfilter show={showFilter} showFunc={setShowFilter} gridOrList={gridOrList} setGridOrList={setGridOrList} /> */}
+      <div className="mx-24 ">
+          <div className="py-12"><ProductCard products={yachtCarousel} view={true} /></div>
         </div>
       </div>
 

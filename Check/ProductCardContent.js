@@ -17,7 +17,7 @@ const ProductCardContent = ({ data, view }) => {
 
   return (
     <div>
-      <div className={view ? "product-wrapper-col" : "product-wrapper-row"}>
+      <div className={view ? "product-wrapper-col " : "product-wrapper-row "}>
         <div className="product-cards">
           <Image style={{ width: "300px", height: "200px" }}
             onMouseLeave={() => {
@@ -39,7 +39,7 @@ const ProductCardContent = ({ data, view }) => {
                 Brand
               </div>
               {showBuy ? (
-                <div className="-mt-10 px-3 -ml-4  rounded-md sticky product-buynow text-neutral-50 text-xs pointer">
+                <div className="-mt-12 px-3  rounded-md sticky product-buynow text-neutral-50 text-xs pointer">
                   Buy Now
                 </div>
               ) : (
@@ -48,7 +48,7 @@ const ProductCardContent = ({ data, view }) => {
             </div> : ""
             }
 
-            <div className="flex justify-end ml-12 -mt-10 mb-8 absolute pointer">
+            <div className="flex justify-end ml-18 -mt-10 mb-8 absolute pointer">
               <svg style={{ marginLeft: "220px" }}
                 onClick={() => {
                   fillHeart === "#FFFFFF" ? setFillHeart("#FF1694") : setFillHeart("#FFFFFF")
@@ -72,8 +72,8 @@ const ProductCardContent = ({ data, view }) => {
             </div>
           </div>
           <div className={view===true ? "product-details-div-row" : "product-details-div-col"}>
-            <div className="text-slate-900">
-              <h6 className="px-2 text-xs font-bold">
+            <div className="text-red-300 ">
+              <h6 className="px-2  text-xs font-bold">
                 {
                   specifications.map((item) => {
                     return item
@@ -81,9 +81,9 @@ const ProductCardContent = ({ data, view }) => {
                 }
               </h6>
             </div>
-            <div className="product-details-inner">
+            <div className="product-details-inner ">
 
-              <div className="flex flex-col  text-neutral-900">
+              <div className="flex flex-col ">
 
                 <div className="">
                   <h6 className="px-2 text-xs">Product Brand</h6>
@@ -100,7 +100,7 @@ const ProductCardContent = ({ data, view }) => {
               </div> */}
               <div className="text-neutral-900 flex flex-col">
                 <span style={{ fontSize: "10px", fontWeight: "800" }}>EUR USD INR</span>
-                <span className="font-bold text-indigo-700">$500,000,000</span>
+                <span style={{color:"indigo"}} className="font-bold">$500,000,000</span>
               </div>
             </div>
           </div>

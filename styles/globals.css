@@ -525,7 +525,6 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color: white;
   letter-spacing: 1px;
 }
 
@@ -533,7 +532,6 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color: white;
   letter-spacing: 1px;
   margin-top: 80px;
 }
@@ -550,7 +548,6 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  color: white;
   letter-spacing: 1px;
 }
 .product-details {
