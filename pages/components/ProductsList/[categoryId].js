@@ -5,6 +5,8 @@ import Footer from "../footer";
 import classes from "./../../../styles/Home.module.css";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import Modal from "react-bootstrap/Modal"
+import Button from "react-bootstrap/Button";
 
 import { Unica_One, Quicksand, Bebas_Neue, Raleway } from "next/font/google";
 import motorYachts from "@/CategoryData/motorYachts";
@@ -26,7 +28,10 @@ import Topfilter from "../Filter/topfilter";
 import Sidenav from "../sidenav";
 import Navbar1 from "../navbar";
 import Navbar2 from "../navbar2";
-import Relatedtags from "../../../Check/relatedtags";
+import RelatedtagsEstate from "../../../Check/Relatedtags/relatedtagsestate";
+import RelatedtagsYachts from "@/Check/Relatedtags/relatedtagsyachts";
+import RelatedMotorcycle from "@/Check/Relatedtags/relatedMotorcycle";
+import RelatedtagsCars from "@/Check/Relatedtags/relatedCars";
 const fontBebas = Bebas_Neue({
   weight: ["400"],
   style: ["normal"],
@@ -45,7 +50,6 @@ export default function ProductsList() {
 
 
 // sample tags 
-const tags=["yacht","yachtlife","yachting","boat","sailing","yachts","luxury","boatlife","sea","boating","superyacht","boat","travel","luxuryyacht","yachtdesign","luxurylifestyle","yachtcharter","yachtlifestyle","summer","sail","megayach","ocean","sailboat","yachtworld","lifestyle","ailinglife","yachtclub","motoryacht","superyachts","sunset"]
 
   const router = useRouter();
   const categoryDetail = router.query.categoryId;
@@ -131,18 +135,39 @@ const tags=["yacht","yachtlife","yachting","boat","sailing","yachts","luxury","b
         {showFilter ? <Filter /> : ""}
       </div>
       <div>
-      <Relatedtags tags={tags}/>
       <div>
         {carouselImages === "yachtCarousel" ? (
-          <CarouselPage CarouselImages={yachtCarousel} />
+          <><RelatedtagsYachts/><Modal
+      // {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Modal heading
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <h4>Centered Modal</h4>
+        <p>
+          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
+          consectetur ac, vestibulum at eros.
+        </p>
+      </Modal.Body>
+      <Modal.Footer>
+        {/* <Button onClick={props.onHide}>Close</Button> */}
+      </Modal.Footer>
+    </Modal><CarouselPage CarouselImages={yachtCarousel} /></>
         ) : carouselImages === "estateCarousel" ? (
-          <CarouselPage CarouselImages={estateCarousel} />
+          <><RelatedtagsEstate /><CarouselPage CarouselImages={estateCarousel} /></>
         ) : carouselImages === "jetCarousel" ? (
           <CarouselPage CarouselImages={jetCarousel} />
         ) : carouselImages === "bikeCarousel" ? (
-          <CarouselPage CarouselImages={bikeCarousel} />
+          <><RelatedMotorcycle/><CarouselPage CarouselImages={bikeCarousel} /></>
         ) : carouselImages === "carCarousel" ? (
-          <CarouselPage CarouselImages={carCarousel} />
+          <><RelatedtagsCars/><CarouselPage CarouselImages={carCarousel} /></>
         ) : carouselImages === "amphibiousCarousel" ? (
           <CarouselPage CarouselImages={amphibiousCarousel} />
         ) : carouselImages === "submarineCarousel" ? (
