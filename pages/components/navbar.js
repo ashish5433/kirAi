@@ -3,11 +3,11 @@ import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { useEffect, useState } from "react";
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 import { Unica_One, Quicksand, Bebas_Neue } from "next/font/google";
-import Dropdown from 'react-bootstrap/Dropdown';
-import { getAuth, onAuthStateChanged ,signOut} from "firebase/auth";
-
+import Dropdown from "react-bootstrap/Dropdown";
+import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
+import classes from "./../../styles/responsive.module.css";
 
 import Nav_li_items from "../../Check/nav_li_items";
 import Sidenav from "./sidenav";
@@ -21,11 +21,10 @@ const play = Bebas_Neue({
 });
 
 function Navbar1() {
-
-  const [userName,setUserName]=useState("")
+  const [userName, setUserName] = useState("");
   const [show, setShow] = useState(false);
-  const [isUser,setisUser]=useState(true)
-  const [btnDisable,setbtnDisable]=useState(false)
+  const [isUser, setisUser] = useState(true);
+  const [btnDisable, setbtnDisable] = useState(false);
   const [color, setColor] = useState(false);
 
   const li_default = [[[]]];
@@ -193,35 +192,30 @@ function Navbar1() {
     ],
   ];
   const auth = getAuth(app);
-  useEffect(()=>{
+  useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        setUserName(auth.currentUser.displayName)
-        setisUser(false)
-        setbtnDisable(true)
-        console.log(auth.currentUser.displayName)
-      
+        setUserName(auth.currentUser.displayName);
+        setisUser(false);
+        setbtnDisable(true);
+        console.log(auth.currentUser.displayName);
       } else {
-        console.log("User Not Found")
-       
+        console.log("User Not Found");
       }
-     
     });
-  },[])
+  }, []);
 
-  
-  
   const sign_Out = () => {
-  signOut(auth)
-    .then(() => {
-      alert("Signed Out Successfully....")
-      setisUser(true);
-    })
-    .catch((error) => {
-      // An error happened.
-    });
-  }
-  
+    signOut(auth)
+      .then(() => {
+        alert("Signed Out Successfully....");
+        setisUser(true);
+      })
+      .catch((error) => {
+        // An error happened.
+      });
+  };
+
   const [li_content, set_li_content] = useState(li_default);
 
   const [nav2, setNav2] = useState(false);
@@ -251,15 +245,15 @@ function Navbar1() {
   const router = useRouter();
 
   const signInClick = () => {
-    router.push('/components/signUp3')
-  }
-  const dashboardClick = ()=>{
-    router.push("/components/Dashboard/Dashboard")
-  }
+    router.push("/login");
+  };
+  const dashboardClick = () => {
+    router.push("/components/Dashboard/Dashboard");
+  };
 
   const Explorer_account = () => {
-    router.push('/components/Explorer')
-  }
+    router.push("/components/Explorer");
+  };
 
   return (
     <>
@@ -305,7 +299,7 @@ function Navbar1() {
                   searchbar ? "hidden fadeout" : "flex justify-end fadein"
                 }
               >
-                <div className="carousel-search">
+                <div className={`${classes.smallnav} carousel-search`}>
                   <input
                     style={{ maxWidth: "500px", minWidth: "400px" }}
                     type="text"
@@ -325,7 +319,7 @@ function Navbar1() {
                   </button>
                 </div>
               </div>
-              <div className="all-nav-btns">
+              <div className={`${classes.small} all-nav-btns`}>
                 <Button className="me-2 nav-btn">
                   <span onClick={Explorer_account} className="nav-btns">
                     Just For You
@@ -339,9 +333,12 @@ function Navbar1() {
                   // disabled={btnDisable}
                 >
                   {isUser ? (
-                    <span id="signin" onClick={()=>{router.push("/login")}
-                    
-                    }>
+                    <span
+                      id="signin"
+                      onClick={() => {
+                        router.push("/login");
+                      }}
+                    >
                       Login
                     </span>
                   ) : (
@@ -368,8 +365,8 @@ function Navbar1() {
                           </Dropdown.Item>
                           <Dropdown.Item
                             className="focus:bg-slate-100"
-                              //href="#/action-2"
-                              onClick={sign_Out}
+                            //href="#/action-2"
+                            onClick={sign_Out}
                           >
                             Sign Out
                           </Dropdown.Item>
@@ -412,6 +409,10 @@ function Navbar1() {
                     <div>
                       <span class="material-symbols-outlined">recommend</span>
                       <Button>Just For You</Button>
+                    </div>
+                    <div>
+                      <span class="material-symbols-outlined">fact_check</span>
+                      <Button>List With Us</Button>
                     </div>
                   </div>
                   <hr />
