@@ -1,10 +1,11 @@
-import Navbar from "./components/navbar";
+import Navbar1 from "./components/navbar";
 import MidSection from "./components/midSection";
 import Corousel from "./components/Carousel";
 import ProgressBar from "react-progressbar-on-scroll";
 import Footer from "./components/footer";
 import HomeGradient from "./components/HomeGradient";
 import { useState } from "react";
+import HomeBeforelogin from "./components/HomeBeforelogin";
 export default function Home() {
   const [yachts, setYachts] = useState(false);
   const [estates, setEstates] = useState(false);
@@ -18,8 +19,9 @@ export default function Home() {
   const [rv, setRVs] = useState(false);
   return (
     <>
-      <div className="nav1">
-        <Navbar />
+    <HomeBeforelogin/>
+      {/* <div className="nav1">
+        <Navbar1/>
       </div>
       <div className="cor1">
         <HomeGradient
@@ -58,7 +60,7 @@ export default function Home() {
         RVProps={rv}
       />
       <Footer />
-      <ProgressBar color="black" height={10} position="bottom" />
+      <ProgressBar color="black" height={10} position="bottom" /> */}
     </>
   );
 }

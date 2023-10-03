@@ -39,8 +39,8 @@ const ProductCardContent = ({ data, view }) => {
                 Brand
               </div>
               {showBuy ? (
-                <div className="-mt-12 px-3  rounded-md sticky product-buynow text-neutral-50 text-xs pointer">
-                  Buy Now
+                <div className="-mt-12 w-20 px-2  rounded-md  product-buynow text-neutral-50  pointer">
+                  <p style={{"fontSize":"14px"}}>Buy Now</p>
                 </div>
               ) : (
                 ""
@@ -48,8 +48,8 @@ const ProductCardContent = ({ data, view }) => {
             </div> : ""
             }
 
-            <div className="flex justify-end ml-18 -mt-10 mb-8 absolute pointer">
-              <svg style={{ marginLeft: "220px" }}
+            <div className="flex justify-end ml-18 -mt-10 mb-8  pointer">
+              <svg className="mx-10"
                 onClick={() => {
                   fillHeart === "#FFFFFF" ? setFillHeart("#FF1694") : setFillHeart("#FFFFFF")
                 }}
