@@ -1,7 +1,7 @@
-import Datascroll from "./datascroll_sq";
+import Datascroll from "../../../Check/datascroll_sq";
 import filter from "./filter.module.css"
 import { Button } from "react-bootstrap";
-import Datascroll_R from "./datascroll_cir";
+import Datascroll_R from "../../../Check/datascroll_cir";
 import { useState } from "react";
 import Image from "next/image";
 import motorboat from "../../../images/motorboat.png";

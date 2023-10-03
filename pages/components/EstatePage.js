@@ -1,5 +1,6 @@
 import { Unica_One, Quicksand, Bebas_Neue } from "next/font/google";
 import CategoryCard from "./CategoryCards";
+import Relatedtags from "@/Check/Relatedtags/relatedtagsestate";
 
 const play = Bebas_Neue({
   weight: ["400"],

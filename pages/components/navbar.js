@@ -3,14 +3,15 @@ import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { useEffect, useState } from "react";
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 import { Unica_One, Quicksand, Bebas_Neue } from "next/font/google";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import Dropdown from "react-bootstrap/Dropdown";
+import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
+import classes from "./../../styles/responsive.module.css";
 
-
-import Nav_li_items from "./nav_li_items";
+import Nav_li_items from "../../Check/nav_li_items";
 import Sidenav from "./sidenav";
-import { app } from "../firebase/firebase";
+import { app } from "../../firebase/firebase";
 import Link from "next/link";
 import Dashboard from "./Dashboard/Dashboard";
 const play = Bebas_Neue({
@@ -20,11 +21,10 @@ const play = Bebas_Neue({
 });
 
 function Navbar1() {
-
-  const [userName,setUserName]=useState("")
+  const [userName, setUserName] = useState("");
   const [show, setShow] = useState(false);
-  const [isUser,setisUser]=useState(true)
-  const [btnDisable,setbtnDisable]=useState(false)
+  const [isUser, setisUser] = useState(true);
+  const [btnDisable, setbtnDisable] = useState(false);
   const [color, setColor] = useState(false);
 
   const li_default = [[[]]];
@@ -192,21 +192,29 @@ function Navbar1() {
     ],
   ];
   const auth = getAuth(app);
-  useEffect(()=>{
+  useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        setUserName(auth.currentUser.displayName)
-        setisUser(false)
-        setbtnDisable(true)
-        console.log(auth.currentUser.displayName)
-      
+        setUserName(auth.currentUser.displayName);
+        setisUser(false);
+        setbtnDisable(true);
+        console.log(auth.currentUser.displayName);
       } else {
-        console.log("User Not Found")
-       
+        console.log("User Not Found");
       }
     });
-  },[])
-  
+  }, []);
+
+  const sign_Out = () => {
+    signOut(auth)
+      .then(() => {
+        alert("Signed Out Successfully....");
+        setisUser(true);
+      })
+      .catch((error) => {
+        // An error happened.
+      });
+  };
 
   const [li_content, set_li_content] = useState(li_default);
 
@@ -237,19 +245,18 @@ function Navbar1() {
   const router = useRouter();
 
   const signInClick = () => {
-    router.push('/components/signUp3')
-  }
-  const dashboardClick = ()=>{
-    router.push("/components/Dashboard/Dashboard")
-  }
+    router.push("/login");
+  };
+  const dashboardClick = () => {
+    router.push("/components/Dashboard/Dashboard");
+  };
 
   const Explorer_account = () => {
-    router.push('/components/Explorer')
-  }
+    router.push("/components/Explorer");
+  };
 
   return (
     <>
-
       {["lg"].map((expand) => (
         <div>
           <Navbar
@@ -292,7 +299,7 @@ function Navbar1() {
                   searchbar ? "hidden fadeout" : "flex justify-end fadein"
                 }
               >
-                <div className="carousel-search">
+                <div className={`${classes.smallnav} carousel-search`}>
                   <input
                     style={{ maxWidth: "500px", minWidth: "400px" }}
                     type="text"
@@ -312,16 +319,61 @@ function Navbar1() {
                   </button>
                 </div>
               </div>
-              <div className="all-nav-btns">
+              <div className={`${classes.small} all-nav-btns`}>
                 <Button className="me-2 nav-btn">
-                  <span onClick={Explorer_account} className="nav-btns">Just For You</span>
+                  <span onClick={Explorer_account} className="nav-btns">
+                    Just For You
+                  </span>
                 </Button>
                 <Button className="me-2 nav-btn">
                   <span className="nav-btns">List With Us</span>
                 </Button>
-                <Button className="me-2 nav-btn sign-in-btn" disabled={btnDisable}>
-                  <span className="material-symbols-outlined">person</span>
-                  {isUser?<span id="signin">Login</span>:<span>{userName}</span>}
+                <Button
+                  className="me-2 nav-btn login-name-button"
+                  // disabled={btnDisable}
+                >
+                  {isUser ? (
+                    <span
+                      id="signin"
+                      onClick={() => {
+                        router.push("/login");
+                      }}
+                    >
+                      Login
+                    </span>
+                  ) : (
+                    <span>
+                      <Dropdown className="mt-3.5">
+                        <Dropdown.Toggle
+                          variant="transparent"
+                          id="dropdown-basic"
+                        >
+                          <p className="inline-flex  text-neutral-50">
+                            <span className="material-symbols-outlined py-3">
+                              person
+                            </span>
+                            <span className="py-3">{userName}</span>
+                          </p>
+                        </Dropdown.Toggle>
+
+                        <Dropdown.Menu className="hover:bg-slate-100">
+                          <Dropdown.Item
+                            className="focus:bg-slate-100"
+                            href="#/action-1"
+                          >
+                            Account Details
+                          </Dropdown.Item>
+                          <Dropdown.Item
+                            className="focus:bg-slate-100"
+                            //href="#/action-2"
+                            onClick={sign_Out}
+                          >
+                            Sign Out
+                          </Dropdown.Item>
+                        </Dropdown.Menu>
+                      </Dropdown>
+                    </span>
+                  )}
                 </Button>
               </div>
               <Offcanvas show={show} onHide={handleClose}>
@@ -343,12 +395,24 @@ function Navbar1() {
                     <div>
                       <span class="material-symbols-outlined">
                         account_circle
-                    </span>
-                    {isUser ? <Button onClick={signInClick}>Sign in / Register</Button>:<p style={{marginLeft:"3rem",marginTop:"-37px"}}>{userName}</p>}
+                      </span>
+                      {isUser ? (
+                        <Button onClick={signInClick}>
+                          Sign in / Register
+                        </Button>
+                      ) : (
+                        <p style={{ marginLeft: "3rem", marginTop: "-37px" }}>
+                          {userName}
+                        </p>
+                      )}
                     </div>
                     <div>
                       <span class="material-symbols-outlined">recommend</span>
                       <Button>Just For You</Button>
+                    </div>
+                    <div>
+                      <span class="material-symbols-outlined">fact_check</span>
+                      <Button>List With Us</Button>
                     </div>
                   </div>
                   <hr />
@@ -386,7 +450,7 @@ function Navbar1() {
                   </div>
                   <hr />
                   <div className="btn-div-2">
-                  <Button onClick={dashboardClick}>Dashboard</Button>
+                    <Button onClick={dashboardClick}>Dashboard</Button>
                     <Button>List With Us</Button>
                     <Button>Help & FAQ</Button>
                     <Button>About</Button>
@@ -398,87 +462,9 @@ function Navbar1() {
             </Container>
           </Navbar>
           <div className={nav2 ? "hidden" : "absolute w-full"}>
-            <div className={color ? "second_nav" : "second_nav2"}>
-              <ul className="flex bg-transparent -mt-4 space-x-4 p-2 border-t-1 text-white responsive_nav2">
-                <li
-                  onMouseEnter={() => {
-                    document.getElementsByClassName(
-                      "li_1_div"
-                    )[0].style.visibility = "visible";
-                    set_li_content(li1_items);
-                    setdefaultItem("Yachts");
-                  }}
-                  className="left_li1 pointer px-2 py-1 rounded-md bg-semi-white"
-                >
-                  Yachts
-                </li>
-                <li
-                  onMouseEnter={() => {
-                    document.getElementsByClassName(
-                      "li_1_div"
-                    )[0].style.visibility = "visible";
-                    set_li_content(li2_items);
-                    setdefaultItem("Real Estates");
-                  }}
-                  className="pointer px-2 py-1 rounded-md bg-semi-white"
-                >
-                  Real Estates
-                </li>
-                <li
-                  onMouseEnter={() => {
-                    document.getElementsByClassName(
-                      "li_1_div"
-                    )[0].style.visibility = "visible";
-                    set_li_content(li_default);
-                    setdefaultItem("Helicopter");
-                  }}
-                  className="pointer px-2 py-1 rounded-md bg-semi-white"
-                >
-                  Helicopter
-                </li>
-                <li
-                  onMouseEnter={() => {
-                    document.getElementsByClassName(
-                      "li_1_div"
-                    )[0].style.visibility = "visible";
-                    set_li_content(li4_items);
-                    setdefaultItem("Jets");
-                  }}
-                  className="pointer px-2 py-1 rounded-md bg-semi-white"
-                >
-                  Jets
-                </li>
-                <li
-                  onMouseEnter={() => {
-                    document.getElementsByClassName(
-                      "li_1_div"
-                    )[0].style.visibility = "visible";
-                    set_li_content(li_default);
-                    setdefaultItem("Bikes");
-                  }}
-                  className="pointer px-2 py-1 rounded-md bg-semi-white"
-                >
-                  Bikes
-                </li>
-                <li
-                  onMouseEnter={() => {
-                    document.getElementsByClassName(
-                      "li_1_div"
-                    )[0].style.visibility = "visible";
-                    set_li_content(li6_items);
-                    setdefaultItem("Cars");
-                  }}
-                  className="pointer px-2 py-1 rounded-md bg-semi-white"
-                >
-                  Cars
-                </li>
-              </ul>
-            </div>
+            <div className={color ? "second_nav" : "second_nav2"}></div>
 
             <Nav_li_items props={li_content} item={default_item} />
-          </div>
-          <div style={{ marginTop: "-222px" }}>
-            <Sidenav />
           </div>
         </div>
       ))}

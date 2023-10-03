@@ -1,6 +1,6 @@
 import { createUserWithEmailAndPassword } from "firebase/auth"
 import { useEffect, useState } from "react"
-import { auth, provider } from "../firebase/firebase"
+import { auth, provider } from "../../firebase/firebase"
 
 export default function SignInAndSignUp() {
     const [registerEmail, setregisterEmail] = useState("")

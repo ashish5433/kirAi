@@ -16,16 +16,17 @@ export default function CarouselPage({CarouselImages}) {
           showThumbs={false}
           stopOnHover={false}
         >
-          {CarouselImages?.map((data) => (
-            <div>
-              <div className="overlay"></div>
-              <Image
-                className="img-slider"
-                src={data.image}
-                width={1920}
-                height={1080}
-                priority={true}
-              />
+        {CarouselImages?.map((data) => (
+          <div>
+          
+          <div className="overlay"></div>
+            <Image
+            className="img-slider"
+            src={data.image}
+            width={1920}
+            height={1080}
+            priority={true}
+            />
             </div>
           ))}
         </Carousel>

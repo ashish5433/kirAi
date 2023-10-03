@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { db, storage } from "../firebase/firebase"
+import { db, storage } from "../../firebase/firebase"
 import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage"
 import { v4 } from "uuid"
 import Image from "next/image";
