@@ -3,18 +3,18 @@ import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import {
-  onAuthStateChanged,
-  signInWithPopup,
+  
   getAuth,
   updateProfile,
   sendEmailVerification,
 } from "firebase/auth";
-import { auth, provider } from "../firebase/firebase";
-import { useRouter } from "next/router";
-import Cookies from "universal-cookie";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import axios from "axios";
+import Toast from "@/pages/components/Toast";
 
 /////////////////////////// Email Verification...........///////////////////////////////
 
@@ -41,30 +41,14 @@ const GoogleIcon = styled(FontAwesomeIcon)`
 const SignUp = () => {
   const [showPass, setshowPass] = useState(false);
   const [showPassword, setshowPassword] = useState("password");
-  const [isChecked1, setIsChecked1] = useState(false);
   const [isChecked2, setIsChecked2] = useState(false);
-  const [isChecked3, setIsChecked3] = useState(false);
-  const [isChecked4, setIsChecked4] = useState(false);
+ 
   const [registerEmail, setregisterEmail] = useState("");
   const [registerName, setregisterName] = useState("");
   const [registerPassword, setregisterPassword] = useState("");
   const [registercnfrmPassword, setregistercnfrmPassword] = useState("");
-  const [user1, setUser] = useState("");
-  const router = useRouter();
-  //Login with Google.......
 
-  const signInwithgoogle = async () => {
-    const user = await signInWithPopup(auth, provider);
-    // console.log(user.user.displayName)
-    setUser(user.user.displayName);
-    alert("Signed In");
-    cookie.set("UserName", user.user.displayName);
-    console.log(cookie.get("UserName"));
-    // console.log(user1)
-    router.push({
-      pathname: "/",
-    });
-  };
+  
 
   // Register User with Email And Password.............
 
@@ -80,13 +64,55 @@ const SignUp = () => {
       registercnfrmPassword === "" ||
       registerName === ""
     ) {
-      alert("Please Fill the form properly");
+      toast.error('Please Fill the Form Properly!! ', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
 
-    }else if(!emailExists) alert("Email Doesn't Exist"); 
+    }else if(!emailExists) {
+      toast.error("Email doesn't exist!!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
+    } 
     else if (registerPassword !== registercnfrmPassword) {
-      alert("Password doesn't match!!!");
-    } else if (isChecked1 === false) {
-      alert("Please Accept terms and conditions");
+     {
+      toast.error("Password didn't matched!! ", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
+     }
+    } else if (isChecked2 === false) {
+     {
+      toast.error('Please accept terms and conditons!! ', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
+     }
     } else {
       try {
         const user = await createUserWithEmailAndPassword(
@@ -94,7 +120,18 @@ const SignUp = () => {
           registerEmail,
           registerPassword
         );
-        alert("Successfully registered");
+        {
+          toast.success('Registered Successfully and Email verification Sent!! ', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            });
+        }
         sendEmailVerification(auth.currentUser).then(() => {
           console.log("Email Sent");
         });
@@ -114,18 +151,11 @@ const SignUp = () => {
       }
     }
   };
-  const handleCheckboxChange1 = () => {
-    setIsChecked1(!isChecked1);
-  };
+  
   const handleCheckboxChange2 = () => {
     setIsChecked2(!isChecked2);
   };
-  const handleCheckboxChange3 = () => {
-    setIsChecked3(!isChecked3);
-  };
-  const handleCheckboxChange4 = () => {
-    setIsChecked4(!isChecked4);
-  };
+  
 
   const handleShowPassword = () => {
     setshowPass(!showPass);
@@ -140,6 +170,7 @@ const SignUp = () => {
 
   return (
     <>
+      <Toast/>
       <div className="secondsignupcont">
         <h2 className="explorer_title">Create an Explorer Account</h2>
         <div className="name_n_loc">
@@ -225,14 +256,7 @@ const SignUp = () => {
           </div>
         </div>
         <div className="terms_n_conditions">
-          <label>
-            <input
-              type="checkbox"
-              checked={isChecked1}
-              onChange={handleCheckboxChange1}
-            />
-            <span className="signupTerms"> Always Signed in</span>
-          </label>
+          
           <label>
             <input
               type="checkbox"
@@ -241,22 +265,8 @@ const SignUp = () => {
             />
             <span className="signupTerms"> Agree to Terms and Conditions</span>
           </label>
-          <label>
-            <input
-              type="checkbox"
-              checked={isChecked3}
-              onChange={handleCheckboxChange3}
-            />
-            <span className="signupTerms"> Read Privacy Policy</span>
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              checked={isChecked4}
-              onChange={handleCheckboxChange4}
-            />
-            <span className="signupTerms"> I Accept</span>
-          </label>
+         
+         
         </div>
               <div className="sign_up_btn">
               <button className="signupsubmitbtn2" onClick={Register}>

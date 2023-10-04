@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import Router, { useRouter } from "next/router";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {
   onAuthStateChanged,
   signInWithPopup,
@@ -27,11 +29,12 @@ const GoogleIcon = styled(FontAwesomeIcon)`
 function SignIn() {
   const router = useRouter();
   const auth = getAuth();
-  const [signInEmail, setSignInEmail] = useState("");
-  const [signInPassword, setSignInPassword] = useState("");
+  const user = auth.currentUser;
+  const [signInEmail, setSignInEmail] = useState(null);
+  const [signInPassword, setSignInPassword] = useState(null);
   const [showPassword, setshowPassword] = useState("password");
-    const [showPass, setshowPass] = useState(false);
-      const [isChecked, setIsChecked] = useState(false);
+  const [showPass, setshowPass] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
 
   const handleShowPassword = () => {
     setshowPass(!showPass);
@@ -56,20 +59,58 @@ function SignIn() {
     }
   };
   const signInwithgoogle = async () => {
+    try{
     const user = await signInWithPopup(auth, provider);
-
+    console.log(user)
     alert("Signed In");
-    // console.log(cookie.get('UserName'))
-    // console.log(user1)
     router.push({
       pathname: "/",
     });
+  }catch(e){
+    alert("Some error Occured Please refresh the page and try again")
+  }
   };
   const login = async () => {
-    const emailExists = await checkEmailExistence(signInEmail);
-    const checkEmail = await fetchSignInMethodsForEmail(auth, signInEmail);
-    if (!emailExists) alert("Invalid Email");
-    else if (checkEmail.length == 0) alert("User Doesn't Exist");
+   
+    if(signInEmail===null || signInPassword===null){
+      toast.error('Please Fill the Form Properly!! ', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
+    }
+    else{
+      const emailExists = await checkEmailExistence(signInEmail);
+      const checkEmail = await fetchSignInMethodsForEmail(auth, signInEmail);
+     if (!emailExists) {
+      toast.error('Invalid Email!! ', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
+    }
+    else if (checkEmail.length == 0) {
+      toast.error("User doesn't exists Please register!!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
+    }
     else {
       try {
         const user = await signInWithEmailAndPassword(
@@ -78,10 +119,28 @@ function SignIn() {
           signInPassword
         );
         if (!auth.currentUser.emailVerified) {
-          alert("Please Verify your Email");
+          toast.error('Please Verify your email!! ', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            });
           SignOut();
         } else {
-          alert("Successfully Logged in");
+          toast.success('Logged In successfully!! ', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            });
           console.log(user);
           console.log(user.user.auth.displayName);
            router.push({
@@ -89,15 +148,34 @@ function SignIn() {
            });
         }
       } catch (e) {
-        alert("Invalid Credentials");
+        toast.error('Invalid Credentials!! ', {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          });
         console.log(e);
       }
     }
+  }
   };
-
-  const SignOut = async () => {
-    await signOut(auth);
-  };
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // setUserName(auth.currentUser.displayName);
+        // setisUser(false);
+        // setbtnDisable(true);
+        console.log(auth.currentUser.displayName);
+      } else {
+        console.log("User Not Found");
+      }
+    });
+  }, []);
+ 
 
   const forgetPassword = async () => {
     try {
@@ -113,15 +191,41 @@ function SignIn() {
         setIsChecked(!isChecked);
   };
   
-  const chnagepage = () => {
-  router.push("/");
+  const chnagepage = async() => {
+    if (user){
+      await signOut(auth);
+    }
+    else {
+      toast.error('User not Found!! ', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
+    }
   }
   return (
     <>
+     <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="colored"
+            />
       <div className="login_content">
         <div className="inner_login">
           <h2>Login</h2>
-          <button onClick={chnagepage}>Sjnwk</button>
+          <button onClick={chnagepage}>Sign Out</button>
           <label>EMAIL</label>
           <input
             className="signUpEnterEmail"

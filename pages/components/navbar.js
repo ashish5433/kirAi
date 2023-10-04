@@ -20,7 +20,7 @@ const play = Bebas_Neue({
   subsets: ["latin"],
 });
 
-function Navbar1() {
+function Navbar1(props) {
   const [userName, setUserName] = useState("");
   const [show, setShow] = useState(false);
   const [isUser, setisUser] = useState(true);
@@ -204,18 +204,18 @@ function Navbar1() {
       }
     });
   }, []);
-
   const sign_Out = () => {
     signOut(auth)
       .then(() => {
         alert("Signed Out Successfully....");
-        setisUser(true);
+        // setisUser(true);
       })
       .catch((error) => {
-        // An error happened.
+        console.log(error)
       });
   };
-
+ 
+  
   const [li_content, set_li_content] = useState(li_default);
 
   const [nav2, setNav2] = useState(false);
@@ -254,7 +254,12 @@ function Navbar1() {
   const Explorer_account = () => {
     router.push("/components/Explorer");
   };
-
+  const ShowDetails =()=>{
+    props.setToshow(true)
+  }
+  const HideDetails =()=>{
+    props.setToshow(false)
+  }
   return (
     <>
       {["lg"].map((expand) => (
@@ -360,6 +365,8 @@ function Navbar1() {
                           <Dropdown.Item
                             className="focus:bg-slate-100"
                             href="#/action-1"
+                            onMouseEnter={ShowDetails}
+                            onMouseLeave={HideDetails}
                           >
                             Account Details
                           </Dropdown.Item>
