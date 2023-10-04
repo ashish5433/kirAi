@@ -10,10 +10,7 @@ import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import classes from "./../../styles/responsive.module.css";
 
 import Nav_li_items from "../../Check/nav_li_items";
-import Sidenav from "./sidenav";
 import { app } from "../../firebase/firebase";
-import Link from "next/link";
-import Dashboard from "./Dashboard/Dashboard";
 const play = Bebas_Neue({
   weight: ["400"],
   style: ["normal"],
@@ -330,7 +327,7 @@ function NavbarL() {
                 <div className={`${classes.small} all-nav-btns`}>
                   <span class="material-symbols-outlined">chat</span>
                   <span class="material-symbols-outlined">notifications</span>
-                  <span class="material-symbols-outlined">account_circle</span>
+                  <span onClick={()=>{router.push("/login")}} class="material-symbols-outlined pointer">account_circle</span>
                   <span class="material-symbols-outlined">settings</span>
                 </div>
                 <Offcanvas show={show} onHide={handleClose}>
