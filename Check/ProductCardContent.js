@@ -2,6 +2,7 @@ import { Raleway } from "next/font/google";
 import Image from "next/image";
 import React from "react";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 // const play = Raleway({
 //   weight: ["400"],
@@ -14,10 +15,12 @@ const specifications = ["200HP |", " 2019 |", " 44km/l", " Electric"]
 const ProductCardContent = ({ data, view }) => {
   const [showBuy, setShowBuy] = useState(false);
   const [fillHeart, setFillHeart] = useState("#FFFFFF");
+  const router = useRouter();
+
 
   return (
     <div>
-      <div className={view ? "product-wrapper-col " : "product-wrapper-row "}>
+      <div  className={view ? "product-wrapper-col " : "product-wrapper-row "}>
         <div className="product-cards">
           <Image style={{ width: "300px", height: "200px" }}
             onMouseLeave={() => {
@@ -39,17 +42,17 @@ const ProductCardContent = ({ data, view }) => {
                 Brand
               </div>
               {showBuy ? (
-                <div className="-mt-12 px-3  rounded-md sticky product-buynow text-neutral-50 text-xs pointer">
-                  Buy Now
-                </div>
+                <button onClick={()=>{router.push("/components/ProductPage")}} className="-mt-12 mx-2 w-20 px-2  rounded-md  product-buynow text-neutral-50  pointer">
+                  <p style={{"fontSize":"14px"}}>Buy Now</p>
+                </button>
               ) : (
                 ""
               )}
             </div> : ""
             }
 
-            <div className="flex justify-end ml-18 -mt-10 mb-8 absolute pointer">
-              <svg style={{ marginLeft: "220px" }}
+            <div className="flex justify-end ml-18 -mt-10 mb-8  pointer">
+              <svg className="mx-10"
                 onClick={() => {
                   fillHeart === "#FFFFFF" ? setFillHeart("#FF1694") : setFillHeart("#FFFFFF")
                 }}

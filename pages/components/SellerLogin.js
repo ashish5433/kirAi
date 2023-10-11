@@ -330,7 +330,8 @@ const Seller = () => {
                                             <input type="radio" name="category" /> Private
                                             Helicopters
                                         </label>
-                                    </div>
+                                    </div
+                                    >
                                     <div className={cls.rad_btn}>
                                         <label>
                                             <input type="radio" name="category" /> Beachside

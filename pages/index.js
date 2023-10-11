@@ -1,10 +1,16 @@
-import Navbar from "./components/navbar";
+import Navbar1 from "./components/navbar";
 import MidSection from "./components/midSection";
 import Corousel from "./components/Carousel";
 import ProgressBar from "react-progressbar-on-scroll";
 import Footer from "./components/footer";
 import HomeGradient from "./components/HomeGradient";
-import { useState } from "react";
+import { useState ,useEffect} from "react";
+import { getAuth,onAuthStateChanged } from "firebase/auth";
+import { app } from "../firebase/firebase";
+
+import HomeBeforelogin from "./components/HomeBeforelogin";
+import { useTheme } from "styled-components";
+import UserProfile from "./components/UserProfile";
 export default function Home() {
   const [yachts, setYachts] = useState(false);
   const [estates, setEstates] = useState(false);
@@ -16,10 +22,40 @@ export default function Home() {
   const [submarine, setSubmarines] = useState(false);
   const [atv, setATVs] = useState(false);
   const [rv, setRVs] = useState(false);
+  const [userName,setUserName]=useState(null)
+  const [userEmail,setUserEmail]=useState(null)
+  const [isUser,setisUser]=useState(false)
+  const [toShow,SettoShow]=useState(false)
+    
+  const auth = getAuth(app);
+    useEffect(() => {
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          setUserName(auth.currentUser.displayName);
+          setUserEmail(auth.currentUser.email)
+          setisUser(true);
+          // setbtnDisable(true);
+          console.log(auth.currentUser.displayName);
+        } else {
+          setisUser(false);
+          console.log("User Not Found");
+        }
+      });
+    }, [isUser]);
+
+    
   return (
+
+    
     <>
-      <div className="nav1">
-        <Navbar />
+    {!isUser?
+    <HomeBeforelogin/>:
+    <>
+    
+     <div className="nav1">
+     <Navbar1 isShow={toShow} setToshow={SettoShow}/>
+     {toShow &&<UserProfile Name={userName} Email={userEmail} />}
+
       </div>
       <div className="cor1">
         <HomeGradient
@@ -58,7 +94,9 @@ export default function Home() {
         RVProps={rv}
       />
       <Footer />
-      <ProgressBar color="black" height={10} position="bottom" />
+      <ProgressBar color="black" height={10} position="bottom" /> 
+      </>
+    }
     </>
   );
 }
