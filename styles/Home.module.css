@@ -80,6 +80,7 @@
   text-transform: capitalize;
   letter-spacing: 2px;
   word-spacing: 3px;
+  text-align: center;
 }
 .subcategory_div{
   display: flex;
@@ -144,4 +145,491 @@
 }
 .selected span {
   font-size: 3rem;
+}
+
+@media only screen and (max-width: 1150px){
+.overlay_main_title>h1{
+font-size: 7.5rem;
+margin: 0;
+}
+.carousel_search input {
+  width: 70%;
+  padding: 1%;
+  text-align: center;
+  font-size: 110%;
+  border-radius: 2rem;
+  outline: none;
+  border: none;
+  letter-spacing: 1px;
+  transition-duration: 300ms;
+}
+.carousel_search button span{
+font-size: 100%;
+padding: 0.65rem;
+}
+.line_span {
+  font-size: 60% !important;
+  padding-top: 1rem;
+  letter-spacing: 2px;
+  word-spacing: 3px;
+}
+.carousel_icons {
+  width: 90px;
+  height: 90px;
+}
+.carousel_icons span {
+  font-size: 1.8rem;
+}
+.selected {
+  width: 99px;
+  height: 99px;
+
+}
+.selected:hover {
+  width: 99px;
+  height: 99px;
+}
+.selected span {
+  font-size: 2.5rem;
+}
+}
+@media only screen and (max-width: 1060px){
+.overlay_main_title>h1{
+font-size: 7.5rem;
+margin: 0;
+}
+.carousel_search input {
+  width: 60%;
+  padding: 1%;
+  text-align: center;
+  font-size: 110%;
+  border-radius: 2rem;
+  outline: none;
+  border: none;
+  letter-spacing: 1px;
+  transition-duration: 300ms;
+}
+.carousel_search button span{
+font-size: 100%;
+padding: 0.65rem;
+}
+.line_span {
+  font-size: 60% !important;
+  padding-top: 1rem;
+  letter-spacing: 2px;
+  word-spacing: 3px;
+}
+.carousel_icons {
+  width: 80px;
+  height: 80px;
+}
+.carousel_icons span {
+  font-size: 1.6rem;
+}
+.selected {
+  width: 92px;
+  height: 92px;
+
+}
+.selected:hover {
+  width: 92px;
+  height: 92px;
+}
+.selected span {
+  font-size: 2.3rem;
+}
+}
+@media only screen and (max-width: 980px){
+.overlay_main_title>h1{
+font-size: 7.5rem;
+margin: 0;
+}
+.carousel_search input {
+  width: 80%;
+  padding: 1%;
+  text-align: center;
+  font-size: 110%;
+  border-radius: 2rem;
+  outline: none;
+  border: none;
+  letter-spacing: 1px;
+  transition-duration: 300ms;
+}
+.carousel_search button span{
+font-size: 100%;
+padding: 0.65rem;
+}
+.line_span {
+  font-size: 60% !important;
+  padding-top: 1rem;
+  letter-spacing: 2px;
+  word-spacing: 3px;
+}
+.carousel_icon_div {
+  gap: 22px;
+  padding: 0 4%;
+  padding-top: 2%;
+  flex-wrap: wrap;
+
+}
+.carousel_icons {
+  width: 80px;
+  height: 80px;
+}
+.carousel_icons span {
+  font-size: 1.6rem;
+}
+.selected {
+  width: 92px;
+  height: 92px;
+
+}
+.selected:hover {
+  width: 92px;
+  height: 92px;
+}
+.selected span {
+  font-size: 2.3rem;
+}
+}
+@media only screen and (max-width: 780px){
+.overlay_main_title>h1{
+font-size: 6.3rem;
+margin: 0;
+}
+.carousel_search input {
+  width: 80%;
+  padding: 1%;
+  text-align: center;
+  font-size: 110%;
+  border-radius: 2rem;
+  outline: none;
+  border: none;
+  letter-spacing: 1px;
+  transition-duration: 300ms;
+}
+.carousel_search button span{
+font-size: 100%;
+padding: 0.65rem;
+}
+.line_span {
+  width: 150%;
+  font-size: 45% !important;
+  padding-top: 1rem;
+  letter-spacing: 2px;
+  word-spacing: 3px;
+}
+.carousel_icon_div {
+  gap: 20px;
+  padding: 0 4%;
+  padding-top: 3%;
+  flex-wrap: wrap;
+
+}
+.carousel_icons {
+  width: 80px;
+  height: 80px;
+}
+.carousel_icons span {
+  font-size: 1.6rem;
+}
+.selected {
+  width: 92px;
+  height: 92px;
+
+}
+.selected:hover {
+  width: 92px;
+  height: 92px;
+}
+.selected span {
+  font-size: 2.3rem;
+}
+}
+@media only screen and (max-width: 500px){
+.overlay_main_title>h1{
+font-size:5.5rem;
+margin: 0;
+}
+.carousel_search {
+  width: 80%;
+}
+.carousel_search input {
+  width: 80%;
+  padding: 0.8%;
+  text-align: center;
+  font-size: 90%;
+  border-radius: 2rem;
+  outline: none;
+  border: none;
+  letter-spacing: 1px;
+  transition-duration: 300ms;
+}
+.carousel_search button span{
+font-size: 80%;
+padding: 0.65rem;
+}
+.line_span {
+  width: 100%;
+  font-size: 45% !important;
+  padding-top: 1rem;
+  letter-spacing: 2px;
+  word-spacing: 3px;
+}
+.carousel_icon_div {
+  gap: 20px;
+  padding: 0 4%;
+  padding-top: 7%;
+  flex-wrap: wrap;
+
+}
+.carousel_icons {
+  width: 70px;
+  height: 70px;
+}
+.carousel_icons span {
+  font-size: 1.2rem;
+}
+.selected {
+  width: 82px;
+  height: 82px;
+
+}
+.selected:hover {
+  width: 82px;
+  height: 82px;
+}
+.selected span {
+  font-size: 2rem;
+}
+}
+@media only screen and (max-width: 450px){
+.overlay_main_title>h1{
+font-size:5.5rem;
+margin: 0;
+}
+.carousel_search {
+  width: 80%;
+}
+.carousel_search input {
+  width: 80%;
+  padding: 0.8%;
+  text-align: center;
+  font-size: 90%;
+  border-radius: 2rem;
+  outline: none;
+  border: none;
+  letter-spacing: 1px;
+  transition-duration: 300ms;
+}
+.carousel_search button span{
+font-size: 80%;
+padding: 0.65rem;
+}
+.line_span {
+  width: 100%;
+  font-size: 45% !important;
+  padding-top: 1rem;
+  letter-spacing: 2px;
+  word-spacing: 3px;
+}
+.carousel_icon_div {
+  gap: 20px;
+  padding: 0 4%;
+  padding-top: 7%;
+  flex-wrap: wrap;
+
+}
+.carousel_icons {
+  width: 70px;
+  height: 70px;
+}
+.carousel_icons span {
+  font-size: 1.2rem;
+}
+.selected {
+  width: 82px;
+  height: 82px;
+
+}
+.selected:hover {
+  width: 82px;
+  height: 82px;
+}
+.selected span {
+  font-size: 2rem;
+}
+}
+@media only screen and (max-width: 408px){
+.overlay_main_title>h1{
+font-size:5rem;
+margin: 0;
+}
+.carousel_search {
+  width: 80%;
+}
+.carousel_search input {
+  width: 80%;
+  padding: 0.8%;
+  text-align: center;
+  font-size: 90%;
+  border-radius: 2rem;
+  outline: none;
+  border: none;
+  letter-spacing: 1px;
+  transition-duration: 300ms;
+}
+.carousel_search button span{
+font-size: 80%;
+padding: 0.65rem;
+}
+.line_span {
+  width: 100%;
+  font-size: 45% !important;
+  padding-top: 1rem;
+  letter-spacing: 2px;
+  word-spacing: 3px;
+}
+.carousel_icon_div {
+  gap: 20px;
+  padding: 0 0%;
+  padding-top: 7%;
+  flex-wrap: wrap;
+
+}
+.carousel_icons {
+  width: 70px;
+  height: 70px;
+}
+.carousel_icons span {
+  font-size: 1.4rem;
+}
+.selected {
+  width: 82px;
+  height: 82px;
+
+}
+.selected:hover {
+  width: 82px;
+  height: 82px;
+}
+.selected span {
+  font-size: 2rem;
+}
+}
+@media only screen and (max-width: 392px){
+
+.overlay_main_title>h1{
+font-size:4.5rem;
+margin: 0;
+}
+.carousel_search {
+  width: 90%;
+}
+.carousel_search input {
+  width: 80%;
+  padding: 1%;
+  text-align: center;
+  font-size: 80%;
+  border-radius: 2rem;
+  outline: none;
+  border: none;
+  letter-spacing: 1px;
+  transition-duration: 300ms;
+}
+.carousel_search button span{
+font-size: 65%;
+padding: 0.55rem;
+}
+.line_span {
+  width: 100%;
+  font-size: 35% !important;
+  padding-top: 1rem;
+  letter-spacing: 2px;
+  word-spacing: 3px;
+}
+.carousel_icon_div {
+  gap: 18px;
+  padding: 0 0%;
+  padding-top: 7%;
+  flex-wrap: wrap;
+
+}
+.carousel_icons {
+  width: 60px;
+  height: 60px;
+}
+.carousel_icons span {
+  font-size: 1.3rem;
+}
+.selected {
+  width: 70px;
+  height: 70px;
+
+}
+.selected:hover {
+  width: 70px;
+  height: 70px;
+}
+.selected span {
+  font-size: 1.9rem;
+}
+}
+@media only screen and (max-width: 327px){
+
+.overlay_main_title>h1{
+font-size:3.7rem;
+margin: 0;
+}
+.carousel_search {
+  width: 80%;
+}
+.carousel_search input {
+  width: 80%;
+  padding: 1%;
+  text-align: center;
+  font-size: 80%;
+  border-radius: 2rem;
+  outline: none;
+  border: none;
+  letter-spacing: 1px;
+  transition-duration: 300ms;
+}
+.carousel_search button span{
+font-size: 65%;
+padding: 0.55rem;
+}
+.line_span {
+  width: 100%;
+  font-size: 35% !important;
+  padding-top: 1rem;
+  letter-spacing: 2px;
+  word-spacing: 3px;
+}
+.carousel_icon_div {
+  gap: 13px;
+  padding: 0 0%;
+  padding-top: 7%;
+  flex-wrap: wrap;
+
+}
+.carousel_icons {
+  width: 60px;
+  height: 60px;
+}
+.carousel_icons span {
+  font-size: 1.3rem;
+}
+.selected {
+  width: 70px;
+  height: 70px;
+
+}
+.selected:hover {
+  width: 70px;
+  height: 70px;
+}
+.selected span {
+  font-size: 1.9rem;
+}
 }
