@@ -7,27 +7,27 @@ import chatbot from "../../../../images/chatbot.png";
 
 function Support() {
   return (
-    <div className="flex flex-col bg-slate-200 h-[100vh] w-[83vw] -m-3">
+    <div className="flex flex-col bg-slate-200 m-3">
       <div className="supportbg">
         <h1 className="italic font-thin font-serif text-right mr-20 mt-10 text-neutral-950">
           How can we help you ?
         </h1>
         <input
           type="text"
-          className="mr-20 ml-[65%] p-2 w-[30%] bg-slate-200 rounded-xl hover:border-2 hover:border-slate-300 hover:shadow-md"
+          className="mr-20 ml-[35%] md:ml-[65%] p-2 w-[30%] bg-slate-200 rounded-xl hover:border-2 hover:border-slate-300 hover:shadow-md"
           placeholder="Type your message here ..."
         />
-        <button className="ml-[78%] mt-2 w-20 bg-violet-600 px-4 py-2 rounded-full text-neutral-100 font-semibold ">
+        <button className="ml-[35%] md:ml-[78%] mt-2 w-20 bg-violet-600 px-4 py-2 rounded-full text-neutral-100 font-semibold ">
           Send
         </button>
-        <div className="ml-[65%] mt-14 text-neutral-800">
-          <h6 className="font-bold">Follow us at :- </h6>
-          <div className=" ml-24 flex gap-3 mt-3 scale-150">
+        <div className="flex ml-[20%] md:ml-[65%] mt-14 text-neutral-800">
+          <h6 className="font-bold ">Follow us at :- </h6>
+          <div className="ml-10  flex flex-wrap gap-3  scale-150">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
             height="16"
-            fill="currentColor"
+            fill="gray"
             class="bi bi-instagram pointer"
             viewBox="0 0 16 16"
           >
@@ -37,7 +37,7 @@ function Support() {
             xmlns="http://www.w3.org/2000/svg"
             width="16"
             height="16"
-            fill="currentColor"
+            fill="gray"
             class="bi bi-facebook pointer"
             viewBox="0 0 16 16"
           >
@@ -47,7 +47,7 @@ function Support() {
             xmlns="http://www.w3.org/2000/svg"
             width="16"
             height="16"
-            fill="currentColor"
+            fill="gray"
             class="bi bi-twitter pointer"
             viewBox="0 0 16 16"
           >
@@ -56,18 +56,18 @@ function Support() {
           </div> 
         </div>
       </div>
-      <div className="bg-slate-300 p-2  w-full mt-3">
-        <input
+      <div className="bg-slate-300 p-2 flex flex-wrap w-full mt-3">
+        <div><input
           type="text"
-          className="p-3 mt-2 mx-28 py-2 pl-5  w-[70%] bg-slate-100 rounded-xl "
+          className="p-3 px-10 w-[80vw] mt-2 py-2 pl-5 bg-slate-100 rounded-xl "
           placeholder="Find what your are Searching for ..."
-        />
-        <button className="w-28 -ml-24 bg-violet-700 py-2 rounded-lg text-neutral-100 font-semibold ">
+        /></div>
+        <div><button className="w-28 m-2 bg-violet-700 py-2 rounded-lg text-neutral-100 font-semibold ">
           Search
-        </button>
+        </button></div>
       </div>
       <div className="">
-        <div className="grid grid-cols-3 mt-2 text-center px-32 py-10 bg-slate-300">
+        <div className="grid gap-2 md:grid-cols-3 mt-2 text-center px-5 py-10 bg-slate-300">
           <div className="w-[90%] border-2 p-10 bg-slate-100 border-slate-100 rounded-2xl shadow-lg">
             <Image
               className="rounded-full m-auto shadow-xl border-4 border-slate-200"
@@ -110,7 +110,7 @@ function Support() {
 
           <div className="fixed">
             <Image
-              className="ml-[67vw] mt-52 rounded-full border-2 shadow-xl"
+              className="md:ml-[82vw] mt-32 rounded-full border-2 shadow-xl"
               src={chatbot}
               width={100}
               height={100}

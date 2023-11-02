@@ -177,7 +177,7 @@ export default function Enquiries() {
         </span>
 
         <hr />
-        <div className="grid grid-row-1 grid-cols-2 gap-2">
+        <div className="grid md:grid-row-1 md:grid-cols-2 gap-2">
           <div className="px-2 grid-rows-2 grid-cols-1 border-2 rounded-lg border-gray-300 p-3 ">
             <div className="static">
               <div className="flex flex-wrap  ">
@@ -203,25 +203,27 @@ export default function Enquiries() {
               {listEnquiries.map(() => {
                 return (
                   <>
-                    <div className="flex flex-row">
+                    <div className="flex flex-col md:flex-row">
                       <div className="flex m-2 mx-3">
-                        <span>
-                          <svg
-                            className="m-auto"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="30"
-                            height="30"
-                            fill="indigo"
-                            class="bi bi-geo-alt-fill"
-                            viewBox="0 0 16 16"
-                          >
-                            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
-                          </svg>
-                        </span>
-                        <span className="flex flex-col">
-                          <span className="font-semibold">ANONYMOUS</span>
-                          <span>Country, Region</span>
-                        </span>
+                        <div>
+                          <span>
+                            <svg
+                              className="m-auto"
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="30"
+                              height="30"
+                              fill="indigo"
+                              class="bi bi-geo-alt-fill"
+                              viewBox="0 0 16 16"
+                            >
+                              <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+                            </svg>
+                          </span>
+                          <span className="flex flex-col">
+                            <span className="font-semibold">ANONYMOUS</span>
+                            <span>Country, Region</span>
+                          </span>
+                        </div>
                       </div>
                       <div className="py-2 text-sm">
                         Lorem ipsum, dolor sit amet consectetur adipisicing
@@ -263,7 +265,7 @@ export default function Enquiries() {
                     </span>
                   </div>
                   <div className="flex flex-col mx-2 ">
-                    <span className="ml-[28rem]">
+                    <span className="ml-[22vw]">
                       <svg
                         className="m-auto"
                         xmlns="http://www.w3.org/2000/svg"
@@ -276,7 +278,9 @@ export default function Enquiries() {
                         <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
                       </svg>
                     </span>
-                    <span className="text-sm w-14 ml-[28rem] font-bold">Request A Visit</span>
+                    <span className="text-sm w-14 ml-[22vw]  font-bold">
+                      Request A Visit
+                    </span>
                   </div>
                 </div>
               </div>
@@ -285,10 +289,16 @@ export default function Enquiries() {
             <div className="h-[180px] overflow-y-scroll "></div>
             <hr />
             <div className="h-[50px] flex flex-row absolute">
-              <span className="w-full"><input placeholder="Type a message ..." type="text"  className="border-2 px-2 border-gray-300 shadow-md rounded-lg h-14 -mt-2 w-[590px]" /></span>
-              <span className="material-symbols-outlined  px-3 rounded-lg mx-1 border-2 border-violet-600 bg-rose-100 -mt-2">
-send
-</span>
+              <span className="w-[110%]">
+                <input
+                  placeholder="Type a message ..."
+                  type="text"
+                  className=" border-2 px-2 border-gray-300 shadow-md rounded-lg h-14"
+                />
+              </span>
+              <span className="material-symbols-outlined px-2  md:px-3 rounded-lg mx-1 border-2 border-violet-600 bg-rose-100 ">
+                send
+              </span>
             </div>
           </div>
         </div>

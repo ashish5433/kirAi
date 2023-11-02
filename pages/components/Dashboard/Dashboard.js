@@ -18,12 +18,13 @@ import Listings from './Options/Listings';
 
 export default function Dashboard() {
   const [showOption,setShowOption] = useState("Home");
+  const [dashoption,setDashOption] = useState(true);
   return (
     <div>
-      <Navdash />
+      <Navdash dashoption={dashoption} setDashOption={setDashOption}/>
       <div>
-        <div className='grid grid-cols-12  border-t-2'>
-          <div className='col-span-2 bg-black pt-4 flex flex-col '>
+        <div className='flex flex-col lg:flex-row  border-t-2'>
+          <div className={dashoption ? `col-span-2 bg-black pt-4 flex flex-col`: "hidden"} >
             <div onClick={()=>{setShowOption("Home")}} className={`flex flex-row hover:bg-violet-300 text-neutral-50 hover:text-neutral-900  m-2 pointer  py-1 ${showOption ==="Home" ? "bg-violet-300" : "bg-neutral-900"}`}>
               <span class="material-symbols-outlined  border-4 mt-1 ml-10  h-14 w-14 rounded-full border-violet-800 bg-black text-neutral-50">
                 home
@@ -60,14 +61,14 @@ export default function Dashboard() {
               </span>
               <span className='my-1 mx-3 px-4  py-2 rounded-xl text-lg text-center font-bold' >Support</span>
             </div>
-            <div className='mt-[20vh] text-center'>
+            <div className='mt-16 text-center'>
               <span className='text-neutral-50 px-5 py-3 bg-violet-800 rounded-md'>Affiliate with Us</span>
             </div>
           </div>
           
           {showOption==="Home" ? <>
-
-            <div className="m-3 col-span-7">
+        
+            <div className="m-3 md:col-span-7">
             <Home/>
           </div>
 
