@@ -4,8 +4,10 @@ import { useState, useEffect } from "react";
 import Router, { useRouter } from "next/router";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import axios from "axios";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import leftvideo from "../images/leftvideo.gif"
+import Image from "next/image";
 import {
   onAuthStateChanged,
   signInWithPopup,
@@ -59,21 +61,20 @@ function SignIn() {
     }
   };
   const signInwithgoogle = async () => {
-    try{
-    const user = await signInWithPopup(auth, provider);
-    console.log(user)
-    alert("Signed In");
-    router.push({
-      pathname: "/",
-    });
-  }catch(e){
-    alert("Some error Occured Please refresh the page and try again")
-  }
+    try {
+      const user = await signInWithPopup(auth, provider);
+      console.log(user);
+      alert("Signed In");
+      router.push({
+        pathname: "/",
+      });
+    } catch (e) {
+      alert("Some error Occured Please refresh the page and try again");
+    }
   };
   const login = async () => {
-   
-    if(signInEmail===null || signInPassword===null){
-      toast.error('Please Fill the Form Properly!! ', {
+    if (signInEmail === null || signInPassword === null) {
+      toast.error("Please Fill the Form Properly!! ", {
         position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
@@ -82,73 +83,12 @@ function SignIn() {
         draggable: true,
         progress: undefined,
         theme: "colored",
-        });
-    }
-    else{
+      });
+    } else {
       const emailExists = await checkEmailExistence(signInEmail);
       const checkEmail = await fetchSignInMethodsForEmail(auth, signInEmail);
-     if (!emailExists) {
-      toast.error('Invalid Email!! ', {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-        });
-    }
-    else if (checkEmail.length == 0) {
-      toast.error("User doesn't exists Please register!!", {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-        });
-    }
-    else {
-      try {
-        const user = await signInWithEmailAndPassword(
-          auth,
-          signInEmail,
-          signInPassword
-        );
-        if (!auth.currentUser.emailVerified) {
-          toast.error('Please Verify your email!! ', {
-            position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
-            });
-          SignOut();
-        } else {
-          toast.success('Logged In successfully!! ', {
-            position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
-            });
-          console.log(user);
-          console.log(user.user.auth.displayName);
-           router.push({
-             pathname: "/",
-           });
-        }
-      } catch (e) {
-        toast.error('Invalid Credentials!! ', {
+      if (!emailExists) {
+        toast.error("Invalid Email!! ", {
           position: "top-center",
           autoClose: 5000,
           hideProgressBar: false,
@@ -157,11 +97,69 @@ function SignIn() {
           draggable: true,
           progress: undefined,
           theme: "colored",
+        });
+      } else if (checkEmail.length == 0) {
+        toast.error("User doesn't exists Please register!!", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
+      } else {
+        try {
+          const user = await signInWithEmailAndPassword(
+            auth,
+            signInEmail,
+            signInPassword
+          );
+          if (!auth.currentUser.emailVerified) {
+            toast.error("Please Verify your email!! ", {
+              position: "top-center",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+            });
+            SignOut();
+          } else {
+            toast.success("Logged In successfully!! ", {
+              position: "top-center",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+            });
+            console.log(user);
+            console.log(user.user.auth.displayName);
+            router.push({
+              pathname: "/",
+            });
+          }
+        } catch (e) {
+          toast.error("Invalid Credentials!! ", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
           });
-        console.log(e);
+          console.log(e);
+        }
       }
     }
-  }
   };
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -175,7 +173,6 @@ function SignIn() {
       }
     });
   }, []);
- 
 
   const forgetPassword = async () => {
     try {
@@ -186,17 +183,16 @@ function SignIn() {
       alert(error.message);
       console.error("Error sending password reset email:", error.message);
     }
-    };
-      const handleCheckboxChange = () => {
-        setIsChecked(!isChecked);
   };
-  
-  const chnagepage = async() => {
-    if (user){
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
+  };
+
+  const chnagepage = async () => {
+    if (user) {
       await signOut(auth);
-    }
-    else {
-      toast.error('User not Found!! ', {
+    } else {
+      toast.error("User not Found!! ", {
         position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
@@ -205,24 +201,36 @@ function SignIn() {
         draggable: true,
         progress: undefined,
         theme: "colored",
-        });
+      });
     }
-  }
+  };
   return (
     <>
-     <ToastContainer
-                position="top-center"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="colored"
-            />
-      <div className="login_content">
+      {/* <div>
+        <Video
+          src={videoLoop}
+          autoPlay
+          muted
+          loop
+          playsInLine
+          controls={false}
+          className={classes.videos}
+        ></Video>
+      </div> */}
+      {/* <Image src={leftvideo}/> */}
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
+      <div className="login_content ">
         <div className="inner_login">
           <h2>Login</h2>
           <button onClick={chnagepage}>Sign Out</button>
@@ -252,8 +260,8 @@ function SignIn() {
           </button>
           <div className="button_div">
             <div>
-                          <input
-                              className="radios"
+              <input
+                className="radios"
                 type="checkbox"
                 checked={isChecked}
                 onChange={handleCheckboxChange}
@@ -265,15 +273,15 @@ function SignIn() {
             </button>
           </div>
         </div>
-        </div>
-        <p className="or_text">or login with</p>
-        <div className="login_icons">
-          <button className="signupsubmitbtngoogle" onClick={signInwithgoogle}>
-            <GoogleIcon icon={faGoogle} />
-          </button>
+      </div>
+      <p className="or_text">or login with</p>
+      <div className="login_icons">
+        <button className="signupsubmitbtngoogle" onClick={signInwithgoogle}>
+          <GoogleIcon icon={faGoogle} />
+        </button>
       </div>
       <div className="logo_name">
-      <h1>SHAUKEENS</h1>
+        <h1>SHAUKEENS</h1>
       </div>
     </>
   );

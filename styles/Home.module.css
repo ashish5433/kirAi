@@ -13,7 +13,7 @@
 .overlay_main_title {
 
   z-index: 4;
-  position: absolute;
+  position: absolute; 
   color: #fff;
   width: 70%;
   height: 40%;
