@@ -14,7 +14,7 @@ import {
 } from "firebase/auth";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import axios from "axios";
-import Toast from "@/pages/components/Toast";
+import Toast from "@/components/Toast";
 
 /////////////////////////// Email Verification...........///////////////////////////////
 
@@ -29,7 +29,7 @@ const checkEmailExistence = async (email) => {
     // Check if email exists based on ZeroBounce API response
     return response.data.status === "valid";
   } catch (error) {
-    console.log("Error checking email existence:", error);
+    // console.log("Error checking email existence:", error);
     return false;
   }
 };
@@ -133,7 +133,7 @@ const SignUp = () => {
             });
         }
         sendEmailVerification(auth.currentUser).then(() => {
-          console.log("Email Sent");
+          // console.log("Email Sent");
         });
         updateProfile(auth.currentUser, {
           displayName: registerName,
@@ -144,9 +144,9 @@ const SignUp = () => {
           .catch((error) => {
             console.log(error);
           });
-        console.log(user);
+        // console.log(user);
       } catch (e) {
-        console.log(e);
+        // console.log(e);
         alert(e);
       }
     }
@@ -175,7 +175,7 @@ const SignUp = () => {
         <h2 className="explorer_title">Create an Explorer Account</h2>
         <div className="name_n_loc">
           <div>
-            <label>Your Name</label>
+            {/* <label>Your Name</label> */}
             <input
               className="signUpEnterFields"
               type="text"
@@ -186,7 +186,7 @@ const SignUp = () => {
             />
           </div>
           <div>
-            <label>Location</label>
+            {/* <label>Location</label> */}
             <input
               className="signUpEnterFields"
               type="text"
@@ -196,8 +196,9 @@ const SignUp = () => {
         </div>
         <div className="email_n_code">
           <div>
-            <label>Your Email</label>
+            {/* <label>Your Email</label> */}
             <input
+              color="white"
               className="signUpEnterFields"
               type="email"
               placeholder="Enter your Email"
@@ -207,17 +208,17 @@ const SignUp = () => {
             />
           </div>
           <div>
-            <label>Confirm Your Email</label>
+            {/* <label>Confirm Your Email</label> */}
             <input
               className="signUpEnterFields"
               type="text"
-              placeholder="Enter your code"
+              placeholder="Confirm Your Email"
             />
           </div>
         </div>
         <div className="password_n_conf">
           <div>
-            <label>Enter Password</label>
+            {/* <label>Enter Password</label> */}
             <input
               className="signUpEnterPass"
               type={showPassword}
@@ -226,15 +227,10 @@ const SignUp = () => {
                 setregisterPassword(e.target.value);
               }}
             />
-            <button onClick={handleShowPassword}>
-              <FontAwesomeIcon
-                icon={showPass ? faEye : faEyeSlash}
-                className="signup_icon"
-              />
-            </button>
+           
           </div>
           <div>
-            <label>Confirm Password</label>
+            {/* <label>Confirm Password</label> */}
             <input
               className="signUpEnterEmail"
               type="password"
@@ -247,7 +243,7 @@ const SignUp = () => {
         </div>
         <div className="mobile_num">
           <div>
-            <label>Mobile Number</label>
+            {/* <label>Mobile Number</label> */}
             <input
               className="signUpEnterEmail"
               type="number"
