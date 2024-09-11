@@ -45,8 +45,8 @@ export const MainFooter = () => {
 
                 <div className="flex flex-col gap-3 max-md:!gap-1 max-md:py-4 max-md:pt-14">
 
-                    <FlipLink href="https://github.com/Milind-Palaria">Github</FlipLink>
-                    <FlipLink href="https://www.linkedin.com/in/milind-palaria/">Linkedin</FlipLink>
+                    <FlipLink href="https://github.com/ashish5433">Github</FlipLink>
+                    <FlipLink href="https://www.linkedin.com/in/ashish-bhardwaj-98b961231/">Linkedin</FlipLink>
                 </div>
             </div>
             <div className="flex justify-center items-center gap-3 md:gap-5 pt-10">
