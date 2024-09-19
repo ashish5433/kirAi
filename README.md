@@ -95,7 +95,7 @@ The application will be running on `http://localhost:3000`.
 - **Managing Rentals**: Use the user dashboard to manage your current and past rentals.
 - **Admin Access**: Access the admin panel to manage the platform’s operations (admin credentials required).
 
-![Kir.AI Owner Details](/images/ss_ownerdetail.png)
+![Kir.AI Owner Details](/images/ss_owner.png)
 
 ## 👨‍🎓 Contributors 👨‍🎓
 
