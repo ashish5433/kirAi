@@ -101,7 +101,7 @@ The application will be running on `http://localhost:3000`.
 
 We would like to thank the following contributors for their efforts and contributions to the Kir.AI project:
 
-  [Milind Palaria](https://github.com/Milind-Palaria)
+- [Milind Palaria](https://github.com/Milind-Palaria)
 - [Harsh Kanojia](https://github.com/Eyesnatcher-coder)
 - [Rishav Kumar](https://github.com/RockingRishav)
 
