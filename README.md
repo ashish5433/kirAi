@@ -128,8 +128,8 @@ This project is licensed under the MIT License - see the [LICENSE](/License) fil
 For any inquiries or feedback, please contact us at:
 
 - **Email**: bhardwajashish601@gmail.com
-- **Website**: [www.kir.ai](kirai.vercel.app)
-- **GitHub**: [Kir.AI Repository](https://github.com/Milind-Palaria/kir.ai)
+- **Website**: [www.kir.ai](https://kir-l4qx5ub0m-ashish5433s-projects.vercel.app/)
+- **GitHub**: [Kir.AI Repository](https://github.com/ashish5433/kirAi)
 
 ---
 
