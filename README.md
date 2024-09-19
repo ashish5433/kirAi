@@ -41,7 +41,7 @@ Welcome to the Kir.AI repository! Kir.AI revolutionizes the rental marketplace b
 
 Kir.AI is an AI-driven rental platform designed to provide a premium, user-friendly experience. Whether you're looking to rent a cozy apartment, a sleek vehicle, or the latest home appliances, Kir.AI caters to all your needs with the added luxury of voice command navigation.
 
-![Kir.AI BestSeller](/images/ss_bestseller.png)
+
 
 
 
@@ -101,7 +101,7 @@ The application will be running on `http://localhost:3000`.
 
 We would like to thank the following contributors for their efforts and contributions to the Kir.AI project:
 
-
+  [Milind Palaria](https://github.com/Milind-Palaria)
 - [Harsh Kanojia](https://github.com/Eyesnatcher-coder)
 - [Rishav Kumar](https://github.com/RockingRishav)
 
